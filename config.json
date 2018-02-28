@@ -1,0 +1,9 @@
+{
+  "artifactVersion": "0.1.0",
+  "composerProjectName": "ynab",
+  "gitUserId": "jerrylopez",
+  "gitRepoId": "ynab-sdk-php",
+  "invokerPackage": "Ynab",
+  "packagePath": ".",
+  "srcBasePath": "src"
+}

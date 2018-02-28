@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# script/generate: Generate PHP from swagger spec.
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+# Download latest swagger spec
+SPEC_FILENAME='spec-v1-swagger.json'
+rm ${SPEC_FILENAME} && wget https://api.youneedabudget.com/papi/${SPEC_FILENAME}
+
+# Replace nullable types defined as i.e. ["string", "null"] in the spec to simply "string" as the generator does not understand the nullable format.
+# Examples:
+#   ["string", "null"] => "string"
+#   ["number", "null"] => "number"
+sed -E -i '' 's/\\\[\\"(string|number|array|boolean)\\"\\, \\"null\\"\\\]/"\\1"/g' ${SPEC_FILENAME}
+
+# Use Docker to codegen PHP based on the swagger spec
+docker run --rm -v ${PWD}:/local swaggerapi/swagger-codegen-cli generate\
+    -i /local/spec-v1-swagger.json\
+    -l php\
+    -c /local/config.json -o /local\
+    -t /local/swagger-templates
