@@ -9,7 +9,7 @@
         "api"
     ],
     "homepage": "https://github.com/jerrylopez/ynab-sdk-php",
-    "license": "",
+    "license": "MIT",
     "authors": [
         {
             "name": "Jerry Lopez",
