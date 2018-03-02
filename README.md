@@ -14,47 +14,9 @@ This client is generated using the [Swagger Code Generator](https://github.com/s
 composer require jerrylopez/ynab
 ```
 
-## Tests
-
-To run the unit tests:
-
-```
-composer install
-./vendor/bin/phpunit
-```
-
-## Getting Started
-
-Please follow the [installation procedure](#installation) and then run the following:
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: bearer
-$config = Ynab\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Ynab\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Ynab\Api\AccountsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$budget_id = "budget_id_example"; // string | The ID of the Budget.
-$account_id = "account_id_example"; // string | The ID of the Account.
-
-try {
-    $result = $apiInstance->getAccountById($budget_id, $account_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling AccountsApi->getAccountById: ', $e->getMessage(), PHP_EOL;
-}
-
-?>
-```
-
-## Author
+## Development
+ - Install dependencies: `composer install`
+ - Generate latest client based on swagger spec: `script/generate`
+ - Run tests: `./vendor/bin/phpunit`
 
 
