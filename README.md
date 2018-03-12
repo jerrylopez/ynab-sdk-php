@@ -19,4 +19,5 @@ composer require jerrylopez/ynab
  - Generate latest client based on swagger spec: `script/generate`
  - Run tests: `./vendor/bin/phpunit`
 
-
+## Examples
+- [Budgets](/examples/budgets.php) 
