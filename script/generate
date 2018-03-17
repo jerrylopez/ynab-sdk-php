@@ -8,7 +8,7 @@ cd "$(dirname "$0")/.."
 
 # Download latest swagger spec
 SPEC_FILENAME='spec-v1-swagger.json'
-rm ${SPEC_FILENAME} && wget https://api.youneedabudget.com/papi/${SPEC_FILENAME}
+#rm ${SPEC_FILENAME} && wget https://api.youneedabudget.com/papi/${SPEC_FILENAME}
 
 # Replace nullable types defined as i.e. ["string", "null"] in the spec to simply "string" as the generator does not understand the nullable format.
 # Examples:

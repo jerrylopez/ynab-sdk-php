@@ -196,6 +196,13 @@ class Account implements ModelInterface, ArrayAccess
     const TYPE_CHECKING = 'checking';
     const TYPE_SAVINGS = 'savings';
     const TYPE_CREDIT_CARD = 'creditCard';
+    const TYPE_CASH = 'cash';
+    const TYPE_LINE_OF_CREDIT = 'lineOfCredit';
+    const TYPE_MERCHANT_ACCOUNT = 'merchantAccount';
+    const TYPE_INVESTMENT_ACCOUNT = 'investmentAccount';
+    const TYPE_MORTGAGE = 'mortgage';
+    const TYPE_OTHER_ASSET = 'otherAsset';
+    const TYPE_OTHER_LIABILITY = 'otherLiability';
     
 
     
@@ -210,6 +217,13 @@ class Account implements ModelInterface, ArrayAccess
             self::TYPE_CHECKING,
             self::TYPE_SAVINGS,
             self::TYPE_CREDIT_CARD,
+            self::TYPE_CASH,
+            self::TYPE_LINE_OF_CREDIT,
+            self::TYPE_MERCHANT_ACCOUNT,
+            self::TYPE_INVESTMENT_ACCOUNT,
+            self::TYPE_MORTGAGE,
+            self::TYPE_OTHER_ASSET,
+            self::TYPE_OTHER_LIABILITY,
         ];
     }
     

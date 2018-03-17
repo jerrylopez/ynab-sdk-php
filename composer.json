@@ -1,6 +1,6 @@
 {
     "name": "jerrylopez/ynab",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "PHP wrapper for the YNAB API. Read the documentation at https://api.youneedabudget.com",
     "keywords": [
         "ynab",
