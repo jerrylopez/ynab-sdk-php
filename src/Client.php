@@ -20,10 +20,12 @@ class Client
 
     protected $configuration;
 
-    public function __construct(Configuration $configuration)
+    public function __construct($token)
     {
         $this->client = new GuzzleClient();
-        $this->configuration = $configuration;
+        $this->configuration = Configuration::getDefaultConfiguration()
+            ->setApiKey('Authorization', $token)
+            ->setApiKeyPrefix('Authorization', 'Bearer');
     }
 
     public function api($endpoint)
