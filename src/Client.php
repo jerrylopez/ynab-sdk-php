@@ -12,6 +12,7 @@ use Ynab\Api\PayeeLocationsApi;
 use Ynab\Api\PayeesApi;
 use Ynab\Api\ScheduledTransactionsApi;
 use Ynab\Api\TransactionsApi;
+use Ynab\Api\UserApi;
 
 class Client
 {
@@ -58,6 +59,10 @@ class Client
 
             case 'transactions':
                 $api = new TransactionsApi($this->client, $this->configuration);
+                break;
+
+            case 'user':
+                $api = new UserApi($this->client, $this->configuration);
                 break;
 
             default:

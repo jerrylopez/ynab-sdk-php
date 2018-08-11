@@ -58,7 +58,7 @@ class BudgetDetailWrapper implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'budget' => '\Ynab\Model\BudgetDetail',
-        'server_knowledge' => 'float'
+        'server_knowledge' => 'int'
     ];
 
     /**
@@ -250,7 +250,7 @@ class BudgetDetailWrapper implements ModelInterface, ArrayAccess
     /**
      * Gets server_knowledge
      *
-     * @return float
+     * @return int
      */
     public function getServerKnowledge()
     {
@@ -260,7 +260,7 @@ class BudgetDetailWrapper implements ModelInterface, ArrayAccess
     /**
      * Sets server_knowledge
      *
-     * @param float $server_knowledge The knowledge of the server
+     * @param int $server_knowledge The knowledge of the server
      *
      * @return $this
      */

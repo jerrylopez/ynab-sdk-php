@@ -59,10 +59,12 @@ class TransactionDetail implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'date' => '\DateTime',
-        'amount' => 'float',
+        'amount' => 'int',
         'cleared' => 'string',
         'approved' => 'bool',
         'account_id' => 'string',
+        'deleted' => 'bool',
+        'account_name' => 'string',
         'subtransactions' => '\Ynab\Model\SubTransaction[]'
     ];
 
@@ -78,6 +80,8 @@ class TransactionDetail implements ModelInterface, ArrayAccess
         'cleared' => null,
         'approved' => null,
         'account_id' => 'uuid',
+        'deleted' => null,
+        'account_name' => null,
         'subtransactions' => null
     ];
 
@@ -114,6 +118,8 @@ class TransactionDetail implements ModelInterface, ArrayAccess
         'cleared' => 'cleared',
         'approved' => 'approved',
         'account_id' => 'account_id',
+        'deleted' => 'deleted',
+        'account_name' => 'account_name',
         'subtransactions' => 'subtransactions'
     ];
 
@@ -129,6 +135,8 @@ class TransactionDetail implements ModelInterface, ArrayAccess
         'cleared' => 'setCleared',
         'approved' => 'setApproved',
         'account_id' => 'setAccountId',
+        'deleted' => 'setDeleted',
+        'account_name' => 'setAccountName',
         'subtransactions' => 'setSubtransactions'
     ];
 
@@ -144,6 +152,8 @@ class TransactionDetail implements ModelInterface, ArrayAccess
         'cleared' => 'getCleared',
         'approved' => 'getApproved',
         'account_id' => 'getAccountId',
+        'deleted' => 'getDeleted',
+        'account_name' => 'getAccountName',
         'subtransactions' => 'getSubtransactions'
     ];
 
@@ -230,6 +240,8 @@ class TransactionDetail implements ModelInterface, ArrayAccess
         $this->container['cleared'] = isset($data['cleared']) ? $data['cleared'] : null;
         $this->container['approved'] = isset($data['approved']) ? $data['approved'] : null;
         $this->container['account_id'] = isset($data['account_id']) ? $data['account_id'] : null;
+        $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
+        $this->container['account_name'] = isset($data['account_name']) ? $data['account_name'] : null;
         $this->container['subtransactions'] = isset($data['subtransactions']) ? $data['subtransactions'] : null;
     }
 
@@ -268,6 +280,12 @@ class TransactionDetail implements ModelInterface, ArrayAccess
         if ($this->container['account_id'] === null) {
             $invalidProperties[] = "'account_id' can't be null";
         }
+        if ($this->container['deleted'] === null) {
+            $invalidProperties[] = "'deleted' can't be null";
+        }
+        if ($this->container['account_name'] === null) {
+            $invalidProperties[] = "'account_name' can't be null";
+        }
         if ($this->container['subtransactions'] === null) {
             $invalidProperties[] = "'subtransactions' can't be null";
         }
@@ -303,6 +321,12 @@ class TransactionDetail implements ModelInterface, ArrayAccess
             return false;
         }
         if ($this->container['account_id'] === null) {
+            return false;
+        }
+        if ($this->container['deleted'] === null) {
+            return false;
+        }
+        if ($this->container['account_name'] === null) {
             return false;
         }
         if ($this->container['subtransactions'] === null) {
@@ -363,7 +387,7 @@ class TransactionDetail implements ModelInterface, ArrayAccess
     /**
      * Gets amount
      *
-     * @return float
+     * @return int
      */
     public function getAmount()
     {
@@ -373,7 +397,7 @@ class TransactionDetail implements ModelInterface, ArrayAccess
     /**
      * Sets amount
      *
-     * @param float $amount The transaction amount in milliunits format
+     * @param int $amount The transaction amount in milliunits format
      *
      * @return $this
      */
@@ -466,6 +490,54 @@ class TransactionDetail implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets deleted
+     *
+     * @return bool
+     */
+    public function getDeleted()
+    {
+        return $this->container['deleted'];
+    }
+
+    /**
+     * Sets deleted
+     *
+     * @param bool $deleted Whether or not the transaction has been deleted.  Deleted transactions will only be included in delta requests.
+     *
+     * @return $this
+     */
+    public function setDeleted($deleted)
+    {
+        $this->container['deleted'] = $deleted;
+
+        return $this;
+    }
+
+    /**
+     * Gets account_name
+     *
+     * @return string
+     */
+    public function getAccountName()
+    {
+        return $this->container['account_name'];
+    }
+
+    /**
+     * Sets account_name
+     *
+     * @param string $account_name account_name
+     *
+     * @return $this
+     */
+    public function setAccountName($account_name)
+    {
+        $this->container['account_name'] = $account_name;
+
+        return $this;
+    }
+
+    /**
      * Gets subtransactions
      *
      * @return \Ynab\Model\SubTransaction[]
@@ -478,7 +550,7 @@ class TransactionDetail implements ModelInterface, ArrayAccess
     /**
      * Sets subtransactions
      *
-     * @param \Ynab\Model\SubTransaction[] $subtransactions If a split transaction, the sub-transactions.
+     * @param \Ynab\Model\SubTransaction[] $subtransactions If a split transaction, the subtransactions.
      *
      * @return $this
      */

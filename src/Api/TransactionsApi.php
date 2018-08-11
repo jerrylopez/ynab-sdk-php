@@ -473,7 +473,7 @@ class TransactionsApi
                     );
                     $e->setResponseObject($data);
                     break;
-                case 422:
+                case 409:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Ynab\Model\ErrorResponse',
@@ -680,7 +680,7 @@ class TransactionsApi
      *
      * @param  string $budget_id The ID of the Budget. (required)
      * @param  \DateTime $since_date Only return transactions on or after this date. (optional)
-     * @param  string $type Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) (optional)
+     * @param  string $type Only return transactions of a certain type (&#39;uncategorized&#39; and &#39;unapproved&#39; are currently supported) (optional)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -699,7 +699,7 @@ class TransactionsApi
      *
      * @param  string $budget_id The ID of the Budget. (required)
      * @param  \DateTime $since_date Only return transactions on or after this date. (optional)
-     * @param  string $type Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) (optional)
+     * @param  string $type Only return transactions of a certain type (&#39;uncategorized&#39; and &#39;unapproved&#39; are currently supported) (optional)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -792,7 +792,7 @@ class TransactionsApi
      *
      * @param  string $budget_id The ID of the Budget. (required)
      * @param  \DateTime $since_date Only return transactions on or after this date. (optional)
-     * @param  string $type Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) (optional)
+     * @param  string $type Only return transactions of a certain type (&#39;uncategorized&#39; and &#39;unapproved&#39; are currently supported) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -814,7 +814,7 @@ class TransactionsApi
      *
      * @param  string $budget_id The ID of the Budget. (required)
      * @param  \DateTime $since_date Only return transactions on or after this date. (optional)
-     * @param  string $type Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) (optional)
+     * @param  string $type Only return transactions of a certain type (&#39;uncategorized&#39; and &#39;unapproved&#39; are currently supported) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -866,7 +866,7 @@ class TransactionsApi
      *
      * @param  string $budget_id The ID of the Budget. (required)
      * @param  \DateTime $since_date Only return transactions on or after this date. (optional)
-     * @param  string $type Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) (optional)
+     * @param  string $type Only return transactions of a certain type (&#39;uncategorized&#39; and &#39;unapproved&#39; are currently supported) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -982,14 +982,15 @@ class TransactionsApi
      * @param  string $budget_id The ID of the Budget. (required)
      * @param  string $account_id The ID of the Account. (required)
      * @param  \DateTime $since_date Only return transactions on or after this date. (optional)
+     * @param  string $type Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) (optional)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ynab\Model\TransactionsResponse
      */
-    public function getTransactionsByAccount($budget_id, $account_id, $since_date = null)
+    public function getTransactionsByAccount($budget_id, $account_id, $since_date = null, $type = null)
     {
-        list($response) = $this->getTransactionsByAccountWithHttpInfo($budget_id, $account_id, $since_date);
+        list($response) = $this->getTransactionsByAccountWithHttpInfo($budget_id, $account_id, $since_date, $type);
         return $response;
     }
 
@@ -1001,15 +1002,16 @@ class TransactionsApi
      * @param  string $budget_id The ID of the Budget. (required)
      * @param  string $account_id The ID of the Account. (required)
      * @param  \DateTime $since_date Only return transactions on or after this date. (optional)
+     * @param  string $type Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) (optional)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ynab\Model\TransactionsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTransactionsByAccountWithHttpInfo($budget_id, $account_id, $since_date = null)
+    public function getTransactionsByAccountWithHttpInfo($budget_id, $account_id, $since_date = null, $type = null)
     {
         $returnType = '\Ynab\Model\TransactionsResponse';
-        $request = $this->getTransactionsByAccountRequest($budget_id, $account_id, $since_date);
+        $request = $this->getTransactionsByAccountRequest($budget_id, $account_id, $since_date, $type);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1094,13 +1096,14 @@ class TransactionsApi
      * @param  string $budget_id The ID of the Budget. (required)
      * @param  string $account_id The ID of the Account. (required)
      * @param  \DateTime $since_date Only return transactions on or after this date. (optional)
+     * @param  string $type Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTransactionsByAccountAsync($budget_id, $account_id, $since_date = null)
+    public function getTransactionsByAccountAsync($budget_id, $account_id, $since_date = null, $type = null)
     {
-        return $this->getTransactionsByAccountAsyncWithHttpInfo($budget_id, $account_id, $since_date)
+        return $this->getTransactionsByAccountAsyncWithHttpInfo($budget_id, $account_id, $since_date, $type)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1116,14 +1119,15 @@ class TransactionsApi
      * @param  string $budget_id The ID of the Budget. (required)
      * @param  string $account_id The ID of the Account. (required)
      * @param  \DateTime $since_date Only return transactions on or after this date. (optional)
+     * @param  string $type Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTransactionsByAccountAsyncWithHttpInfo($budget_id, $account_id, $since_date = null)
+    public function getTransactionsByAccountAsyncWithHttpInfo($budget_id, $account_id, $since_date = null, $type = null)
     {
         $returnType = '\Ynab\Model\TransactionsResponse';
-        $request = $this->getTransactionsByAccountRequest($budget_id, $account_id, $since_date);
+        $request = $this->getTransactionsByAccountRequest($budget_id, $account_id, $since_date, $type);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1168,11 +1172,12 @@ class TransactionsApi
      * @param  string $budget_id The ID of the Budget. (required)
      * @param  string $account_id The ID of the Account. (required)
      * @param  \DateTime $since_date Only return transactions on or after this date. (optional)
+     * @param  string $type Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getTransactionsByAccountRequest($budget_id, $account_id, $since_date = null)
+    protected function getTransactionsByAccountRequest($budget_id, $account_id, $since_date = null, $type = null)
     {
         // verify the required parameter 'budget_id' is set
         if ($budget_id === null || (is_array($budget_id) && count($budget_id) === 0)) {
@@ -1197,6 +1202,10 @@ class TransactionsApi
         // query params
         if ($since_date !== null) {
             $queryParams['since_date'] = ObjectSerializer::toQueryValue($since_date);
+        }
+        // query params
+        if ($type !== null) {
+            $queryParams['type'] = ObjectSerializer::toQueryValue($type);
         }
 
         // path params
@@ -1293,14 +1302,15 @@ class TransactionsApi
      * @param  string $budget_id The ID of the Budget. (required)
      * @param  string $category_id The ID of the Category. (required)
      * @param  \DateTime $since_date Only return transactions on or after this date. (optional)
+     * @param  string $type Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) (optional)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Ynab\Model\TransactionsResponse
+     * @return \Ynab\Model\HybridTransactionsResponse
      */
-    public function getTransactionsByCategory($budget_id, $category_id, $since_date = null)
+    public function getTransactionsByCategory($budget_id, $category_id, $since_date = null, $type = null)
     {
-        list($response) = $this->getTransactionsByCategoryWithHttpInfo($budget_id, $category_id, $since_date);
+        list($response) = $this->getTransactionsByCategoryWithHttpInfo($budget_id, $category_id, $since_date, $type);
         return $response;
     }
 
@@ -1312,15 +1322,16 @@ class TransactionsApi
      * @param  string $budget_id The ID of the Budget. (required)
      * @param  string $category_id The ID of the Category. (required)
      * @param  \DateTime $since_date Only return transactions on or after this date. (optional)
+     * @param  string $type Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) (optional)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Ynab\Model\TransactionsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Ynab\Model\HybridTransactionsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTransactionsByCategoryWithHttpInfo($budget_id, $category_id, $since_date = null)
+    public function getTransactionsByCategoryWithHttpInfo($budget_id, $category_id, $since_date = null, $type = null)
     {
-        $returnType = '\Ynab\Model\TransactionsResponse';
-        $request = $this->getTransactionsByCategoryRequest($budget_id, $category_id, $since_date);
+        $returnType = '\Ynab\Model\HybridTransactionsResponse';
+        $request = $this->getTransactionsByCategoryRequest($budget_id, $category_id, $since_date, $type);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1371,7 +1382,7 @@ class TransactionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Ynab\Model\TransactionsResponse',
+                        '\Ynab\Model\HybridTransactionsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1405,13 +1416,14 @@ class TransactionsApi
      * @param  string $budget_id The ID of the Budget. (required)
      * @param  string $category_id The ID of the Category. (required)
      * @param  \DateTime $since_date Only return transactions on or after this date. (optional)
+     * @param  string $type Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTransactionsByCategoryAsync($budget_id, $category_id, $since_date = null)
+    public function getTransactionsByCategoryAsync($budget_id, $category_id, $since_date = null, $type = null)
     {
-        return $this->getTransactionsByCategoryAsyncWithHttpInfo($budget_id, $category_id, $since_date)
+        return $this->getTransactionsByCategoryAsyncWithHttpInfo($budget_id, $category_id, $since_date, $type)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1427,14 +1439,15 @@ class TransactionsApi
      * @param  string $budget_id The ID of the Budget. (required)
      * @param  string $category_id The ID of the Category. (required)
      * @param  \DateTime $since_date Only return transactions on or after this date. (optional)
+     * @param  string $type Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTransactionsByCategoryAsyncWithHttpInfo($budget_id, $category_id, $since_date = null)
+    public function getTransactionsByCategoryAsyncWithHttpInfo($budget_id, $category_id, $since_date = null, $type = null)
     {
-        $returnType = '\Ynab\Model\TransactionsResponse';
-        $request = $this->getTransactionsByCategoryRequest($budget_id, $category_id, $since_date);
+        $returnType = '\Ynab\Model\HybridTransactionsResponse';
+        $request = $this->getTransactionsByCategoryRequest($budget_id, $category_id, $since_date, $type);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1479,11 +1492,12 @@ class TransactionsApi
      * @param  string $budget_id The ID of the Budget. (required)
      * @param  string $category_id The ID of the Category. (required)
      * @param  \DateTime $since_date Only return transactions on or after this date. (optional)
+     * @param  string $type Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getTransactionsByCategoryRequest($budget_id, $category_id, $since_date = null)
+    protected function getTransactionsByCategoryRequest($budget_id, $category_id, $since_date = null, $type = null)
     {
         // verify the required parameter 'budget_id' is set
         if ($budget_id === null || (is_array($budget_id) && count($budget_id) === 0)) {
@@ -1508,6 +1522,10 @@ class TransactionsApi
         // query params
         if ($since_date !== null) {
             $queryParams['since_date'] = ObjectSerializer::toQueryValue($since_date);
+        }
+        // query params
+        if ($type !== null) {
+            $queryParams['type'] = ObjectSerializer::toQueryValue($type);
         }
 
         // path params
@@ -1825,6 +1843,326 @@ class TransactionsApi
             $resourcePath = str_replace(
                 '{' . 'transaction_id' . '}',
                 ObjectSerializer::toPathValue($transaction_id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getTransactionsByPayee
+     *
+     * List payee transactions
+     *
+     * @param  string $budget_id The ID of the Budget. (required)
+     * @param  string $payee_id The ID of the Payee. (required)
+     * @param  \DateTime $since_date Only return transactions on or after this date. (optional)
+     * @param  string $type Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) (optional)
+     *
+     * @throws \Ynab\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Ynab\Model\HybridTransactionsResponse
+     */
+    public function getTransactionsByPayee($budget_id, $payee_id, $since_date = null, $type = null)
+    {
+        list($response) = $this->getTransactionsByPayeeWithHttpInfo($budget_id, $payee_id, $since_date, $type);
+        return $response;
+    }
+
+    /**
+     * Operation getTransactionsByPayeeWithHttpInfo
+     *
+     * List payee transactions
+     *
+     * @param  string $budget_id The ID of the Budget. (required)
+     * @param  string $payee_id The ID of the Payee. (required)
+     * @param  \DateTime $since_date Only return transactions on or after this date. (optional)
+     * @param  string $type Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) (optional)
+     *
+     * @throws \Ynab\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Ynab\Model\HybridTransactionsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getTransactionsByPayeeWithHttpInfo($budget_id, $payee_id, $since_date = null, $type = null)
+    {
+        $returnType = '\Ynab\Model\HybridTransactionsResponse';
+        $request = $this->getTransactionsByPayeeRequest($budget_id, $payee_id, $since_date, $type);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Ynab\Model\HybridTransactionsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Ynab\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                default:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Ynab\Model\ErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getTransactionsByPayeeAsync
+     *
+     * List payee transactions
+     *
+     * @param  string $budget_id The ID of the Budget. (required)
+     * @param  string $payee_id The ID of the Payee. (required)
+     * @param  \DateTime $since_date Only return transactions on or after this date. (optional)
+     * @param  string $type Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getTransactionsByPayeeAsync($budget_id, $payee_id, $since_date = null, $type = null)
+    {
+        return $this->getTransactionsByPayeeAsyncWithHttpInfo($budget_id, $payee_id, $since_date, $type)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getTransactionsByPayeeAsyncWithHttpInfo
+     *
+     * List payee transactions
+     *
+     * @param  string $budget_id The ID of the Budget. (required)
+     * @param  string $payee_id The ID of the Payee. (required)
+     * @param  \DateTime $since_date Only return transactions on or after this date. (optional)
+     * @param  string $type Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getTransactionsByPayeeAsyncWithHttpInfo($budget_id, $payee_id, $since_date = null, $type = null)
+    {
+        $returnType = '\Ynab\Model\HybridTransactionsResponse';
+        $request = $this->getTransactionsByPayeeRequest($budget_id, $payee_id, $since_date, $type);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getTransactionsByPayee'
+     *
+     * @param  string $budget_id The ID of the Budget. (required)
+     * @param  string $payee_id The ID of the Payee. (required)
+     * @param  \DateTime $since_date Only return transactions on or after this date. (optional)
+     * @param  string $type Only return transactions of a certain type (i.e. &#39;uncategorized&#39;, &#39;unapproved&#39;) (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getTransactionsByPayeeRequest($budget_id, $payee_id, $since_date = null, $type = null)
+    {
+        // verify the required parameter 'budget_id' is set
+        if ($budget_id === null || (is_array($budget_id) && count($budget_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $budget_id when calling getTransactionsByPayee'
+            );
+        }
+        // verify the required parameter 'payee_id' is set
+        if ($payee_id === null || (is_array($payee_id) && count($payee_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $payee_id when calling getTransactionsByPayee'
+            );
+        }
+
+        $resourcePath = '/budgets/{budget_id}/payees/{payee_id}/transactions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($since_date !== null) {
+            $queryParams['since_date'] = ObjectSerializer::toQueryValue($since_date);
+        }
+        // query params
+        if ($type !== null) {
+            $queryParams['type'] = ObjectSerializer::toQueryValue($type);
+        }
+
+        // path params
+        if ($budget_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'budget_id' . '}',
+                ObjectSerializer::toPathValue($budget_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($payee_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'payee_id' . '}',
+                ObjectSerializer::toPathValue($payee_id),
                 $resourcePath
             );
         }

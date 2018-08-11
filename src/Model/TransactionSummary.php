@@ -59,10 +59,11 @@ class TransactionSummary implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'date' => '\DateTime',
-        'amount' => 'float',
+        'amount' => 'int',
         'cleared' => 'string',
         'approved' => 'bool',
-        'account_id' => 'string'
+        'account_id' => 'string',
+        'deleted' => 'bool'
     ];
 
     /**
@@ -76,7 +77,8 @@ class TransactionSummary implements ModelInterface, ArrayAccess
         'amount' => '1234000',
         'cleared' => null,
         'approved' => null,
-        'account_id' => 'uuid'
+        'account_id' => 'uuid',
+        'deleted' => null
     ];
 
     /**
@@ -111,7 +113,8 @@ class TransactionSummary implements ModelInterface, ArrayAccess
         'amount' => 'amount',
         'cleared' => 'cleared',
         'approved' => 'approved',
-        'account_id' => 'account_id'
+        'account_id' => 'account_id',
+        'deleted' => 'deleted'
     ];
 
     /**
@@ -125,7 +128,8 @@ class TransactionSummary implements ModelInterface, ArrayAccess
         'amount' => 'setAmount',
         'cleared' => 'setCleared',
         'approved' => 'setApproved',
-        'account_id' => 'setAccountId'
+        'account_id' => 'setAccountId',
+        'deleted' => 'setDeleted'
     ];
 
     /**
@@ -139,7 +143,8 @@ class TransactionSummary implements ModelInterface, ArrayAccess
         'amount' => 'getAmount',
         'cleared' => 'getCleared',
         'approved' => 'getApproved',
-        'account_id' => 'getAccountId'
+        'account_id' => 'getAccountId',
+        'deleted' => 'getDeleted'
     ];
 
     /**
@@ -225,6 +230,7 @@ class TransactionSummary implements ModelInterface, ArrayAccess
         $this->container['cleared'] = isset($data['cleared']) ? $data['cleared'] : null;
         $this->container['approved'] = isset($data['approved']) ? $data['approved'] : null;
         $this->container['account_id'] = isset($data['account_id']) ? $data['account_id'] : null;
+        $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
     }
 
     /**
@@ -262,6 +268,9 @@ class TransactionSummary implements ModelInterface, ArrayAccess
         if ($this->container['account_id'] === null) {
             $invalidProperties[] = "'account_id' can't be null";
         }
+        if ($this->container['deleted'] === null) {
+            $invalidProperties[] = "'deleted' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -294,6 +303,9 @@ class TransactionSummary implements ModelInterface, ArrayAccess
             return false;
         }
         if ($this->container['account_id'] === null) {
+            return false;
+        }
+        if ($this->container['deleted'] === null) {
             return false;
         }
         return true;
@@ -351,7 +363,7 @@ class TransactionSummary implements ModelInterface, ArrayAccess
     /**
      * Gets amount
      *
-     * @return float
+     * @return int
      */
     public function getAmount()
     {
@@ -361,7 +373,7 @@ class TransactionSummary implements ModelInterface, ArrayAccess
     /**
      * Sets amount
      *
-     * @param float $amount The transaction amount in milliunits format
+     * @param int $amount The transaction amount in milliunits format
      *
      * @return $this
      */
@@ -449,6 +461,30 @@ class TransactionSummary implements ModelInterface, ArrayAccess
     public function setAccountId($account_id)
     {
         $this->container['account_id'] = $account_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets deleted
+     *
+     * @return bool
+     */
+    public function getDeleted()
+    {
+        return $this->container['deleted'];
+    }
+
+    /**
+     * Sets deleted
+     *
+     * @param bool $deleted Whether or not the transaction has been deleted.  Deleted transactions will only be included in delta requests.
+     *
+     * @return $this
+     */
+    public function setDeleted($deleted)
+    {
+        $this->container['deleted'] = $deleted;
 
         return $this;
     }
