@@ -20,6 +20,9 @@ class Client
 
     protected $configuration;
 
+    /**
+     * @param String $token
+     */
     public function __construct($token)
     {
         $this->client = new GuzzleClient();
@@ -28,6 +31,10 @@ class Client
             ->setApiKeyPrefix('Authorization', 'Bearer');
     }
 
+    /**
+     * @param $endpoint
+     * @return AccountsApi|BudgetsApi|CategoriesApi|MonthsApi|PayeeLocationsApi|PayeesApi|ScheduledTransactionsApi|TransactionsApi|UserApi
+     */
     public function api($endpoint)
     {
         switch ($endpoint) {
