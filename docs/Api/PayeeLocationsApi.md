@@ -32,8 +32,8 @@ $apiInstance = new Ynab\Api\PayeeLocationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$budget_id = "budget_id_example"; // string | The ID of the Budget.
-$payee_location_id = "payee_location_id_example"; // string | ID of payee location
+$budget_id = "budget_id_example"; // string | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+$payee_location_id = "payee_location_id_example"; // string | id of payee location
 
 try {
     $result = $apiInstance->getPayeeLocationById($budget_id, $payee_location_id);
@@ -48,8 +48,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**string**](../Model/.md)| The ID of the Budget. |
- **payee_location_id** | [**string**](../Model/.md)| ID of payee location |
+ **budget_id** | **string**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **payee_location_id** | **string**| id of payee location |
 
 ### Return type
 
@@ -89,7 +89,7 @@ $apiInstance = new Ynab\Api\PayeeLocationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$budget_id = "budget_id_example"; // string | The ID of the Budget.
+$budget_id = "budget_id_example"; // string | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 
 try {
     $result = $apiInstance->getPayeeLocations($budget_id);
@@ -104,7 +104,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**string**](../Model/.md)| The ID of the Budget. |
+ **budget_id** | **string**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
 
 ### Return type
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 List locations for a payee
 
-Returns all payee locations for the specified payee
+Returns all payee locations for a specified payee
 
 ### Example
 ```php
@@ -144,8 +144,8 @@ $apiInstance = new Ynab\Api\PayeeLocationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$budget_id = "budget_id_example"; // string | The ID of the Budget.
-$payee_id = "payee_id_example"; // string | ID of payee
+$budget_id = "budget_id_example"; // string | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+$payee_id = "payee_id_example"; // string | id of payee
 
 try {
     $result = $apiInstance->getPayeeLocationsByPayee($budget_id, $payee_id);
@@ -160,8 +160,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**string**](../Model/.md)| The ID of the Budget. |
- **payee_id** | [**string**](../Model/.md)| ID of payee |
+ **budget_id** | **string**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **payee_id** | **string**| id of payee |
 
 ### Return type
 

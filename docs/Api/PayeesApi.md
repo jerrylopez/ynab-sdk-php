@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Single payee
 
-Returns single payee
+Returns a single payee
 
 ### Example
 ```php
@@ -31,8 +31,8 @@ $apiInstance = new Ynab\Api\PayeesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$budget_id = "budget_id_example"; // string | The ID of the Budget.
-$payee_id = "payee_id_example"; // string | The ID of the Payee.
+$budget_id = "budget_id_example"; // string | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+$payee_id = "payee_id_example"; // string | The id of the payee
 
 try {
     $result = $apiInstance->getPayeeById($budget_id, $payee_id);
@@ -47,8 +47,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**string**](../Model/.md)| The ID of the Budget. |
- **payee_id** | [**string**](../Model/.md)| The ID of the Payee. |
+ **budget_id** | **string**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **payee_id** | **string**| The id of the payee |
 
 ### Return type
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPayees**
-> \Ynab\Model\PayeesResponse getPayees($budget_id)
+> \Ynab\Model\PayeesResponse getPayees($budget_id, $last_knowledge_of_server)
 
 List payees
 
@@ -88,10 +88,11 @@ $apiInstance = new Ynab\Api\PayeesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$budget_id = "budget_id_example"; // string | The ID of the Budget.
+$budget_id = "budget_id_example"; // string | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+$last_knowledge_of_server = 789; // int | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
 
 try {
-    $result = $apiInstance->getPayees($budget_id);
+    $result = $apiInstance->getPayees($budget_id, $last_knowledge_of_server);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PayeesApi->getPayees: ', $e->getMessage(), PHP_EOL;
@@ -103,7 +104,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | [**string**](../Model/.md)| The ID of the Budget. |
+ **budget_id** | **string**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **last_knowledge_of_server** | **int**| The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. | [optional]
 
 ### Return type
 

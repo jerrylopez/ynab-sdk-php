@@ -3,10 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **string** |  | 
-**name** | **string** |  | 
-**date_format** | [**\Ynab\Model\DateFormat**](DateFormat.md) |  | [optional] 
-**currency_format** | [**\Ynab\Model\CurrencyFormat**](CurrencyFormat.md) |  | [optional] 
 **accounts** | [**\Ynab\Model\Account[]**](Account.md) |  | [optional] 
 **payees** | [**\Ynab\Model\Payee[]**](Payee.md) |  | [optional] 
 **payee_locations** | [**\Ynab\Model\PayeeLocation[]**](PayeeLocation.md) |  | [optional] 

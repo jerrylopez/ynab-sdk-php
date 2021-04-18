@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 User info
 
-Returns authenticated user information.
+Returns authenticated user information
 
 ### Example
 ```php
