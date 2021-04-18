@@ -58,7 +58,8 @@ class Payee implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'name' => 'string'
+        'name' => 'string',
+        'deleted' => 'bool'
     ];
 
     /**
@@ -68,7 +69,8 @@ class Payee implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => 'uuid',
-        'name' => null
+        'name' => null,
+        'deleted' => null
     ];
 
     /**
@@ -99,7 +101,8 @@ class Payee implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'name' => 'name'
+        'name' => 'name',
+        'deleted' => 'deleted'
     ];
 
     /**
@@ -109,7 +112,8 @@ class Payee implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'name' => 'setName'
+        'name' => 'setName',
+        'deleted' => 'setDeleted'
     ];
 
     /**
@@ -119,7 +123,8 @@ class Payee implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'name' => 'getName'
+        'name' => 'getName',
+        'deleted' => 'getDeleted'
     ];
 
     /**
@@ -184,6 +189,7 @@ class Payee implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
     }
 
     /**
@@ -201,6 +207,9 @@ class Payee implements ModelInterface, ArrayAccess
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
+        if ($this->container['deleted'] === null) {
+            $invalidProperties[] = "'deleted' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -217,6 +226,9 @@ class Payee implements ModelInterface, ArrayAccess
             return false;
         }
         if ($this->container['name'] === null) {
+            return false;
+        }
+        if ($this->container['deleted'] === null) {
             return false;
         }
         return true;
@@ -267,6 +279,30 @@ class Payee implements ModelInterface, ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets deleted
+     *
+     * @return bool
+     */
+    public function getDeleted()
+    {
+        return $this->container['deleted'];
+    }
+
+    /**
+     * Sets deleted
+     *
+     * @param bool $deleted Whether or not the payee has been deleted.  Deleted payees will only be included in delta requests.
+     *
+     * @return $this
+     */
+    public function setDeleted($deleted)
+    {
+        $this->container['deleted'] = $deleted;
 
         return $this;
     }

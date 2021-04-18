@@ -93,7 +93,7 @@ class MonthsApi
      * Single budget month
      *
      * @param  string $budget_id The ID of the Budget. (required)
-     * @param  \DateTime $month The Budget Month.  \&quot;current\&quot; can also be used to specify the current calendar month (UTC). (required)
+     * @param  \DateTime $month The Budget Month in ISO format (e.g. 2016-12-01).    \&quot;current\&quot; can also be used to specify the current calendar month (UTC). (required)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -111,7 +111,7 @@ class MonthsApi
      * Single budget month
      *
      * @param  string $budget_id The ID of the Budget. (required)
-     * @param  \DateTime $month The Budget Month.  \&quot;current\&quot; can also be used to specify the current calendar month (UTC). (required)
+     * @param  \DateTime $month The Budget Month in ISO format (e.g. 2016-12-01).    \&quot;current\&quot; can also be used to specify the current calendar month (UTC). (required)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -203,7 +203,7 @@ class MonthsApi
      * Single budget month
      *
      * @param  string $budget_id The ID of the Budget. (required)
-     * @param  \DateTime $month The Budget Month.  \&quot;current\&quot; can also be used to specify the current calendar month (UTC). (required)
+     * @param  \DateTime $month The Budget Month in ISO format (e.g. 2016-12-01).    \&quot;current\&quot; can also be used to specify the current calendar month (UTC). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -224,7 +224,7 @@ class MonthsApi
      * Single budget month
      *
      * @param  string $budget_id The ID of the Budget. (required)
-     * @param  \DateTime $month The Budget Month.  \&quot;current\&quot; can also be used to specify the current calendar month (UTC). (required)
+     * @param  \DateTime $month The Budget Month in ISO format (e.g. 2016-12-01).    \&quot;current\&quot; can also be used to specify the current calendar month (UTC). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -275,7 +275,7 @@ class MonthsApi
      * Create request for operation 'getBudgetMonth'
      *
      * @param  string $budget_id The ID of the Budget. (required)
-     * @param  \DateTime $month The Budget Month.  \&quot;current\&quot; can also be used to specify the current calendar month (UTC). (required)
+     * @param  \DateTime $month The Budget Month in ISO format (e.g. 2016-12-01).    \&quot;current\&quot; can also be used to specify the current calendar month (UTC). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

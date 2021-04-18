@@ -59,7 +59,7 @@ class SaveTransaction implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'account_id' => 'string',
         'date' => '\DateTime',
-        'amount' => 'float',
+        'amount' => 'int',
         'cleared' => 'string',
         'approved' => 'bool'
     ];
@@ -327,7 +327,7 @@ class SaveTransaction implements ModelInterface, ArrayAccess
     /**
      * Gets amount
      *
-     * @return float
+     * @return int
      */
     public function getAmount()
     {
@@ -337,7 +337,7 @@ class SaveTransaction implements ModelInterface, ArrayAccess
     /**
      * Sets amount
      *
-     * @param float $amount The transaction amount in milliunits format
+     * @param int $amount The transaction amount in milliunits format
      *
      * @return $this
      */

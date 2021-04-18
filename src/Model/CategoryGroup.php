@@ -59,7 +59,8 @@ class CategoryGroup implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'name' => 'string',
-        'hidden' => 'bool'
+        'hidden' => 'bool',
+        'deleted' => 'bool'
     ];
 
     /**
@@ -70,7 +71,8 @@ class CategoryGroup implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => 'uuid',
         'name' => null,
-        'hidden' => null
+        'hidden' => null,
+        'deleted' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class CategoryGroup implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
-        'hidden' => 'hidden'
+        'hidden' => 'hidden',
+        'deleted' => 'deleted'
     ];
 
     /**
@@ -113,7 +116,8 @@ class CategoryGroup implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
-        'hidden' => 'setHidden'
+        'hidden' => 'setHidden',
+        'deleted' => 'setDeleted'
     ];
 
     /**
@@ -124,7 +128,8 @@ class CategoryGroup implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
-        'hidden' => 'getHidden'
+        'hidden' => 'getHidden',
+        'deleted' => 'getDeleted'
     ];
 
     /**
@@ -190,6 +195,7 @@ class CategoryGroup implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['hidden'] = isset($data['hidden']) ? $data['hidden'] : null;
+        $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
     }
 
     /**
@@ -210,6 +216,9 @@ class CategoryGroup implements ModelInterface, ArrayAccess
         if ($this->container['hidden'] === null) {
             $invalidProperties[] = "'hidden' can't be null";
         }
+        if ($this->container['deleted'] === null) {
+            $invalidProperties[] = "'deleted' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -229,6 +238,9 @@ class CategoryGroup implements ModelInterface, ArrayAccess
             return false;
         }
         if ($this->container['hidden'] === null) {
+            return false;
+        }
+        if ($this->container['deleted'] === null) {
             return false;
         }
         return true;
@@ -303,6 +315,30 @@ class CategoryGroup implements ModelInterface, ArrayAccess
     public function setHidden($hidden)
     {
         $this->container['hidden'] = $hidden;
+
+        return $this;
+    }
+
+    /**
+     * Gets deleted
+     *
+     * @return bool
+     */
+    public function getDeleted()
+    {
+        return $this->container['deleted'];
+    }
+
+    /**
+     * Sets deleted
+     *
+     * @param bool $deleted Whether or not the category group has been deleted.  Deleted category groups will only be included in delta requests.
+     *
+     * @return $this
+     */
+    public function setDeleted($deleted)
+    {
+        $this->container['deleted'] = $deleted;
 
         return $this;
     }

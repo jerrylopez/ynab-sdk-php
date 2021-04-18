@@ -59,7 +59,8 @@ class SubTransaction implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'transaction_id' => 'string',
-        'amount' => 'float'
+        'amount' => 'int',
+        'deleted' => 'bool'
     ];
 
     /**
@@ -70,7 +71,8 @@ class SubTransaction implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => 'uuid',
         'transaction_id' => 'uuid',
-        'amount' => '1234000'
+        'amount' => '1234000',
+        'deleted' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class SubTransaction implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'transaction_id' => 'transaction_id',
-        'amount' => 'amount'
+        'amount' => 'amount',
+        'deleted' => 'deleted'
     ];
 
     /**
@@ -113,7 +116,8 @@ class SubTransaction implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'transaction_id' => 'setTransactionId',
-        'amount' => 'setAmount'
+        'amount' => 'setAmount',
+        'deleted' => 'setDeleted'
     ];
 
     /**
@@ -124,7 +128,8 @@ class SubTransaction implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'transaction_id' => 'getTransactionId',
-        'amount' => 'getAmount'
+        'amount' => 'getAmount',
+        'deleted' => 'getDeleted'
     ];
 
     /**
@@ -190,6 +195,7 @@ class SubTransaction implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['transaction_id'] = isset($data['transaction_id']) ? $data['transaction_id'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
     }
 
     /**
@@ -210,6 +216,9 @@ class SubTransaction implements ModelInterface, ArrayAccess
         if ($this->container['amount'] === null) {
             $invalidProperties[] = "'amount' can't be null";
         }
+        if ($this->container['deleted'] === null) {
+            $invalidProperties[] = "'deleted' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -229,6 +238,9 @@ class SubTransaction implements ModelInterface, ArrayAccess
             return false;
         }
         if ($this->container['amount'] === null) {
+            return false;
+        }
+        if ($this->container['deleted'] === null) {
             return false;
         }
         return true;
@@ -286,7 +298,7 @@ class SubTransaction implements ModelInterface, ArrayAccess
     /**
      * Gets amount
      *
-     * @return float
+     * @return int
      */
     public function getAmount()
     {
@@ -296,13 +308,37 @@ class SubTransaction implements ModelInterface, ArrayAccess
     /**
      * Sets amount
      *
-     * @param float $amount The sub-transaction amount in milliunits format
+     * @param int $amount The subtransaction amount in milliunits format
      *
      * @return $this
      */
     public function setAmount($amount)
     {
         $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets deleted
+     *
+     * @return bool
+     */
+    public function getDeleted()
+    {
+        return $this->container['deleted'];
+    }
+
+    /**
+     * Sets deleted
+     *
+     * @param bool $deleted Whether or not the subtransaction has been deleted.  Deleted subtransactions will only be included in delta requests.
+     *
+     * @return $this
+     */
+    public function setDeleted($deleted)
+    {
+        $this->container['deleted'] = $deleted;
 
         return $this;
     }

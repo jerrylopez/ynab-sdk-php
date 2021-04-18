@@ -12,6 +12,7 @@ use Ynab\Api\PayeeLocationsApi;
 use Ynab\Api\PayeesApi;
 use Ynab\Api\ScheduledTransactionsApi;
 use Ynab\Api\TransactionsApi;
+use Ynab\Api\UserApi;
 
 class Client
 {
@@ -19,12 +20,21 @@ class Client
 
     protected $configuration;
 
-    public function __construct(Configuration $configuration)
+    /**
+     * @param String $token
+     */
+    public function __construct($token)
     {
         $this->client = new GuzzleClient();
-        $this->configuration = $configuration;
+        $this->configuration = Configuration::getDefaultConfiguration()
+            ->setApiKey('Authorization', $token)
+            ->setApiKeyPrefix('Authorization', 'Bearer');
     }
 
+    /**
+     * @param $endpoint
+     * @return AccountsApi|BudgetsApi|CategoriesApi|MonthsApi|PayeeLocationsApi|PayeesApi|ScheduledTransactionsApi|TransactionsApi|UserApi
+     */
     public function api($endpoint)
     {
         switch ($endpoint) {
@@ -58,6 +68,10 @@ class Client
 
             case 'transactions':
                 $api = new TransactionsApi($this->client, $this->configuration);
+                break;
+
+            case 'user':
+                $api = new UserApi($this->client, $this->configuration);
                 break;
 
             default:

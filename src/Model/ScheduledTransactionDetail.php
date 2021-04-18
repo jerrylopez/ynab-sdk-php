@@ -61,8 +61,10 @@ class ScheduledTransactionDetail implements ModelInterface, ArrayAccess
         'date_first' => '\DateTime',
         'date_next' => '\DateTime',
         'frequency' => 'string',
-        'amount' => 'float',
+        'amount' => 'int',
         'account_id' => 'string',
+        'deleted' => 'bool',
+        'account_name' => 'string',
         'subtransactions' => '\Ynab\Model\ScheduledSubTransaction[]'
     ];
 
@@ -78,6 +80,8 @@ class ScheduledTransactionDetail implements ModelInterface, ArrayAccess
         'frequency' => null,
         'amount' => '1234000',
         'account_id' => 'uuid',
+        'deleted' => null,
+        'account_name' => null,
         'subtransactions' => null
     ];
 
@@ -114,6 +118,8 @@ class ScheduledTransactionDetail implements ModelInterface, ArrayAccess
         'frequency' => 'frequency',
         'amount' => 'amount',
         'account_id' => 'account_id',
+        'deleted' => 'deleted',
+        'account_name' => 'account_name',
         'subtransactions' => 'subtransactions'
     ];
 
@@ -129,6 +135,8 @@ class ScheduledTransactionDetail implements ModelInterface, ArrayAccess
         'frequency' => 'setFrequency',
         'amount' => 'setAmount',
         'account_id' => 'setAccountId',
+        'deleted' => 'setDeleted',
+        'account_name' => 'setAccountName',
         'subtransactions' => 'setSubtransactions'
     ];
 
@@ -144,6 +152,8 @@ class ScheduledTransactionDetail implements ModelInterface, ArrayAccess
         'frequency' => 'getFrequency',
         'amount' => 'getAmount',
         'account_id' => 'getAccountId',
+        'deleted' => 'getDeleted',
+        'account_name' => 'getAccountName',
         'subtransactions' => 'getSubtransactions'
     ];
 
@@ -250,6 +260,8 @@ class ScheduledTransactionDetail implements ModelInterface, ArrayAccess
         $this->container['frequency'] = isset($data['frequency']) ? $data['frequency'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['account_id'] = isset($data['account_id']) ? $data['account_id'] : null;
+        $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
+        $this->container['account_name'] = isset($data['account_name']) ? $data['account_name'] : null;
         $this->container['subtransactions'] = isset($data['subtransactions']) ? $data['subtransactions'] : null;
     }
 
@@ -288,6 +300,12 @@ class ScheduledTransactionDetail implements ModelInterface, ArrayAccess
         if ($this->container['account_id'] === null) {
             $invalidProperties[] = "'account_id' can't be null";
         }
+        if ($this->container['deleted'] === null) {
+            $invalidProperties[] = "'deleted' can't be null";
+        }
+        if ($this->container['account_name'] === null) {
+            $invalidProperties[] = "'account_name' can't be null";
+        }
         if ($this->container['subtransactions'] === null) {
             $invalidProperties[] = "'subtransactions' can't be null";
         }
@@ -323,6 +341,12 @@ class ScheduledTransactionDetail implements ModelInterface, ArrayAccess
             return false;
         }
         if ($this->container['account_id'] === null) {
+            return false;
+        }
+        if ($this->container['deleted'] === null) {
+            return false;
+        }
+        if ($this->container['account_name'] === null) {
             return false;
         }
         if ($this->container['subtransactions'] === null) {
@@ -440,7 +464,7 @@ class ScheduledTransactionDetail implements ModelInterface, ArrayAccess
     /**
      * Gets amount
      *
-     * @return float
+     * @return int
      */
     public function getAmount()
     {
@@ -450,7 +474,7 @@ class ScheduledTransactionDetail implements ModelInterface, ArrayAccess
     /**
      * Sets amount
      *
-     * @param float $amount The scheduled transaction amount in milliunits format
+     * @param int $amount The scheduled transaction amount in milliunits format
      *
      * @return $this
      */
@@ -486,6 +510,54 @@ class ScheduledTransactionDetail implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets deleted
+     *
+     * @return bool
+     */
+    public function getDeleted()
+    {
+        return $this->container['deleted'];
+    }
+
+    /**
+     * Sets deleted
+     *
+     * @param bool $deleted Whether or not the scheduled transaction has been deleted.  Deleted scheduled transactions will only be included in delta requests.
+     *
+     * @return $this
+     */
+    public function setDeleted($deleted)
+    {
+        $this->container['deleted'] = $deleted;
+
+        return $this;
+    }
+
+    /**
+     * Gets account_name
+     *
+     * @return string
+     */
+    public function getAccountName()
+    {
+        return $this->container['account_name'];
+    }
+
+    /**
+     * Sets account_name
+     *
+     * @param string $account_name account_name
+     *
+     * @return $this
+     */
+    public function setAccountName($account_name)
+    {
+        $this->container['account_name'] = $account_name;
+
+        return $this;
+    }
+
+    /**
      * Gets subtransactions
      *
      * @return \Ynab\Model\ScheduledSubTransaction[]
@@ -498,7 +570,7 @@ class ScheduledTransactionDetail implements ModelInterface, ArrayAccess
     /**
      * Sets subtransactions
      *
-     * @param \Ynab\Model\ScheduledSubTransaction[] $subtransactions If a split scheduled transaction, the sub-transactions.
+     * @param \Ynab\Model\ScheduledSubTransaction[] $subtransactions If a split scheduled transaction, the subtransactions.
      *
      * @return $this
      */

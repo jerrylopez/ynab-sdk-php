@@ -58,7 +58,8 @@ class PayeeLocation implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'payee_id' => 'string'
+        'payee_id' => 'string',
+        'deleted' => 'bool'
     ];
 
     /**
@@ -68,7 +69,8 @@ class PayeeLocation implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => 'uuid',
-        'payee_id' => 'uuid'
+        'payee_id' => 'uuid',
+        'deleted' => null
     ];
 
     /**
@@ -99,7 +101,8 @@ class PayeeLocation implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'payee_id' => 'payee_id'
+        'payee_id' => 'payee_id',
+        'deleted' => 'deleted'
     ];
 
     /**
@@ -109,7 +112,8 @@ class PayeeLocation implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'payee_id' => 'setPayeeId'
+        'payee_id' => 'setPayeeId',
+        'deleted' => 'setDeleted'
     ];
 
     /**
@@ -119,7 +123,8 @@ class PayeeLocation implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'payee_id' => 'getPayeeId'
+        'payee_id' => 'getPayeeId',
+        'deleted' => 'getDeleted'
     ];
 
     /**
@@ -184,6 +189,7 @@ class PayeeLocation implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['payee_id'] = isset($data['payee_id']) ? $data['payee_id'] : null;
+        $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
     }
 
     /**
@@ -201,6 +207,9 @@ class PayeeLocation implements ModelInterface, ArrayAccess
         if ($this->container['payee_id'] === null) {
             $invalidProperties[] = "'payee_id' can't be null";
         }
+        if ($this->container['deleted'] === null) {
+            $invalidProperties[] = "'deleted' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -217,6 +226,9 @@ class PayeeLocation implements ModelInterface, ArrayAccess
             return false;
         }
         if ($this->container['payee_id'] === null) {
+            return false;
+        }
+        if ($this->container['deleted'] === null) {
             return false;
         }
         return true;
@@ -267,6 +279,30 @@ class PayeeLocation implements ModelInterface, ArrayAccess
     public function setPayeeId($payee_id)
     {
         $this->container['payee_id'] = $payee_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets deleted
+     *
+     * @return bool
+     */
+    public function getDeleted()
+    {
+        return $this->container['deleted'];
+    }
+
+    /**
+     * Sets deleted
+     *
+     * @param bool $deleted Whether or not the payee location has been deleted.  Deleted payee locations will only be included in delta requests.
+     *
+     * @return $this
+     */
+    public function setDeleted($deleted)
+    {
+        $this->container['deleted'] = $deleted;
 
         return $this;
     }

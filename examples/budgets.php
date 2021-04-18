@@ -2,12 +2,7 @@
 
 require '../vendor/autoload.php';
 
-// Configure API key authorization: bearer
-$config = Ynab\Configuration::getDefaultConfiguration()
-    ->setApiKey('Authorization', '{{YOUR_ACCESS_TOKEN}}')
-    ->setApiKeyPrefix('Authorization', 'Bearer');
-
-$client = new Ynab\Client($config);
+$client = new Ynab\Client('{{YOUR_ACCESS_TOKEN}}');
 
 try {
     $result = $client->api('budgets')->getBudgets();

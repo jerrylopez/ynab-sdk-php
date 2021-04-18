@@ -59,7 +59,8 @@ class ScheduledSubTransaction implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'scheduled_transaction_id' => 'string',
-        'amount' => 'float'
+        'amount' => 'int',
+        'deleted' => 'bool'
     ];
 
     /**
@@ -70,7 +71,8 @@ class ScheduledSubTransaction implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => 'uuid',
         'scheduled_transaction_id' => 'uuid',
-        'amount' => '1234000'
+        'amount' => '1234000',
+        'deleted' => null
     ];
 
     /**
@@ -102,7 +104,8 @@ class ScheduledSubTransaction implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'scheduled_transaction_id' => 'scheduled_transaction_id',
-        'amount' => 'amount'
+        'amount' => 'amount',
+        'deleted' => 'deleted'
     ];
 
     /**
@@ -113,7 +116,8 @@ class ScheduledSubTransaction implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'scheduled_transaction_id' => 'setScheduledTransactionId',
-        'amount' => 'setAmount'
+        'amount' => 'setAmount',
+        'deleted' => 'setDeleted'
     ];
 
     /**
@@ -124,7 +128,8 @@ class ScheduledSubTransaction implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'scheduled_transaction_id' => 'getScheduledTransactionId',
-        'amount' => 'getAmount'
+        'amount' => 'getAmount',
+        'deleted' => 'getDeleted'
     ];
 
     /**
@@ -190,6 +195,7 @@ class ScheduledSubTransaction implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['scheduled_transaction_id'] = isset($data['scheduled_transaction_id']) ? $data['scheduled_transaction_id'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
     }
 
     /**
@@ -210,6 +216,9 @@ class ScheduledSubTransaction implements ModelInterface, ArrayAccess
         if ($this->container['amount'] === null) {
             $invalidProperties[] = "'amount' can't be null";
         }
+        if ($this->container['deleted'] === null) {
+            $invalidProperties[] = "'deleted' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -229,6 +238,9 @@ class ScheduledSubTransaction implements ModelInterface, ArrayAccess
             return false;
         }
         if ($this->container['amount'] === null) {
+            return false;
+        }
+        if ($this->container['deleted'] === null) {
             return false;
         }
         return true;
@@ -286,7 +298,7 @@ class ScheduledSubTransaction implements ModelInterface, ArrayAccess
     /**
      * Gets amount
      *
-     * @return float
+     * @return int
      */
     public function getAmount()
     {
@@ -296,13 +308,37 @@ class ScheduledSubTransaction implements ModelInterface, ArrayAccess
     /**
      * Sets amount
      *
-     * @param float $amount The scheduled sub-transaction amount in milliunits format
+     * @param int $amount The scheduled subtransaction amount in milliunits format
      *
      * @return $this
      */
     public function setAmount($amount)
     {
         $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets deleted
+     *
+     * @return bool
+     */
+    public function getDeleted()
+    {
+        return $this->container['deleted'];
+    }
+
+    /**
+     * Sets deleted
+     *
+     * @param bool $deleted Whether or not the scheduled subtransaction has been deleted.  Deleted scheduled subtransactions will only be included in delta requests.
+     *
+     * @return $this
+     */
+    public function setDeleted($deleted)
+    {
+        $this->container['deleted'] = $deleted;
 
         return $this;
     }

@@ -32,7 +32,7 @@ $apiInstance = new Ynab\Api\MonthsApi(
     $config
 );
 $budget_id = "budget_id_example"; // string | The ID of the Budget.
-$month = new \DateTime("2013-10-20"); // \DateTime | The Budget Month.  \"current\" can also be used to specify the current calendar month (UTC).
+$month = new \DateTime("2013-10-20"); // \DateTime | The Budget Month in ISO format (e.g. 2016-12-01).    \"current\" can also be used to specify the current calendar month (UTC).
 
 try {
     $result = $apiInstance->getBudgetMonth($budget_id, $month);
@@ -48,7 +48,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **budget_id** | [**string**](../Model/.md)| The ID of the Budget. |
- **month** | **\DateTime**| The Budget Month.  \&quot;current\&quot; can also be used to specify the current calendar month (UTC). |
+ **month** | **\DateTime**| The Budget Month in ISO format (e.g. 2016-12-01).    \&quot;current\&quot; can also be used to specify the current calendar month (UTC). |
 
 ### Return type
 
