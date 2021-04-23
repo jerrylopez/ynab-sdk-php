@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\Ynab\Model\TransactionsWrapper**](TransactionsWrapper.md) |  | 
+**data** | [**\Ynab\Model\TransactionsResponseData**](TransactionsResponseData.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
