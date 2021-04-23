@@ -55,9 +55,9 @@ class ScheduledTransactionDetail extends ScheduledTransactionSummary
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'account_name' => 'string',
-        'payee_name' => 'string',
-        'category_name' => 'string',
+        'accountName' => 'string',
+        'payeeName' => 'string',
+        'categoryName' => 'string',
         'subtransactions' => '\Ynab\Model\ScheduledSubTransaction[]'
     ];
 
@@ -67,9 +67,9 @@ class ScheduledTransactionDetail extends ScheduledTransactionSummary
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'account_name' => null,
-        'payee_name' => null,
-        'category_name' => null,
+        'accountName' => null,
+        'payeeName' => null,
+        'categoryName' => null,
         'subtransactions' => null
     ];
 
@@ -100,9 +100,9 @@ class ScheduledTransactionDetail extends ScheduledTransactionSummary
      * @var string[]
      */
     protected static $attributeMap = [
-        'account_name' => 'account_name',
-        'payee_name' => 'payee_name',
-        'category_name' => 'category_name',
+        'accountName' => 'account_name',
+        'payeeName' => 'payee_name',
+        'categoryName' => 'category_name',
         'subtransactions' => 'subtransactions'
     ];
 
@@ -112,9 +112,9 @@ class ScheduledTransactionDetail extends ScheduledTransactionSummary
      * @var string[]
      */
     protected static $setters = [
-        'account_name' => 'setAccountName',
-        'payee_name' => 'setPayeeName',
-        'category_name' => 'setCategoryName',
+        'accountName' => 'setAccountName',
+        'payeeName' => 'setPayeeName',
+        'categoryName' => 'setCategoryName',
         'subtransactions' => 'setSubtransactions'
     ];
 
@@ -124,9 +124,9 @@ class ScheduledTransactionDetail extends ScheduledTransactionSummary
      * @var string[]
      */
     protected static $getters = [
-        'account_name' => 'getAccountName',
-        'payee_name' => 'getPayeeName',
-        'category_name' => 'getCategoryName',
+        'accountName' => 'getAccountName',
+        'payeeName' => 'getPayeeName',
+        'categoryName' => 'getCategoryName',
         'subtransactions' => 'getSubtransactions'
     ];
 
@@ -186,9 +186,9 @@ class ScheduledTransactionDetail extends ScheduledTransactionSummary
     {
         parent::__construct($data);
 
-        $this->container['account_name'] = isset($data['account_name']) ? $data['account_name'] : null;
-        $this->container['payee_name'] = isset($data['payee_name']) ? $data['payee_name'] : null;
-        $this->container['category_name'] = isset($data['category_name']) ? $data['category_name'] : null;
+        $this->container['accountName'] = isset($data['accountName']) ? $data['accountName'] : null;
+        $this->container['payeeName'] = isset($data['payeeName']) ? $data['payeeName'] : null;
+        $this->container['categoryName'] = isset($data['categoryName']) ? $data['categoryName'] : null;
         $this->container['subtransactions'] = isset($data['subtransactions']) ? $data['subtransactions'] : null;
     }
 
@@ -201,8 +201,8 @@ class ScheduledTransactionDetail extends ScheduledTransactionSummary
     {
         $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['account_name'] === null) {
-            $invalidProperties[] = "'account_name' can't be null";
+        if ($this->container['accountName'] === null) {
+            $invalidProperties[] = "'accountName' can't be null";
         }
         if ($this->container['subtransactions'] === null) {
             $invalidProperties[] = "'subtransactions' can't be null";
@@ -223,73 +223,73 @@ class ScheduledTransactionDetail extends ScheduledTransactionSummary
 
 
     /**
-     * Gets account_name
+     * Gets accountName
      *
      * @return string
      */
     public function getAccountName()
     {
-        return $this->container['account_name'];
+        return $this->container['accountName'];
     }
 
     /**
-     * Sets account_name
+     * Sets accountName
      *
-     * @param string $account_name account_name
+     * @param string $accountName accountName
      *
      * @return $this
      */
-    public function setAccountName($account_name)
+    public function setAccountName($accountName)
     {
-        $this->container['account_name'] = $account_name;
+        $this->container['accountName'] = $accountName;
 
         return $this;
     }
 
     /**
-     * Gets payee_name
+     * Gets payeeName
      *
      * @return string
      */
     public function getPayeeName()
     {
-        return $this->container['payee_name'];
+        return $this->container['payeeName'];
     }
 
     /**
-     * Sets payee_name
+     * Sets payeeName
      *
-     * @param string $payee_name payee_name
+     * @param string $payeeName payeeName
      *
      * @return $this
      */
-    public function setPayeeName($payee_name)
+    public function setPayeeName($payeeName)
     {
-        $this->container['payee_name'] = $payee_name;
+        $this->container['payeeName'] = $payeeName;
 
         return $this;
     }
 
     /**
-     * Gets category_name
+     * Gets categoryName
      *
      * @return string
      */
     public function getCategoryName()
     {
-        return $this->container['category_name'];
+        return $this->container['categoryName'];
     }
 
     /**
-     * Sets category_name
+     * Sets categoryName
      *
-     * @param string $category_name category_name
+     * @param string $categoryName categoryName
      *
      * @return $this
      */
-    public function setCategoryName($category_name)
+    public function setCategoryName($categoryName)
     {
-        $this->container['category_name'] = $category_name;
+        $this->container['categoryName'] = $categoryName;
 
         return $this;
     }

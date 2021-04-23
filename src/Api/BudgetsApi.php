@@ -92,16 +92,16 @@ class BudgetsApi
      *
      * Single budget
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  int $last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  int $lastKnowledgeOfServer The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ynab\Model\BudgetDetailResponse
      */
-    public function getBudgetById($budget_id, $last_knowledge_of_server = null)
+    public function getBudgetById($budgetId, $lastKnowledgeOfServer = null)
     {
-        list($response) = $this->getBudgetByIdWithHttpInfo($budget_id, $last_knowledge_of_server);
+        list($response) = $this->getBudgetByIdWithHttpInfo($budgetId, $lastKnowledgeOfServer);
         return $response;
     }
 
@@ -110,17 +110,17 @@ class BudgetsApi
      *
      * Single budget
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  int $last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  int $lastKnowledgeOfServer The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ynab\Model\BudgetDetailResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBudgetByIdWithHttpInfo($budget_id, $last_knowledge_of_server = null)
+    public function getBudgetByIdWithHttpInfo($budgetId, $lastKnowledgeOfServer = null)
     {
         $returnType = '\Ynab\Model\BudgetDetailResponse';
-        $request = $this->getBudgetByIdRequest($budget_id, $last_knowledge_of_server);
+        $request = $this->getBudgetByIdRequest($budgetId, $lastKnowledgeOfServer);
 
         try {
             $options = $this->createHttpClientOption();
@@ -202,15 +202,15 @@ class BudgetsApi
      *
      * Single budget
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  int $last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  int $lastKnowledgeOfServer The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBudgetByIdAsync($budget_id, $last_knowledge_of_server = null)
+    public function getBudgetByIdAsync($budgetId, $lastKnowledgeOfServer = null)
     {
-        return $this->getBudgetByIdAsyncWithHttpInfo($budget_id, $last_knowledge_of_server)
+        return $this->getBudgetByIdAsyncWithHttpInfo($budgetId, $lastKnowledgeOfServer)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -223,16 +223,16 @@ class BudgetsApi
      *
      * Single budget
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  int $last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  int $lastKnowledgeOfServer The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBudgetByIdAsyncWithHttpInfo($budget_id, $last_knowledge_of_server = null)
+    public function getBudgetByIdAsyncWithHttpInfo($budgetId, $lastKnowledgeOfServer = null)
     {
         $returnType = '\Ynab\Model\BudgetDetailResponse';
-        $request = $this->getBudgetByIdRequest($budget_id, $last_knowledge_of_server);
+        $request = $this->getBudgetByIdRequest($budgetId, $lastKnowledgeOfServer);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -274,18 +274,18 @@ class BudgetsApi
     /**
      * Create request for operation 'getBudgetById'
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  int $last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  int $lastKnowledgeOfServer The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getBudgetByIdRequest($budget_id, $last_knowledge_of_server = null)
+    protected function getBudgetByIdRequest($budgetId, $lastKnowledgeOfServer = null)
     {
-        // verify the required parameter 'budget_id' is set
-        if ($budget_id === null || (is_array($budget_id) && count($budget_id) === 0)) {
+        // verify the required parameter 'budgetId' is set
+        if ($budgetId === null || (is_array($budgetId) && count($budgetId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $budget_id when calling getBudgetById'
+                'Missing the required parameter $budgetId when calling getBudgetById'
             );
         }
 
@@ -297,15 +297,15 @@ class BudgetsApi
         $multipart = false;
 
         // query params
-        if ($last_knowledge_of_server !== null) {
-            $queryParams['last_knowledge_of_server'] = ObjectSerializer::toQueryValue($last_knowledge_of_server);
+        if ($lastKnowledgeOfServer !== null) {
+            $queryParams['last_knowledge_of_server'] = ObjectSerializer::toQueryValue($lastKnowledgeOfServer);
         }
 
         // path params
-        if ($budget_id !== null) {
+        if ($budgetId !== null) {
             $resourcePath = str_replace(
                 '{' . 'budget_id' . '}',
-                ObjectSerializer::toPathValue($budget_id),
+                ObjectSerializer::toPathValue($budgetId),
                 $resourcePath
             );
         }
@@ -391,15 +391,15 @@ class BudgetsApi
      *
      * Budget Settings
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ynab\Model\BudgetSettingsResponse
      */
-    public function getBudgetSettingsById($budget_id)
+    public function getBudgetSettingsById($budgetId)
     {
-        list($response) = $this->getBudgetSettingsByIdWithHttpInfo($budget_id);
+        list($response) = $this->getBudgetSettingsByIdWithHttpInfo($budgetId);
         return $response;
     }
 
@@ -408,16 +408,16 @@ class BudgetsApi
      *
      * Budget Settings
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ynab\Model\BudgetSettingsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBudgetSettingsByIdWithHttpInfo($budget_id)
+    public function getBudgetSettingsByIdWithHttpInfo($budgetId)
     {
         $returnType = '\Ynab\Model\BudgetSettingsResponse';
-        $request = $this->getBudgetSettingsByIdRequest($budget_id);
+        $request = $this->getBudgetSettingsByIdRequest($budgetId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -499,14 +499,14 @@ class BudgetsApi
      *
      * Budget Settings
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBudgetSettingsByIdAsync($budget_id)
+    public function getBudgetSettingsByIdAsync($budgetId)
     {
-        return $this->getBudgetSettingsByIdAsyncWithHttpInfo($budget_id)
+        return $this->getBudgetSettingsByIdAsyncWithHttpInfo($budgetId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -519,15 +519,15 @@ class BudgetsApi
      *
      * Budget Settings
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBudgetSettingsByIdAsyncWithHttpInfo($budget_id)
+    public function getBudgetSettingsByIdAsyncWithHttpInfo($budgetId)
     {
         $returnType = '\Ynab\Model\BudgetSettingsResponse';
-        $request = $this->getBudgetSettingsByIdRequest($budget_id);
+        $request = $this->getBudgetSettingsByIdRequest($budgetId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -569,17 +569,17 @@ class BudgetsApi
     /**
      * Create request for operation 'getBudgetSettingsById'
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getBudgetSettingsByIdRequest($budget_id)
+    protected function getBudgetSettingsByIdRequest($budgetId)
     {
-        // verify the required parameter 'budget_id' is set
-        if ($budget_id === null || (is_array($budget_id) && count($budget_id) === 0)) {
+        // verify the required parameter 'budgetId' is set
+        if ($budgetId === null || (is_array($budgetId) && count($budgetId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $budget_id when calling getBudgetSettingsById'
+                'Missing the required parameter $budgetId when calling getBudgetSettingsById'
             );
         }
 
@@ -592,10 +592,10 @@ class BudgetsApi
 
 
         // path params
-        if ($budget_id !== null) {
+        if ($budgetId !== null) {
             $resourcePath = str_replace(
                 '{' . 'budget_id' . '}',
-                ObjectSerializer::toPathValue($budget_id),
+                ObjectSerializer::toPathValue($budgetId),
                 $resourcePath
             );
         }
@@ -681,15 +681,15 @@ class BudgetsApi
      *
      * List budgets
      *
-     * @param  bool $include_accounts Whether to include the list of budget accounts (optional)
+     * @param  bool $includeAccounts Whether to include the list of budget accounts (optional)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ynab\Model\BudgetSummaryResponse
      */
-    public function getBudgets($include_accounts = null)
+    public function getBudgets($includeAccounts = null)
     {
-        list($response) = $this->getBudgetsWithHttpInfo($include_accounts);
+        list($response) = $this->getBudgetsWithHttpInfo($includeAccounts);
         return $response;
     }
 
@@ -698,16 +698,16 @@ class BudgetsApi
      *
      * List budgets
      *
-     * @param  bool $include_accounts Whether to include the list of budget accounts (optional)
+     * @param  bool $includeAccounts Whether to include the list of budget accounts (optional)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ynab\Model\BudgetSummaryResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getBudgetsWithHttpInfo($include_accounts = null)
+    public function getBudgetsWithHttpInfo($includeAccounts = null)
     {
         $returnType = '\Ynab\Model\BudgetSummaryResponse';
-        $request = $this->getBudgetsRequest($include_accounts);
+        $request = $this->getBudgetsRequest($includeAccounts);
 
         try {
             $options = $this->createHttpClientOption();
@@ -789,14 +789,14 @@ class BudgetsApi
      *
      * List budgets
      *
-     * @param  bool $include_accounts Whether to include the list of budget accounts (optional)
+     * @param  bool $includeAccounts Whether to include the list of budget accounts (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBudgetsAsync($include_accounts = null)
+    public function getBudgetsAsync($includeAccounts = null)
     {
-        return $this->getBudgetsAsyncWithHttpInfo($include_accounts)
+        return $this->getBudgetsAsyncWithHttpInfo($includeAccounts)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -809,15 +809,15 @@ class BudgetsApi
      *
      * List budgets
      *
-     * @param  bool $include_accounts Whether to include the list of budget accounts (optional)
+     * @param  bool $includeAccounts Whether to include the list of budget accounts (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getBudgetsAsyncWithHttpInfo($include_accounts = null)
+    public function getBudgetsAsyncWithHttpInfo($includeAccounts = null)
     {
         $returnType = '\Ynab\Model\BudgetSummaryResponse';
-        $request = $this->getBudgetsRequest($include_accounts);
+        $request = $this->getBudgetsRequest($includeAccounts);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -859,12 +859,12 @@ class BudgetsApi
     /**
      * Create request for operation 'getBudgets'
      *
-     * @param  bool $include_accounts Whether to include the list of budget accounts (optional)
+     * @param  bool $includeAccounts Whether to include the list of budget accounts (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getBudgetsRequest($include_accounts = null)
+    protected function getBudgetsRequest($includeAccounts = null)
     {
 
         $resourcePath = '/budgets';
@@ -875,8 +875,8 @@ class BudgetsApi
         $multipart = false;
 
         // query params
-        if ($include_accounts !== null) {
-            $queryParams['include_accounts'] = ObjectSerializer::toQueryValue($include_accounts);
+        if ($includeAccounts !== null) {
+            $queryParams['include_accounts'] = ObjectSerializer::toQueryValue($includeAccounts);
         }
 
 

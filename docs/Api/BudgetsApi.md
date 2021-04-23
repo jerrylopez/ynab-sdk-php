@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **getBudgetById**
-> \Ynab\Model\BudgetDetailResponse getBudgetById($budget_id, $last_knowledge_of_server)
+> \Ynab\Model\BudgetDetailResponse getBudgetById($budgetId, $lastKnowledgeOfServer)
 
 Single budget
 
@@ -32,11 +32,11 @@ $apiInstance = new Ynab\Api\BudgetsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$budget_id = "budget_id_example"; // string | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-$last_knowledge_of_server = 789; // int | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
+$budgetId = "budgetId_example"; // string | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+$lastKnowledgeOfServer = 789; // int | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
 
 try {
-    $result = $apiInstance->getBudgetById($budget_id, $last_knowledge_of_server);
+    $result = $apiInstance->getBudgetById($budgetId, $lastKnowledgeOfServer);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BudgetsApi->getBudgetById: ', $e->getMessage(), PHP_EOL;
@@ -48,8 +48,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **string**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
- **last_knowledge_of_server** | **int**| The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. | [optional]
+ **budgetId** | **string**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **lastKnowledgeOfServer** | **int**| The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. | [optional]
 
 ### Return type
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBudgetSettingsById**
-> \Ynab\Model\BudgetSettingsResponse getBudgetSettingsById($budget_id)
+> \Ynab\Model\BudgetSettingsResponse getBudgetSettingsById($budgetId)
 
 Budget Settings
 
@@ -89,10 +89,10 @@ $apiInstance = new Ynab\Api\BudgetsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$budget_id = "budget_id_example"; // string | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+$budgetId = "budgetId_example"; // string | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 
 try {
-    $result = $apiInstance->getBudgetSettingsById($budget_id);
+    $result = $apiInstance->getBudgetSettingsById($budgetId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BudgetsApi->getBudgetSettingsById: ', $e->getMessage(), PHP_EOL;
@@ -104,7 +104,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **string**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **budgetId** | **string**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
 
 ### Return type
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBudgets**
-> \Ynab\Model\BudgetSummaryResponse getBudgets($include_accounts)
+> \Ynab\Model\BudgetSummaryResponse getBudgets($includeAccounts)
 
 List budgets
 
@@ -144,10 +144,10 @@ $apiInstance = new Ynab\Api\BudgetsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$include_accounts = true; // bool | Whether to include the list of budget accounts
+$includeAccounts = true; // bool | Whether to include the list of budget accounts
 
 try {
-    $result = $apiInstance->getBudgets($include_accounts);
+    $result = $apiInstance->getBudgets($includeAccounts);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BudgetsApi->getBudgets: ', $e->getMessage(), PHP_EOL;
@@ -159,7 +159,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **include_accounts** | **bool**| Whether to include the list of budget accounts | [optional]
+ **includeAccounts** | **bool**| Whether to include the list of budget accounts | [optional]
 
 ### Return type
 

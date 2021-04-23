@@ -57,8 +57,8 @@ class ScheduledTransactionsResponseData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'scheduled_transactions' => '\Ynab\Model\ScheduledTransactionDetail[]',
-        'server_knowledge' => 'int'
+        'scheduledTransactions' => '\Ynab\Model\ScheduledTransactionDetail[]',
+        'serverKnowledge' => 'int'
     ];
 
     /**
@@ -67,8 +67,8 @@ class ScheduledTransactionsResponseData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'scheduled_transactions' => null,
-        'server_knowledge' => 'int64'
+        'scheduledTransactions' => null,
+        'serverKnowledge' => 'int64'
     ];
 
     /**
@@ -98,8 +98,8 @@ class ScheduledTransactionsResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'scheduled_transactions' => 'scheduled_transactions',
-        'server_knowledge' => 'server_knowledge'
+        'scheduledTransactions' => 'scheduled_transactions',
+        'serverKnowledge' => 'server_knowledge'
     ];
 
     /**
@@ -108,8 +108,8 @@ class ScheduledTransactionsResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'scheduled_transactions' => 'setScheduledTransactions',
-        'server_knowledge' => 'setServerKnowledge'
+        'scheduledTransactions' => 'setScheduledTransactions',
+        'serverKnowledge' => 'setServerKnowledge'
     ];
 
     /**
@@ -118,8 +118,8 @@ class ScheduledTransactionsResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'scheduled_transactions' => 'getScheduledTransactions',
-        'server_knowledge' => 'getServerKnowledge'
+        'scheduledTransactions' => 'getScheduledTransactions',
+        'serverKnowledge' => 'getServerKnowledge'
     ];
 
     /**
@@ -182,8 +182,8 @@ class ScheduledTransactionsResponseData implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['scheduled_transactions'] = isset($data['scheduled_transactions']) ? $data['scheduled_transactions'] : null;
-        $this->container['server_knowledge'] = isset($data['server_knowledge']) ? $data['server_knowledge'] : null;
+        $this->container['scheduledTransactions'] = isset($data['scheduledTransactions']) ? $data['scheduledTransactions'] : null;
+        $this->container['serverKnowledge'] = isset($data['serverKnowledge']) ? $data['serverKnowledge'] : null;
     }
 
     /**
@@ -195,11 +195,11 @@ class ScheduledTransactionsResponseData implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['scheduled_transactions'] === null) {
-            $invalidProperties[] = "'scheduled_transactions' can't be null";
+        if ($this->container['scheduledTransactions'] === null) {
+            $invalidProperties[] = "'scheduledTransactions' can't be null";
         }
-        if ($this->container['server_knowledge'] === null) {
-            $invalidProperties[] = "'server_knowledge' can't be null";
+        if ($this->container['serverKnowledge'] === null) {
+            $invalidProperties[] = "'serverKnowledge' can't be null";
         }
         return $invalidProperties;
     }
@@ -217,49 +217,49 @@ class ScheduledTransactionsResponseData implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets scheduled_transactions
+     * Gets scheduledTransactions
      *
      * @return \Ynab\Model\ScheduledTransactionDetail[]
      */
     public function getScheduledTransactions()
     {
-        return $this->container['scheduled_transactions'];
+        return $this->container['scheduledTransactions'];
     }
 
     /**
-     * Sets scheduled_transactions
+     * Sets scheduledTransactions
      *
-     * @param \Ynab\Model\ScheduledTransactionDetail[] $scheduled_transactions scheduled_transactions
+     * @param \Ynab\Model\ScheduledTransactionDetail[] $scheduledTransactions scheduledTransactions
      *
      * @return $this
      */
-    public function setScheduledTransactions($scheduled_transactions)
+    public function setScheduledTransactions($scheduledTransactions)
     {
-        $this->container['scheduled_transactions'] = $scheduled_transactions;
+        $this->container['scheduledTransactions'] = $scheduledTransactions;
 
         return $this;
     }
 
     /**
-     * Gets server_knowledge
+     * Gets serverKnowledge
      *
      * @return int
      */
     public function getServerKnowledge()
     {
-        return $this->container['server_knowledge'];
+        return $this->container['serverKnowledge'];
     }
 
     /**
-     * Sets server_knowledge
+     * Sets serverKnowledge
      *
-     * @param int $server_knowledge The knowledge of the server
+     * @param int $serverKnowledge The knowledge of the server
      *
      * @return $this
      */
-    public function setServerKnowledge($server_knowledge)
+    public function setServerKnowledge($serverKnowledge)
     {
-        $this->container['server_knowledge'] = $server_knowledge;
+        $this->container['serverKnowledge'] = $serverKnowledge;
 
         return $this;
     }

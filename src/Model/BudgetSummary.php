@@ -59,11 +59,11 @@ class BudgetSummary implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'name' => 'string',
-        'last_modified_on' => '\DateTime',
-        'first_month' => '\DateTime',
-        'last_month' => '\DateTime',
-        'date_format' => '\Ynab\Model\DateFormat',
-        'currency_format' => '\Ynab\Model\CurrencyFormat',
+        'lastModifiedOn' => '\DateTime',
+        'firstMonth' => '\DateTime',
+        'lastMonth' => '\DateTime',
+        'dateFormat' => '\Ynab\Model\DateFormat',
+        'currencyFormat' => '\Ynab\Model\CurrencyFormat',
         'accounts' => '\Ynab\Model\Account[]'
     ];
 
@@ -75,11 +75,11 @@ class BudgetSummary implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => 'uuid',
         'name' => null,
-        'last_modified_on' => 'date-time',
-        'first_month' => 'date',
-        'last_month' => 'date',
-        'date_format' => null,
-        'currency_format' => null,
+        'lastModifiedOn' => 'date-time',
+        'firstMonth' => 'date',
+        'lastMonth' => 'date',
+        'dateFormat' => null,
+        'currencyFormat' => null,
         'accounts' => null
     ];
 
@@ -112,11 +112,11 @@ class BudgetSummary implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
-        'last_modified_on' => 'last_modified_on',
-        'first_month' => 'first_month',
-        'last_month' => 'last_month',
-        'date_format' => 'date_format',
-        'currency_format' => 'currency_format',
+        'lastModifiedOn' => 'last_modified_on',
+        'firstMonth' => 'first_month',
+        'lastMonth' => 'last_month',
+        'dateFormat' => 'date_format',
+        'currencyFormat' => 'currency_format',
         'accounts' => 'accounts'
     ];
 
@@ -128,11 +128,11 @@ class BudgetSummary implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
-        'last_modified_on' => 'setLastModifiedOn',
-        'first_month' => 'setFirstMonth',
-        'last_month' => 'setLastMonth',
-        'date_format' => 'setDateFormat',
-        'currency_format' => 'setCurrencyFormat',
+        'lastModifiedOn' => 'setLastModifiedOn',
+        'firstMonth' => 'setFirstMonth',
+        'lastMonth' => 'setLastMonth',
+        'dateFormat' => 'setDateFormat',
+        'currencyFormat' => 'setCurrencyFormat',
         'accounts' => 'setAccounts'
     ];
 
@@ -144,11 +144,11 @@ class BudgetSummary implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
-        'last_modified_on' => 'getLastModifiedOn',
-        'first_month' => 'getFirstMonth',
-        'last_month' => 'getLastMonth',
-        'date_format' => 'getDateFormat',
-        'currency_format' => 'getCurrencyFormat',
+        'lastModifiedOn' => 'getLastModifiedOn',
+        'firstMonth' => 'getFirstMonth',
+        'lastMonth' => 'getLastMonth',
+        'dateFormat' => 'getDateFormat',
+        'currencyFormat' => 'getCurrencyFormat',
         'accounts' => 'getAccounts'
     ];
 
@@ -214,11 +214,11 @@ class BudgetSummary implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['last_modified_on'] = isset($data['last_modified_on']) ? $data['last_modified_on'] : null;
-        $this->container['first_month'] = isset($data['first_month']) ? $data['first_month'] : null;
-        $this->container['last_month'] = isset($data['last_month']) ? $data['last_month'] : null;
-        $this->container['date_format'] = isset($data['date_format']) ? $data['date_format'] : null;
-        $this->container['currency_format'] = isset($data['currency_format']) ? $data['currency_format'] : null;
+        $this->container['lastModifiedOn'] = isset($data['lastModifiedOn']) ? $data['lastModifiedOn'] : null;
+        $this->container['firstMonth'] = isset($data['firstMonth']) ? $data['firstMonth'] : null;
+        $this->container['lastMonth'] = isset($data['lastMonth']) ? $data['lastMonth'] : null;
+        $this->container['dateFormat'] = isset($data['dateFormat']) ? $data['dateFormat'] : null;
+        $this->container['currencyFormat'] = isset($data['currencyFormat']) ? $data['currencyFormat'] : null;
         $this->container['accounts'] = isset($data['accounts']) ? $data['accounts'] : null;
     }
 
@@ -301,121 +301,121 @@ class BudgetSummary implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets last_modified_on
+     * Gets lastModifiedOn
      *
      * @return \DateTime
      */
     public function getLastModifiedOn()
     {
-        return $this->container['last_modified_on'];
+        return $this->container['lastModifiedOn'];
     }
 
     /**
-     * Sets last_modified_on
+     * Sets lastModifiedOn
      *
-     * @param \DateTime $last_modified_on The last time any changes were made to the budget from either a web or mobile client
+     * @param \DateTime $lastModifiedOn The last time any changes were made to the budget from either a web or mobile client
      *
      * @return $this
      */
-    public function setLastModifiedOn($last_modified_on)
+    public function setLastModifiedOn($lastModifiedOn)
     {
-        $this->container['last_modified_on'] = $last_modified_on;
+        $this->container['lastModifiedOn'] = $lastModifiedOn;
 
         return $this;
     }
 
     /**
-     * Gets first_month
+     * Gets firstMonth
      *
      * @return \DateTime
      */
     public function getFirstMonth()
     {
-        return $this->container['first_month'];
+        return $this->container['firstMonth'];
     }
 
     /**
-     * Sets first_month
+     * Sets firstMonth
      *
-     * @param \DateTime $first_month The earliest budget month
+     * @param \DateTime $firstMonth The earliest budget month
      *
      * @return $this
      */
-    public function setFirstMonth($first_month)
+    public function setFirstMonth($firstMonth)
     {
-        $this->container['first_month'] = $first_month;
+        $this->container['firstMonth'] = $firstMonth;
 
         return $this;
     }
 
     /**
-     * Gets last_month
+     * Gets lastMonth
      *
      * @return \DateTime
      */
     public function getLastMonth()
     {
-        return $this->container['last_month'];
+        return $this->container['lastMonth'];
     }
 
     /**
-     * Sets last_month
+     * Sets lastMonth
      *
-     * @param \DateTime $last_month The latest budget month
+     * @param \DateTime $lastMonth The latest budget month
      *
      * @return $this
      */
-    public function setLastMonth($last_month)
+    public function setLastMonth($lastMonth)
     {
-        $this->container['last_month'] = $last_month;
+        $this->container['lastMonth'] = $lastMonth;
 
         return $this;
     }
 
     /**
-     * Gets date_format
+     * Gets dateFormat
      *
      * @return \Ynab\Model\DateFormat
      */
     public function getDateFormat()
     {
-        return $this->container['date_format'];
+        return $this->container['dateFormat'];
     }
 
     /**
-     * Sets date_format
+     * Sets dateFormat
      *
-     * @param \Ynab\Model\DateFormat $date_format date_format
+     * @param \Ynab\Model\DateFormat $dateFormat dateFormat
      *
      * @return $this
      */
-    public function setDateFormat($date_format)
+    public function setDateFormat($dateFormat)
     {
-        $this->container['date_format'] = $date_format;
+        $this->container['dateFormat'] = $dateFormat;
 
         return $this;
     }
 
     /**
-     * Gets currency_format
+     * Gets currencyFormat
      *
      * @return \Ynab\Model\CurrencyFormat
      */
     public function getCurrencyFormat()
     {
-        return $this->container['currency_format'];
+        return $this->container['currencyFormat'];
     }
 
     /**
-     * Sets currency_format
+     * Sets currencyFormat
      *
-     * @param \Ynab\Model\CurrencyFormat $currency_format currency_format
+     * @param \Ynab\Model\CurrencyFormat $currencyFormat currencyFormat
      *
      * @return $this
      */
-    public function setCurrencyFormat($currency_format)
+    public function setCurrencyFormat($currencyFormat)
     {
-        $this->container['currency_format'] = $currency_format;
+        $this->container['currencyFormat'] = $currencyFormat;
 
         return $this;
     }

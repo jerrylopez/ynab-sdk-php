@@ -57,8 +57,8 @@ class BudgetSettings implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'date_format' => '\Ynab\Model\DateFormat',
-        'currency_format' => '\Ynab\Model\CurrencyFormat'
+        'dateFormat' => '\Ynab\Model\DateFormat',
+        'currencyFormat' => '\Ynab\Model\CurrencyFormat'
     ];
 
     /**
@@ -67,8 +67,8 @@ class BudgetSettings implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'date_format' => null,
-        'currency_format' => null
+        'dateFormat' => null,
+        'currencyFormat' => null
     ];
 
     /**
@@ -98,8 +98,8 @@ class BudgetSettings implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'date_format' => 'date_format',
-        'currency_format' => 'currency_format'
+        'dateFormat' => 'date_format',
+        'currencyFormat' => 'currency_format'
     ];
 
     /**
@@ -108,8 +108,8 @@ class BudgetSettings implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'date_format' => 'setDateFormat',
-        'currency_format' => 'setCurrencyFormat'
+        'dateFormat' => 'setDateFormat',
+        'currencyFormat' => 'setCurrencyFormat'
     ];
 
     /**
@@ -118,8 +118,8 @@ class BudgetSettings implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'date_format' => 'getDateFormat',
-        'currency_format' => 'getCurrencyFormat'
+        'dateFormat' => 'getDateFormat',
+        'currencyFormat' => 'getCurrencyFormat'
     ];
 
     /**
@@ -182,8 +182,8 @@ class BudgetSettings implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['date_format'] = isset($data['date_format']) ? $data['date_format'] : null;
-        $this->container['currency_format'] = isset($data['currency_format']) ? $data['currency_format'] : null;
+        $this->container['dateFormat'] = isset($data['dateFormat']) ? $data['dateFormat'] : null;
+        $this->container['currencyFormat'] = isset($data['currencyFormat']) ? $data['currencyFormat'] : null;
     }
 
     /**
@@ -195,11 +195,11 @@ class BudgetSettings implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['date_format'] === null) {
-            $invalidProperties[] = "'date_format' can't be null";
+        if ($this->container['dateFormat'] === null) {
+            $invalidProperties[] = "'dateFormat' can't be null";
         }
-        if ($this->container['currency_format'] === null) {
-            $invalidProperties[] = "'currency_format' can't be null";
+        if ($this->container['currencyFormat'] === null) {
+            $invalidProperties[] = "'currencyFormat' can't be null";
         }
         return $invalidProperties;
     }
@@ -217,49 +217,49 @@ class BudgetSettings implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets date_format
+     * Gets dateFormat
      *
      * @return \Ynab\Model\DateFormat
      */
     public function getDateFormat()
     {
-        return $this->container['date_format'];
+        return $this->container['dateFormat'];
     }
 
     /**
-     * Sets date_format
+     * Sets dateFormat
      *
-     * @param \Ynab\Model\DateFormat $date_format date_format
+     * @param \Ynab\Model\DateFormat $dateFormat dateFormat
      *
      * @return $this
      */
-    public function setDateFormat($date_format)
+    public function setDateFormat($dateFormat)
     {
-        $this->container['date_format'] = $date_format;
+        $this->container['dateFormat'] = $dateFormat;
 
         return $this;
     }
 
     /**
-     * Gets currency_format
+     * Gets currencyFormat
      *
      * @return \Ynab\Model\CurrencyFormat
      */
     public function getCurrencyFormat()
     {
-        return $this->container['currency_format'];
+        return $this->container['currencyFormat'];
     }
 
     /**
-     * Sets currency_format
+     * Sets currencyFormat
      *
-     * @param \Ynab\Model\CurrencyFormat $currency_format currency_format
+     * @param \Ynab\Model\CurrencyFormat $currencyFormat currencyFormat
      *
      * @return $this
      */
-    public function setCurrencyFormat($currency_format)
+    public function setCurrencyFormat($currencyFormat)
     {
-        $this->container['currency_format'] = $currency_format;
+        $this->container['currencyFormat'] = $currencyFormat;
 
         return $this;
     }

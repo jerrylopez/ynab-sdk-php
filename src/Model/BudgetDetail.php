@@ -57,14 +57,14 @@ class BudgetDetail extends BudgetSummary
     protected static $swaggerTypes = [
         'accounts' => '\Ynab\Model\Account[]',
         'payees' => '\Ynab\Model\Payee[]',
-        'payee_locations' => '\Ynab\Model\PayeeLocation[]',
-        'category_groups' => '\Ynab\Model\CategoryGroup[]',
+        'payeeLocations' => '\Ynab\Model\PayeeLocation[]',
+        'categoryGroups' => '\Ynab\Model\CategoryGroup[]',
         'categories' => '\Ynab\Model\Category[]',
         'months' => '\Ynab\Model\MonthDetail[]',
         'transactions' => '\Ynab\Model\TransactionSummary[]',
         'subtransactions' => '\Ynab\Model\SubTransaction[]',
-        'scheduled_transactions' => '\Ynab\Model\ScheduledTransactionSummary[]',
-        'scheduled_subtransactions' => '\Ynab\Model\ScheduledSubTransaction[]'
+        'scheduledTransactions' => '\Ynab\Model\ScheduledTransactionSummary[]',
+        'scheduledSubtransactions' => '\Ynab\Model\ScheduledSubTransaction[]'
     ];
 
     /**
@@ -75,14 +75,14 @@ class BudgetDetail extends BudgetSummary
     protected static $swaggerFormats = [
         'accounts' => null,
         'payees' => null,
-        'payee_locations' => null,
-        'category_groups' => null,
+        'payeeLocations' => null,
+        'categoryGroups' => null,
         'categories' => null,
         'months' => null,
         'transactions' => null,
         'subtransactions' => null,
-        'scheduled_transactions' => null,
-        'scheduled_subtransactions' => null
+        'scheduledTransactions' => null,
+        'scheduledSubtransactions' => null
     ];
 
     /**
@@ -114,14 +114,14 @@ class BudgetDetail extends BudgetSummary
     protected static $attributeMap = [
         'accounts' => 'accounts',
         'payees' => 'payees',
-        'payee_locations' => 'payee_locations',
-        'category_groups' => 'category_groups',
+        'payeeLocations' => 'payee_locations',
+        'categoryGroups' => 'category_groups',
         'categories' => 'categories',
         'months' => 'months',
         'transactions' => 'transactions',
         'subtransactions' => 'subtransactions',
-        'scheduled_transactions' => 'scheduled_transactions',
-        'scheduled_subtransactions' => 'scheduled_subtransactions'
+        'scheduledTransactions' => 'scheduled_transactions',
+        'scheduledSubtransactions' => 'scheduled_subtransactions'
     ];
 
     /**
@@ -132,14 +132,14 @@ class BudgetDetail extends BudgetSummary
     protected static $setters = [
         'accounts' => 'setAccounts',
         'payees' => 'setPayees',
-        'payee_locations' => 'setPayeeLocations',
-        'category_groups' => 'setCategoryGroups',
+        'payeeLocations' => 'setPayeeLocations',
+        'categoryGroups' => 'setCategoryGroups',
         'categories' => 'setCategories',
         'months' => 'setMonths',
         'transactions' => 'setTransactions',
         'subtransactions' => 'setSubtransactions',
-        'scheduled_transactions' => 'setScheduledTransactions',
-        'scheduled_subtransactions' => 'setScheduledSubtransactions'
+        'scheduledTransactions' => 'setScheduledTransactions',
+        'scheduledSubtransactions' => 'setScheduledSubtransactions'
     ];
 
     /**
@@ -150,14 +150,14 @@ class BudgetDetail extends BudgetSummary
     protected static $getters = [
         'accounts' => 'getAccounts',
         'payees' => 'getPayees',
-        'payee_locations' => 'getPayeeLocations',
-        'category_groups' => 'getCategoryGroups',
+        'payeeLocations' => 'getPayeeLocations',
+        'categoryGroups' => 'getCategoryGroups',
         'categories' => 'getCategories',
         'months' => 'getMonths',
         'transactions' => 'getTransactions',
         'subtransactions' => 'getSubtransactions',
-        'scheduled_transactions' => 'getScheduledTransactions',
-        'scheduled_subtransactions' => 'getScheduledSubtransactions'
+        'scheduledTransactions' => 'getScheduledTransactions',
+        'scheduledSubtransactions' => 'getScheduledSubtransactions'
     ];
 
     /**
@@ -218,14 +218,14 @@ class BudgetDetail extends BudgetSummary
 
         $this->container['accounts'] = isset($data['accounts']) ? $data['accounts'] : null;
         $this->container['payees'] = isset($data['payees']) ? $data['payees'] : null;
-        $this->container['payee_locations'] = isset($data['payee_locations']) ? $data['payee_locations'] : null;
-        $this->container['category_groups'] = isset($data['category_groups']) ? $data['category_groups'] : null;
+        $this->container['payeeLocations'] = isset($data['payeeLocations']) ? $data['payeeLocations'] : null;
+        $this->container['categoryGroups'] = isset($data['categoryGroups']) ? $data['categoryGroups'] : null;
         $this->container['categories'] = isset($data['categories']) ? $data['categories'] : null;
         $this->container['months'] = isset($data['months']) ? $data['months'] : null;
         $this->container['transactions'] = isset($data['transactions']) ? $data['transactions'] : null;
         $this->container['subtransactions'] = isset($data['subtransactions']) ? $data['subtransactions'] : null;
-        $this->container['scheduled_transactions'] = isset($data['scheduled_transactions']) ? $data['scheduled_transactions'] : null;
-        $this->container['scheduled_subtransactions'] = isset($data['scheduled_subtransactions']) ? $data['scheduled_subtransactions'] : null;
+        $this->container['scheduledTransactions'] = isset($data['scheduledTransactions']) ? $data['scheduledTransactions'] : null;
+        $this->container['scheduledSubtransactions'] = isset($data['scheduledSubtransactions']) ? $data['scheduledSubtransactions'] : null;
     }
 
     /**
@@ -301,49 +301,49 @@ class BudgetDetail extends BudgetSummary
     }
 
     /**
-     * Gets payee_locations
+     * Gets payeeLocations
      *
      * @return \Ynab\Model\PayeeLocation[]
      */
     public function getPayeeLocations()
     {
-        return $this->container['payee_locations'];
+        return $this->container['payeeLocations'];
     }
 
     /**
-     * Sets payee_locations
+     * Sets payeeLocations
      *
-     * @param \Ynab\Model\PayeeLocation[] $payee_locations payee_locations
+     * @param \Ynab\Model\PayeeLocation[] $payeeLocations payeeLocations
      *
      * @return $this
      */
-    public function setPayeeLocations($payee_locations)
+    public function setPayeeLocations($payeeLocations)
     {
-        $this->container['payee_locations'] = $payee_locations;
+        $this->container['payeeLocations'] = $payeeLocations;
 
         return $this;
     }
 
     /**
-     * Gets category_groups
+     * Gets categoryGroups
      *
      * @return \Ynab\Model\CategoryGroup[]
      */
     public function getCategoryGroups()
     {
-        return $this->container['category_groups'];
+        return $this->container['categoryGroups'];
     }
 
     /**
-     * Sets category_groups
+     * Sets categoryGroups
      *
-     * @param \Ynab\Model\CategoryGroup[] $category_groups category_groups
+     * @param \Ynab\Model\CategoryGroup[] $categoryGroups categoryGroups
      *
      * @return $this
      */
-    public function setCategoryGroups($category_groups)
+    public function setCategoryGroups($categoryGroups)
     {
-        $this->container['category_groups'] = $category_groups;
+        $this->container['categoryGroups'] = $categoryGroups;
 
         return $this;
     }
@@ -445,49 +445,49 @@ class BudgetDetail extends BudgetSummary
     }
 
     /**
-     * Gets scheduled_transactions
+     * Gets scheduledTransactions
      *
      * @return \Ynab\Model\ScheduledTransactionSummary[]
      */
     public function getScheduledTransactions()
     {
-        return $this->container['scheduled_transactions'];
+        return $this->container['scheduledTransactions'];
     }
 
     /**
-     * Sets scheduled_transactions
+     * Sets scheduledTransactions
      *
-     * @param \Ynab\Model\ScheduledTransactionSummary[] $scheduled_transactions scheduled_transactions
+     * @param \Ynab\Model\ScheduledTransactionSummary[] $scheduledTransactions scheduledTransactions
      *
      * @return $this
      */
-    public function setScheduledTransactions($scheduled_transactions)
+    public function setScheduledTransactions($scheduledTransactions)
     {
-        $this->container['scheduled_transactions'] = $scheduled_transactions;
+        $this->container['scheduledTransactions'] = $scheduledTransactions;
 
         return $this;
     }
 
     /**
-     * Gets scheduled_subtransactions
+     * Gets scheduledSubtransactions
      *
      * @return \Ynab\Model\ScheduledSubTransaction[]
      */
     public function getScheduledSubtransactions()
     {
-        return $this->container['scheduled_subtransactions'];
+        return $this->container['scheduledSubtransactions'];
     }
 
     /**
-     * Sets scheduled_subtransactions
+     * Sets scheduledSubtransactions
      *
-     * @param \Ynab\Model\ScheduledSubTransaction[] $scheduled_subtransactions scheduled_subtransactions
+     * @param \Ynab\Model\ScheduledSubTransaction[] $scheduledSubtransactions scheduledSubtransactions
      *
      * @return $this
      */
-    public function setScheduledSubtransactions($scheduled_subtransactions)
+    public function setScheduledSubtransactions($scheduledSubtransactions)
     {
-        $this->container['scheduled_subtransactions'] = $scheduled_subtransactions;
+        $this->container['scheduledSubtransactions'] = $scheduledSubtransactions;
 
         return $this;
     }

@@ -92,16 +92,16 @@ class ScheduledTransactionsApi
      *
      * Single scheduled transaction
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  string $scheduled_transaction_id The id of the scheduled transaction (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $scheduledTransactionId The id of the scheduled transaction (required)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ynab\Model\ScheduledTransactionResponse
      */
-    public function getScheduledTransactionById($budget_id, $scheduled_transaction_id)
+    public function getScheduledTransactionById($budgetId, $scheduledTransactionId)
     {
-        list($response) = $this->getScheduledTransactionByIdWithHttpInfo($budget_id, $scheduled_transaction_id);
+        list($response) = $this->getScheduledTransactionByIdWithHttpInfo($budgetId, $scheduledTransactionId);
         return $response;
     }
 
@@ -110,17 +110,17 @@ class ScheduledTransactionsApi
      *
      * Single scheduled transaction
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  string $scheduled_transaction_id The id of the scheduled transaction (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $scheduledTransactionId The id of the scheduled transaction (required)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ynab\Model\ScheduledTransactionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getScheduledTransactionByIdWithHttpInfo($budget_id, $scheduled_transaction_id)
+    public function getScheduledTransactionByIdWithHttpInfo($budgetId, $scheduledTransactionId)
     {
         $returnType = '\Ynab\Model\ScheduledTransactionResponse';
-        $request = $this->getScheduledTransactionByIdRequest($budget_id, $scheduled_transaction_id);
+        $request = $this->getScheduledTransactionByIdRequest($budgetId, $scheduledTransactionId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -202,15 +202,15 @@ class ScheduledTransactionsApi
      *
      * Single scheduled transaction
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  string $scheduled_transaction_id The id of the scheduled transaction (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $scheduledTransactionId The id of the scheduled transaction (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getScheduledTransactionByIdAsync($budget_id, $scheduled_transaction_id)
+    public function getScheduledTransactionByIdAsync($budgetId, $scheduledTransactionId)
     {
-        return $this->getScheduledTransactionByIdAsyncWithHttpInfo($budget_id, $scheduled_transaction_id)
+        return $this->getScheduledTransactionByIdAsyncWithHttpInfo($budgetId, $scheduledTransactionId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -223,16 +223,16 @@ class ScheduledTransactionsApi
      *
      * Single scheduled transaction
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  string $scheduled_transaction_id The id of the scheduled transaction (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $scheduledTransactionId The id of the scheduled transaction (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getScheduledTransactionByIdAsyncWithHttpInfo($budget_id, $scheduled_transaction_id)
+    public function getScheduledTransactionByIdAsyncWithHttpInfo($budgetId, $scheduledTransactionId)
     {
         $returnType = '\Ynab\Model\ScheduledTransactionResponse';
-        $request = $this->getScheduledTransactionByIdRequest($budget_id, $scheduled_transaction_id);
+        $request = $this->getScheduledTransactionByIdRequest($budgetId, $scheduledTransactionId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -274,24 +274,24 @@ class ScheduledTransactionsApi
     /**
      * Create request for operation 'getScheduledTransactionById'
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  string $scheduled_transaction_id The id of the scheduled transaction (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $scheduledTransactionId The id of the scheduled transaction (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getScheduledTransactionByIdRequest($budget_id, $scheduled_transaction_id)
+    protected function getScheduledTransactionByIdRequest($budgetId, $scheduledTransactionId)
     {
-        // verify the required parameter 'budget_id' is set
-        if ($budget_id === null || (is_array($budget_id) && count($budget_id) === 0)) {
+        // verify the required parameter 'budgetId' is set
+        if ($budgetId === null || (is_array($budgetId) && count($budgetId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $budget_id when calling getScheduledTransactionById'
+                'Missing the required parameter $budgetId when calling getScheduledTransactionById'
             );
         }
-        // verify the required parameter 'scheduled_transaction_id' is set
-        if ($scheduled_transaction_id === null || (is_array($scheduled_transaction_id) && count($scheduled_transaction_id) === 0)) {
+        // verify the required parameter 'scheduledTransactionId' is set
+        if ($scheduledTransactionId === null || (is_array($scheduledTransactionId) && count($scheduledTransactionId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $scheduled_transaction_id when calling getScheduledTransactionById'
+                'Missing the required parameter $scheduledTransactionId when calling getScheduledTransactionById'
             );
         }
 
@@ -304,18 +304,18 @@ class ScheduledTransactionsApi
 
 
         // path params
-        if ($budget_id !== null) {
+        if ($budgetId !== null) {
             $resourcePath = str_replace(
                 '{' . 'budget_id' . '}',
-                ObjectSerializer::toPathValue($budget_id),
+                ObjectSerializer::toPathValue($budgetId),
                 $resourcePath
             );
         }
         // path params
-        if ($scheduled_transaction_id !== null) {
+        if ($scheduledTransactionId !== null) {
             $resourcePath = str_replace(
                 '{' . 'scheduled_transaction_id' . '}',
-                ObjectSerializer::toPathValue($scheduled_transaction_id),
+                ObjectSerializer::toPathValue($scheduledTransactionId),
                 $resourcePath
             );
         }
@@ -401,16 +401,16 @@ class ScheduledTransactionsApi
      *
      * List scheduled transactions
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  int $last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  int $lastKnowledgeOfServer The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ynab\Model\ScheduledTransactionsResponse
      */
-    public function getScheduledTransactions($budget_id, $last_knowledge_of_server = null)
+    public function getScheduledTransactions($budgetId, $lastKnowledgeOfServer = null)
     {
-        list($response) = $this->getScheduledTransactionsWithHttpInfo($budget_id, $last_knowledge_of_server);
+        list($response) = $this->getScheduledTransactionsWithHttpInfo($budgetId, $lastKnowledgeOfServer);
         return $response;
     }
 
@@ -419,17 +419,17 @@ class ScheduledTransactionsApi
      *
      * List scheduled transactions
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  int $last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  int $lastKnowledgeOfServer The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ynab\Model\ScheduledTransactionsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getScheduledTransactionsWithHttpInfo($budget_id, $last_knowledge_of_server = null)
+    public function getScheduledTransactionsWithHttpInfo($budgetId, $lastKnowledgeOfServer = null)
     {
         $returnType = '\Ynab\Model\ScheduledTransactionsResponse';
-        $request = $this->getScheduledTransactionsRequest($budget_id, $last_knowledge_of_server);
+        $request = $this->getScheduledTransactionsRequest($budgetId, $lastKnowledgeOfServer);
 
         try {
             $options = $this->createHttpClientOption();
@@ -511,15 +511,15 @@ class ScheduledTransactionsApi
      *
      * List scheduled transactions
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  int $last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  int $lastKnowledgeOfServer The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getScheduledTransactionsAsync($budget_id, $last_knowledge_of_server = null)
+    public function getScheduledTransactionsAsync($budgetId, $lastKnowledgeOfServer = null)
     {
-        return $this->getScheduledTransactionsAsyncWithHttpInfo($budget_id, $last_knowledge_of_server)
+        return $this->getScheduledTransactionsAsyncWithHttpInfo($budgetId, $lastKnowledgeOfServer)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -532,16 +532,16 @@ class ScheduledTransactionsApi
      *
      * List scheduled transactions
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  int $last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  int $lastKnowledgeOfServer The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getScheduledTransactionsAsyncWithHttpInfo($budget_id, $last_knowledge_of_server = null)
+    public function getScheduledTransactionsAsyncWithHttpInfo($budgetId, $lastKnowledgeOfServer = null)
     {
         $returnType = '\Ynab\Model\ScheduledTransactionsResponse';
-        $request = $this->getScheduledTransactionsRequest($budget_id, $last_knowledge_of_server);
+        $request = $this->getScheduledTransactionsRequest($budgetId, $lastKnowledgeOfServer);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -583,18 +583,18 @@ class ScheduledTransactionsApi
     /**
      * Create request for operation 'getScheduledTransactions'
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  int $last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  int $lastKnowledgeOfServer The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getScheduledTransactionsRequest($budget_id, $last_knowledge_of_server = null)
+    protected function getScheduledTransactionsRequest($budgetId, $lastKnowledgeOfServer = null)
     {
-        // verify the required parameter 'budget_id' is set
-        if ($budget_id === null || (is_array($budget_id) && count($budget_id) === 0)) {
+        // verify the required parameter 'budgetId' is set
+        if ($budgetId === null || (is_array($budgetId) && count($budgetId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $budget_id when calling getScheduledTransactions'
+                'Missing the required parameter $budgetId when calling getScheduledTransactions'
             );
         }
 
@@ -606,15 +606,15 @@ class ScheduledTransactionsApi
         $multipart = false;
 
         // query params
-        if ($last_knowledge_of_server !== null) {
-            $queryParams['last_knowledge_of_server'] = ObjectSerializer::toQueryValue($last_knowledge_of_server);
+        if ($lastKnowledgeOfServer !== null) {
+            $queryParams['last_knowledge_of_server'] = ObjectSerializer::toQueryValue($lastKnowledgeOfServer);
         }
 
         // path params
-        if ($budget_id !== null) {
+        if ($budgetId !== null) {
             $resourcePath = str_replace(
                 '{' . 'budget_id' . '}',
-                ObjectSerializer::toPathValue($budget_id),
+                ObjectSerializer::toPathValue($budgetId),
                 $resourcePath
             );
         }

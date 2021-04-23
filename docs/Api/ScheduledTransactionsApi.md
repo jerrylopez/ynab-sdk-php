@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **getScheduledTransactionById**
-> \Ynab\Model\ScheduledTransactionResponse getScheduledTransactionById($budget_id, $scheduled_transaction_id)
+> \Ynab\Model\ScheduledTransactionResponse getScheduledTransactionById($budgetId, $scheduledTransactionId)
 
 Single scheduled transaction
 
@@ -31,11 +31,11 @@ $apiInstance = new Ynab\Api\ScheduledTransactionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$budget_id = "budget_id_example"; // string | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-$scheduled_transaction_id = "scheduled_transaction_id_example"; // string | The id of the scheduled transaction
+$budgetId = "budgetId_example"; // string | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+$scheduledTransactionId = "scheduledTransactionId_example"; // string | The id of the scheduled transaction
 
 try {
-    $result = $apiInstance->getScheduledTransactionById($budget_id, $scheduled_transaction_id);
+    $result = $apiInstance->getScheduledTransactionById($budgetId, $scheduledTransactionId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ScheduledTransactionsApi->getScheduledTransactionById: ', $e->getMessage(), PHP_EOL;
@@ -47,8 +47,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **string**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
- **scheduled_transaction_id** | **string**| The id of the scheduled transaction |
+ **budgetId** | **string**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **scheduledTransactionId** | **string**| The id of the scheduled transaction |
 
 ### Return type
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getScheduledTransactions**
-> \Ynab\Model\ScheduledTransactionsResponse getScheduledTransactions($budget_id, $last_knowledge_of_server)
+> \Ynab\Model\ScheduledTransactionsResponse getScheduledTransactions($budgetId, $lastKnowledgeOfServer)
 
 List scheduled transactions
 
@@ -88,11 +88,11 @@ $apiInstance = new Ynab\Api\ScheduledTransactionsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$budget_id = "budget_id_example"; // string | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-$last_knowledge_of_server = 789; // int | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
+$budgetId = "budgetId_example"; // string | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+$lastKnowledgeOfServer = 789; // int | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
 
 try {
-    $result = $apiInstance->getScheduledTransactions($budget_id, $last_knowledge_of_server);
+    $result = $apiInstance->getScheduledTransactions($budgetId, $lastKnowledgeOfServer);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ScheduledTransactionsApi->getScheduledTransactions: ', $e->getMessage(), PHP_EOL;
@@ -104,8 +104,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **string**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
- **last_knowledge_of_server** | **int**| The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. | [optional]
+ **budgetId** | **string**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **lastKnowledgeOfServer** | **int**| The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. | [optional]
 
 ### Return type
 

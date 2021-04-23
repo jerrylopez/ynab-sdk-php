@@ -62,8 +62,8 @@ class MonthSummary implements ModelInterface, ArrayAccess
         'income' => 'int',
         'budgeted' => 'int',
         'activity' => 'int',
-        'to_be_budgeted' => 'int',
-        'age_of_money' => 'int',
+        'toBeBudgeted' => 'int',
+        'ageOfMoney' => 'int',
         'deleted' => 'bool'
     ];
 
@@ -78,8 +78,8 @@ class MonthSummary implements ModelInterface, ArrayAccess
         'income' => 'int64',
         'budgeted' => 'int64',
         'activity' => 'int64',
-        'to_be_budgeted' => 'int64',
-        'age_of_money' => 'int32',
+        'toBeBudgeted' => 'int64',
+        'ageOfMoney' => 'int32',
         'deleted' => null
     ];
 
@@ -115,8 +115,8 @@ class MonthSummary implements ModelInterface, ArrayAccess
         'income' => 'income',
         'budgeted' => 'budgeted',
         'activity' => 'activity',
-        'to_be_budgeted' => 'to_be_budgeted',
-        'age_of_money' => 'age_of_money',
+        'toBeBudgeted' => 'to_be_budgeted',
+        'ageOfMoney' => 'age_of_money',
         'deleted' => 'deleted'
     ];
 
@@ -131,8 +131,8 @@ class MonthSummary implements ModelInterface, ArrayAccess
         'income' => 'setIncome',
         'budgeted' => 'setBudgeted',
         'activity' => 'setActivity',
-        'to_be_budgeted' => 'setToBeBudgeted',
-        'age_of_money' => 'setAgeOfMoney',
+        'toBeBudgeted' => 'setToBeBudgeted',
+        'ageOfMoney' => 'setAgeOfMoney',
         'deleted' => 'setDeleted'
     ];
 
@@ -147,8 +147,8 @@ class MonthSummary implements ModelInterface, ArrayAccess
         'income' => 'getIncome',
         'budgeted' => 'getBudgeted',
         'activity' => 'getActivity',
-        'to_be_budgeted' => 'getToBeBudgeted',
-        'age_of_money' => 'getAgeOfMoney',
+        'toBeBudgeted' => 'getToBeBudgeted',
+        'ageOfMoney' => 'getAgeOfMoney',
         'deleted' => 'getDeleted'
     ];
 
@@ -217,8 +217,8 @@ class MonthSummary implements ModelInterface, ArrayAccess
         $this->container['income'] = isset($data['income']) ? $data['income'] : null;
         $this->container['budgeted'] = isset($data['budgeted']) ? $data['budgeted'] : null;
         $this->container['activity'] = isset($data['activity']) ? $data['activity'] : null;
-        $this->container['to_be_budgeted'] = isset($data['to_be_budgeted']) ? $data['to_be_budgeted'] : null;
-        $this->container['age_of_money'] = isset($data['age_of_money']) ? $data['age_of_money'] : null;
+        $this->container['toBeBudgeted'] = isset($data['toBeBudgeted']) ? $data['toBeBudgeted'] : null;
+        $this->container['ageOfMoney'] = isset($data['ageOfMoney']) ? $data['ageOfMoney'] : null;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
     }
 
@@ -243,8 +243,8 @@ class MonthSummary implements ModelInterface, ArrayAccess
         if ($this->container['activity'] === null) {
             $invalidProperties[] = "'activity' can't be null";
         }
-        if ($this->container['to_be_budgeted'] === null) {
-            $invalidProperties[] = "'to_be_budgeted' can't be null";
+        if ($this->container['toBeBudgeted'] === null) {
+            $invalidProperties[] = "'toBeBudgeted' can't be null";
         }
         if ($this->container['deleted'] === null) {
             $invalidProperties[] = "'deleted' can't be null";
@@ -385,49 +385,49 @@ class MonthSummary implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets to_be_budgeted
+     * Gets toBeBudgeted
      *
      * @return int
      */
     public function getToBeBudgeted()
     {
-        return $this->container['to_be_budgeted'];
+        return $this->container['toBeBudgeted'];
     }
 
     /**
-     * Sets to_be_budgeted
+     * Sets toBeBudgeted
      *
-     * @param int $to_be_budgeted The available amount for 'To be Budgeted'
+     * @param int $toBeBudgeted The available amount for 'To be Budgeted'
      *
      * @return $this
      */
-    public function setToBeBudgeted($to_be_budgeted)
+    public function setToBeBudgeted($toBeBudgeted)
     {
-        $this->container['to_be_budgeted'] = $to_be_budgeted;
+        $this->container['toBeBudgeted'] = $toBeBudgeted;
 
         return $this;
     }
 
     /**
-     * Gets age_of_money
+     * Gets ageOfMoney
      *
      * @return int
      */
     public function getAgeOfMoney()
     {
-        return $this->container['age_of_money'];
+        return $this->container['ageOfMoney'];
     }
 
     /**
-     * Sets age_of_money
+     * Sets ageOfMoney
      *
-     * @param int $age_of_money The Age of Money as of the month
+     * @param int $ageOfMoney The Age of Money as of the month
      *
      * @return $this
      */
-    public function setAgeOfMoney($age_of_money)
+    public function setAgeOfMoney($ageOfMoney)
     {
-        $this->container['age_of_money'] = $age_of_money;
+        $this->container['ageOfMoney'] = $ageOfMoney;
 
         return $this;
     }

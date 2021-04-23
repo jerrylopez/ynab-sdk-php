@@ -56,10 +56,10 @@ class HybridTransaction extends TransactionSummary
       */
     protected static $swaggerTypes = [
         'type' => 'string',
-        'parent_transaction_id' => 'string',
-        'account_name' => 'string',
-        'payee_name' => 'string',
-        'category_name' => 'string'
+        'parentTransactionId' => 'string',
+        'accountName' => 'string',
+        'payeeName' => 'string',
+        'categoryName' => 'string'
     ];
 
     /**
@@ -69,10 +69,10 @@ class HybridTransaction extends TransactionSummary
       */
     protected static $swaggerFormats = [
         'type' => null,
-        'parent_transaction_id' => null,
-        'account_name' => null,
-        'payee_name' => null,
-        'category_name' => null
+        'parentTransactionId' => null,
+        'accountName' => null,
+        'payeeName' => null,
+        'categoryName' => null
     ];
 
     /**
@@ -103,10 +103,10 @@ class HybridTransaction extends TransactionSummary
      */
     protected static $attributeMap = [
         'type' => 'type',
-        'parent_transaction_id' => 'parent_transaction_id',
-        'account_name' => 'account_name',
-        'payee_name' => 'payee_name',
-        'category_name' => 'category_name'
+        'parentTransactionId' => 'parent_transaction_id',
+        'accountName' => 'account_name',
+        'payeeName' => 'payee_name',
+        'categoryName' => 'category_name'
     ];
 
     /**
@@ -116,10 +116,10 @@ class HybridTransaction extends TransactionSummary
      */
     protected static $setters = [
         'type' => 'setType',
-        'parent_transaction_id' => 'setParentTransactionId',
-        'account_name' => 'setAccountName',
-        'payee_name' => 'setPayeeName',
-        'category_name' => 'setCategoryName'
+        'parentTransactionId' => 'setParentTransactionId',
+        'accountName' => 'setAccountName',
+        'payeeName' => 'setPayeeName',
+        'categoryName' => 'setCategoryName'
     ];
 
     /**
@@ -129,10 +129,10 @@ class HybridTransaction extends TransactionSummary
      */
     protected static $getters = [
         'type' => 'getType',
-        'parent_transaction_id' => 'getParentTransactionId',
-        'account_name' => 'getAccountName',
-        'payee_name' => 'getPayeeName',
-        'category_name' => 'getCategoryName'
+        'parentTransactionId' => 'getParentTransactionId',
+        'accountName' => 'getAccountName',
+        'payeeName' => 'getPayeeName',
+        'categoryName' => 'getCategoryName'
     ];
 
     /**
@@ -207,10 +207,10 @@ class HybridTransaction extends TransactionSummary
         parent::__construct($data);
 
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['parent_transaction_id'] = isset($data['parent_transaction_id']) ? $data['parent_transaction_id'] : null;
-        $this->container['account_name'] = isset($data['account_name']) ? $data['account_name'] : null;
-        $this->container['payee_name'] = isset($data['payee_name']) ? $data['payee_name'] : null;
-        $this->container['category_name'] = isset($data['category_name']) ? $data['category_name'] : null;
+        $this->container['parentTransactionId'] = isset($data['parentTransactionId']) ? $data['parentTransactionId'] : null;
+        $this->container['accountName'] = isset($data['accountName']) ? $data['accountName'] : null;
+        $this->container['payeeName'] = isset($data['payeeName']) ? $data['payeeName'] : null;
+        $this->container['categoryName'] = isset($data['categoryName']) ? $data['categoryName'] : null;
     }
 
     /**
@@ -233,8 +233,8 @@ class HybridTransaction extends TransactionSummary
             );
         }
 
-        if ($this->container['account_name'] === null) {
-            $invalidProperties[] = "'account_name' can't be null";
+        if ($this->container['accountName'] === null) {
+            $invalidProperties[] = "'accountName' can't be null";
         }
         return $invalidProperties;
     }
@@ -285,97 +285,97 @@ class HybridTransaction extends TransactionSummary
     }
 
     /**
-     * Gets parent_transaction_id
+     * Gets parentTransactionId
      *
      * @return string
      */
     public function getParentTransactionId()
     {
-        return $this->container['parent_transaction_id'];
+        return $this->container['parentTransactionId'];
     }
 
     /**
-     * Sets parent_transaction_id
+     * Sets parentTransactionId
      *
-     * @param string $parent_transaction_id For subtransaction types, this is the id of the parent transaction.  For transaction types, this id will be always be null.
+     * @param string $parentTransactionId For subtransaction types, this is the id of the parent transaction.  For transaction types, this id will be always be null.
      *
      * @return $this
      */
-    public function setParentTransactionId($parent_transaction_id)
+    public function setParentTransactionId($parentTransactionId)
     {
-        $this->container['parent_transaction_id'] = $parent_transaction_id;
+        $this->container['parentTransactionId'] = $parentTransactionId;
 
         return $this;
     }
 
     /**
-     * Gets account_name
+     * Gets accountName
      *
      * @return string
      */
     public function getAccountName()
     {
-        return $this->container['account_name'];
+        return $this->container['accountName'];
     }
 
     /**
-     * Sets account_name
+     * Sets accountName
      *
-     * @param string $account_name account_name
+     * @param string $accountName accountName
      *
      * @return $this
      */
-    public function setAccountName($account_name)
+    public function setAccountName($accountName)
     {
-        $this->container['account_name'] = $account_name;
+        $this->container['accountName'] = $accountName;
 
         return $this;
     }
 
     /**
-     * Gets payee_name
+     * Gets payeeName
      *
      * @return string
      */
     public function getPayeeName()
     {
-        return $this->container['payee_name'];
+        return $this->container['payeeName'];
     }
 
     /**
-     * Sets payee_name
+     * Sets payeeName
      *
-     * @param string $payee_name payee_name
+     * @param string $payeeName payeeName
      *
      * @return $this
      */
-    public function setPayeeName($payee_name)
+    public function setPayeeName($payeeName)
     {
-        $this->container['payee_name'] = $payee_name;
+        $this->container['payeeName'] = $payeeName;
 
         return $this;
     }
 
     /**
-     * Gets category_name
+     * Gets categoryName
      *
      * @return string
      */
     public function getCategoryName()
     {
-        return $this->container['category_name'];
+        return $this->container['categoryName'];
     }
 
     /**
-     * Sets category_name
+     * Sets categoryName
      *
-     * @param string $category_name category_name
+     * @param string $categoryName categoryName
      *
      * @return $this
      */
-    public function setCategoryName($category_name)
+    public function setCategoryName($categoryName)
     {
-        $this->container['category_name'] = $category_name;
+        $this->container['categoryName'] = $categoryName;
 
         return $this;
     }

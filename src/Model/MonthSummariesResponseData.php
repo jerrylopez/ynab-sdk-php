@@ -58,7 +58,7 @@ class MonthSummariesResponseData implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'months' => '\Ynab\Model\MonthSummary[]',
-        'server_knowledge' => 'int'
+        'serverKnowledge' => 'int'
     ];
 
     /**
@@ -68,7 +68,7 @@ class MonthSummariesResponseData implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'months' => null,
-        'server_knowledge' => 'int64'
+        'serverKnowledge' => 'int64'
     ];
 
     /**
@@ -99,7 +99,7 @@ class MonthSummariesResponseData implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'months' => 'months',
-        'server_knowledge' => 'server_knowledge'
+        'serverKnowledge' => 'server_knowledge'
     ];
 
     /**
@@ -109,7 +109,7 @@ class MonthSummariesResponseData implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'months' => 'setMonths',
-        'server_knowledge' => 'setServerKnowledge'
+        'serverKnowledge' => 'setServerKnowledge'
     ];
 
     /**
@@ -119,7 +119,7 @@ class MonthSummariesResponseData implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'months' => 'getMonths',
-        'server_knowledge' => 'getServerKnowledge'
+        'serverKnowledge' => 'getServerKnowledge'
     ];
 
     /**
@@ -183,7 +183,7 @@ class MonthSummariesResponseData implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['months'] = isset($data['months']) ? $data['months'] : null;
-        $this->container['server_knowledge'] = isset($data['server_knowledge']) ? $data['server_knowledge'] : null;
+        $this->container['serverKnowledge'] = isset($data['serverKnowledge']) ? $data['serverKnowledge'] : null;
     }
 
     /**
@@ -198,8 +198,8 @@ class MonthSummariesResponseData implements ModelInterface, ArrayAccess
         if ($this->container['months'] === null) {
             $invalidProperties[] = "'months' can't be null";
         }
-        if ($this->container['server_knowledge'] === null) {
-            $invalidProperties[] = "'server_knowledge' can't be null";
+        if ($this->container['serverKnowledge'] === null) {
+            $invalidProperties[] = "'serverKnowledge' can't be null";
         }
         return $invalidProperties;
     }
@@ -241,25 +241,25 @@ class MonthSummariesResponseData implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets server_knowledge
+     * Gets serverKnowledge
      *
      * @return int
      */
     public function getServerKnowledge()
     {
-        return $this->container['server_knowledge'];
+        return $this->container['serverKnowledge'];
     }
 
     /**
-     * Sets server_knowledge
+     * Sets serverKnowledge
      *
-     * @param int $server_knowledge The knowledge of the server
+     * @param int $serverKnowledge The knowledge of the server
      *
      * @return $this
      */
-    public function setServerKnowledge($server_knowledge)
+    public function setServerKnowledge($serverKnowledge)
     {
-        $this->container['server_knowledge'] = $server_knowledge;
+        $this->container['serverKnowledge'] = $serverKnowledge;
 
         return $this;
     }

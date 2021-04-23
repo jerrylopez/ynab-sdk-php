@@ -57,7 +57,7 @@ class PayeeLocationResponseData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'payee_location' => '\Ynab\Model\PayeeLocation'
+        'payeeLocation' => '\Ynab\Model\PayeeLocation'
     ];
 
     /**
@@ -66,7 +66,7 @@ class PayeeLocationResponseData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'payee_location' => null
+        'payeeLocation' => null
     ];
 
     /**
@@ -96,7 +96,7 @@ class PayeeLocationResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'payee_location' => 'payee_location'
+        'payeeLocation' => 'payee_location'
     ];
 
     /**
@@ -105,7 +105,7 @@ class PayeeLocationResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'payee_location' => 'setPayeeLocation'
+        'payeeLocation' => 'setPayeeLocation'
     ];
 
     /**
@@ -114,7 +114,7 @@ class PayeeLocationResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'payee_location' => 'getPayeeLocation'
+        'payeeLocation' => 'getPayeeLocation'
     ];
 
     /**
@@ -177,7 +177,7 @@ class PayeeLocationResponseData implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['payee_location'] = isset($data['payee_location']) ? $data['payee_location'] : null;
+        $this->container['payeeLocation'] = isset($data['payeeLocation']) ? $data['payeeLocation'] : null;
     }
 
     /**
@@ -189,8 +189,8 @@ class PayeeLocationResponseData implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['payee_location'] === null) {
-            $invalidProperties[] = "'payee_location' can't be null";
+        if ($this->container['payeeLocation'] === null) {
+            $invalidProperties[] = "'payeeLocation' can't be null";
         }
         return $invalidProperties;
     }
@@ -208,25 +208,25 @@ class PayeeLocationResponseData implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets payee_location
+     * Gets payeeLocation
      *
      * @return \Ynab\Model\PayeeLocation
      */
     public function getPayeeLocation()
     {
-        return $this->container['payee_location'];
+        return $this->container['payeeLocation'];
     }
 
     /**
-     * Sets payee_location
+     * Sets payeeLocation
      *
-     * @param \Ynab\Model\PayeeLocation $payee_location payee_location
+     * @param \Ynab\Model\PayeeLocation $payeeLocation payeeLocation
      *
      * @return $this
      */
-    public function setPayeeLocation($payee_location)
+    public function setPayeeLocation($payeeLocation)
     {
-        $this->container['payee_location'] = $payee_location;
+        $this->container['payeeLocation'] = $payeeLocation;
 
         return $this;
     }

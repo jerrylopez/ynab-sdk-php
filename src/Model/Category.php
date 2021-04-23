@@ -58,23 +58,23 @@ class Category implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'category_group_id' => 'string',
+        'categoryGroupId' => 'string',
         'name' => 'string',
         'hidden' => 'bool',
-        'original_category_group_id' => 'string',
+        'originalCategoryGroupId' => 'string',
         'note' => 'string',
         'budgeted' => 'int',
         'activity' => 'int',
         'balance' => 'int',
-        'goal_type' => 'string',
-        'goal_creation_month' => '\DateTime',
-        'goal_target' => 'int',
-        'goal_target_month' => '\DateTime',
-        'goal_percentage_complete' => 'int',
-        'goal_months_to_budget' => 'int',
-        'goal_under_funded' => 'int',
-        'goal_overall_funded' => 'int',
-        'goal_overall_left' => 'int',
+        'goalType' => 'string',
+        'goalCreationMonth' => '\DateTime',
+        'goalTarget' => 'int',
+        'goalTargetMonth' => '\DateTime',
+        'goalPercentageComplete' => 'int',
+        'goalMonthsToBudget' => 'int',
+        'goalUnderFunded' => 'int',
+        'goalOverallFunded' => 'int',
+        'goalOverallLeft' => 'int',
         'deleted' => 'bool'
     ];
 
@@ -85,23 +85,23 @@ class Category implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => 'uuid',
-        'category_group_id' => 'uuid',
+        'categoryGroupId' => 'uuid',
         'name' => null,
         'hidden' => null,
-        'original_category_group_id' => 'uuid',
+        'originalCategoryGroupId' => 'uuid',
         'note' => null,
         'budgeted' => 'int64',
         'activity' => 'int64',
         'balance' => 'int64',
-        'goal_type' => null,
-        'goal_creation_month' => 'date',
-        'goal_target' => 'int64',
-        'goal_target_month' => 'date',
-        'goal_percentage_complete' => 'int32',
-        'goal_months_to_budget' => 'int32',
-        'goal_under_funded' => 'int64',
-        'goal_overall_funded' => 'int64',
-        'goal_overall_left' => 'int64',
+        'goalType' => null,
+        'goalCreationMonth' => 'date',
+        'goalTarget' => 'int64',
+        'goalTargetMonth' => 'date',
+        'goalPercentageComplete' => 'int32',
+        'goalMonthsToBudget' => 'int32',
+        'goalUnderFunded' => 'int64',
+        'goalOverallFunded' => 'int64',
+        'goalOverallLeft' => 'int64',
         'deleted' => null
     ];
 
@@ -133,23 +133,23 @@ class Category implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'category_group_id' => 'category_group_id',
+        'categoryGroupId' => 'category_group_id',
         'name' => 'name',
         'hidden' => 'hidden',
-        'original_category_group_id' => 'original_category_group_id',
+        'originalCategoryGroupId' => 'original_category_group_id',
         'note' => 'note',
         'budgeted' => 'budgeted',
         'activity' => 'activity',
         'balance' => 'balance',
-        'goal_type' => 'goal_type',
-        'goal_creation_month' => 'goal_creation_month',
-        'goal_target' => 'goal_target',
-        'goal_target_month' => 'goal_target_month',
-        'goal_percentage_complete' => 'goal_percentage_complete',
-        'goal_months_to_budget' => 'goal_months_to_budget',
-        'goal_under_funded' => 'goal_under_funded',
-        'goal_overall_funded' => 'goal_overall_funded',
-        'goal_overall_left' => 'goal_overall_left',
+        'goalType' => 'goal_type',
+        'goalCreationMonth' => 'goal_creation_month',
+        'goalTarget' => 'goal_target',
+        'goalTargetMonth' => 'goal_target_month',
+        'goalPercentageComplete' => 'goal_percentage_complete',
+        'goalMonthsToBudget' => 'goal_months_to_budget',
+        'goalUnderFunded' => 'goal_under_funded',
+        'goalOverallFunded' => 'goal_overall_funded',
+        'goalOverallLeft' => 'goal_overall_left',
         'deleted' => 'deleted'
     ];
 
@@ -160,23 +160,23 @@ class Category implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'category_group_id' => 'setCategoryGroupId',
+        'categoryGroupId' => 'setCategoryGroupId',
         'name' => 'setName',
         'hidden' => 'setHidden',
-        'original_category_group_id' => 'setOriginalCategoryGroupId',
+        'originalCategoryGroupId' => 'setOriginalCategoryGroupId',
         'note' => 'setNote',
         'budgeted' => 'setBudgeted',
         'activity' => 'setActivity',
         'balance' => 'setBalance',
-        'goal_type' => 'setGoalType',
-        'goal_creation_month' => 'setGoalCreationMonth',
-        'goal_target' => 'setGoalTarget',
-        'goal_target_month' => 'setGoalTargetMonth',
-        'goal_percentage_complete' => 'setGoalPercentageComplete',
-        'goal_months_to_budget' => 'setGoalMonthsToBudget',
-        'goal_under_funded' => 'setGoalUnderFunded',
-        'goal_overall_funded' => 'setGoalOverallFunded',
-        'goal_overall_left' => 'setGoalOverallLeft',
+        'goalType' => 'setGoalType',
+        'goalCreationMonth' => 'setGoalCreationMonth',
+        'goalTarget' => 'setGoalTarget',
+        'goalTargetMonth' => 'setGoalTargetMonth',
+        'goalPercentageComplete' => 'setGoalPercentageComplete',
+        'goalMonthsToBudget' => 'setGoalMonthsToBudget',
+        'goalUnderFunded' => 'setGoalUnderFunded',
+        'goalOverallFunded' => 'setGoalOverallFunded',
+        'goalOverallLeft' => 'setGoalOverallLeft',
         'deleted' => 'setDeleted'
     ];
 
@@ -187,23 +187,23 @@ class Category implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'category_group_id' => 'getCategoryGroupId',
+        'categoryGroupId' => 'getCategoryGroupId',
         'name' => 'getName',
         'hidden' => 'getHidden',
-        'original_category_group_id' => 'getOriginalCategoryGroupId',
+        'originalCategoryGroupId' => 'getOriginalCategoryGroupId',
         'note' => 'getNote',
         'budgeted' => 'getBudgeted',
         'activity' => 'getActivity',
         'balance' => 'getBalance',
-        'goal_type' => 'getGoalType',
-        'goal_creation_month' => 'getGoalCreationMonth',
-        'goal_target' => 'getGoalTarget',
-        'goal_target_month' => 'getGoalTargetMonth',
-        'goal_percentage_complete' => 'getGoalPercentageComplete',
-        'goal_months_to_budget' => 'getGoalMonthsToBudget',
-        'goal_under_funded' => 'getGoalUnderFunded',
-        'goal_overall_funded' => 'getGoalOverallFunded',
-        'goal_overall_left' => 'getGoalOverallLeft',
+        'goalType' => 'getGoalType',
+        'goalCreationMonth' => 'getGoalCreationMonth',
+        'goalTarget' => 'getGoalTarget',
+        'goalTargetMonth' => 'getGoalTargetMonth',
+        'goalPercentageComplete' => 'getGoalPercentageComplete',
+        'goalMonthsToBudget' => 'getGoalMonthsToBudget',
+        'goalUnderFunded' => 'getGoalUnderFunded',
+        'goalOverallFunded' => 'getGoalOverallFunded',
+        'goalOverallLeft' => 'getGoalOverallLeft',
         'deleted' => 'getDeleted'
     ];
 
@@ -287,23 +287,23 @@ class Category implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['category_group_id'] = isset($data['category_group_id']) ? $data['category_group_id'] : null;
+        $this->container['categoryGroupId'] = isset($data['categoryGroupId']) ? $data['categoryGroupId'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['hidden'] = isset($data['hidden']) ? $data['hidden'] : null;
-        $this->container['original_category_group_id'] = isset($data['original_category_group_id']) ? $data['original_category_group_id'] : null;
+        $this->container['originalCategoryGroupId'] = isset($data['originalCategoryGroupId']) ? $data['originalCategoryGroupId'] : null;
         $this->container['note'] = isset($data['note']) ? $data['note'] : null;
         $this->container['budgeted'] = isset($data['budgeted']) ? $data['budgeted'] : null;
         $this->container['activity'] = isset($data['activity']) ? $data['activity'] : null;
         $this->container['balance'] = isset($data['balance']) ? $data['balance'] : null;
-        $this->container['goal_type'] = isset($data['goal_type']) ? $data['goal_type'] : null;
-        $this->container['goal_creation_month'] = isset($data['goal_creation_month']) ? $data['goal_creation_month'] : null;
-        $this->container['goal_target'] = isset($data['goal_target']) ? $data['goal_target'] : null;
-        $this->container['goal_target_month'] = isset($data['goal_target_month']) ? $data['goal_target_month'] : null;
-        $this->container['goal_percentage_complete'] = isset($data['goal_percentage_complete']) ? $data['goal_percentage_complete'] : null;
-        $this->container['goal_months_to_budget'] = isset($data['goal_months_to_budget']) ? $data['goal_months_to_budget'] : null;
-        $this->container['goal_under_funded'] = isset($data['goal_under_funded']) ? $data['goal_under_funded'] : null;
-        $this->container['goal_overall_funded'] = isset($data['goal_overall_funded']) ? $data['goal_overall_funded'] : null;
-        $this->container['goal_overall_left'] = isset($data['goal_overall_left']) ? $data['goal_overall_left'] : null;
+        $this->container['goalType'] = isset($data['goalType']) ? $data['goalType'] : null;
+        $this->container['goalCreationMonth'] = isset($data['goalCreationMonth']) ? $data['goalCreationMonth'] : null;
+        $this->container['goalTarget'] = isset($data['goalTarget']) ? $data['goalTarget'] : null;
+        $this->container['goalTargetMonth'] = isset($data['goalTargetMonth']) ? $data['goalTargetMonth'] : null;
+        $this->container['goalPercentageComplete'] = isset($data['goalPercentageComplete']) ? $data['goalPercentageComplete'] : null;
+        $this->container['goalMonthsToBudget'] = isset($data['goalMonthsToBudget']) ? $data['goalMonthsToBudget'] : null;
+        $this->container['goalUnderFunded'] = isset($data['goalUnderFunded']) ? $data['goalUnderFunded'] : null;
+        $this->container['goalOverallFunded'] = isset($data['goalOverallFunded']) ? $data['goalOverallFunded'] : null;
+        $this->container['goalOverallLeft'] = isset($data['goalOverallLeft']) ? $data['goalOverallLeft'] : null;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
     }
 
@@ -319,8 +319,8 @@ class Category implements ModelInterface, ArrayAccess
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
-        if ($this->container['category_group_id'] === null) {
-            $invalidProperties[] = "'category_group_id' can't be null";
+        if ($this->container['categoryGroupId'] === null) {
+            $invalidProperties[] = "'categoryGroupId' can't be null";
         }
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
@@ -338,9 +338,9 @@ class Category implements ModelInterface, ArrayAccess
             $invalidProperties[] = "'balance' can't be null";
         }
         $allowedValues = $this->getGoalTypeAllowableValues();
-        if (!is_null($this->container['goal_type']) && !in_array($this->container['goal_type'], $allowedValues, true)) {
+        if (!is_null($this->container['goalType']) && !in_array($this->container['goalType'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'goal_type', must be one of '%s'",
+                "invalid value for 'goalType', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -388,25 +388,25 @@ class Category implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets category_group_id
+     * Gets categoryGroupId
      *
      * @return string
      */
     public function getCategoryGroupId()
     {
-        return $this->container['category_group_id'];
+        return $this->container['categoryGroupId'];
     }
 
     /**
-     * Sets category_group_id
+     * Sets categoryGroupId
      *
-     * @param string $category_group_id category_group_id
+     * @param string $categoryGroupId categoryGroupId
      *
      * @return $this
      */
-    public function setCategoryGroupId($category_group_id)
+    public function setCategoryGroupId($categoryGroupId)
     {
-        $this->container['category_group_id'] = $category_group_id;
+        $this->container['categoryGroupId'] = $categoryGroupId;
 
         return $this;
     }
@@ -460,25 +460,25 @@ class Category implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets original_category_group_id
+     * Gets originalCategoryGroupId
      *
      * @return string
      */
     public function getOriginalCategoryGroupId()
     {
-        return $this->container['original_category_group_id'];
+        return $this->container['originalCategoryGroupId'];
     }
 
     /**
-     * Sets original_category_group_id
+     * Sets originalCategoryGroupId
      *
-     * @param string $original_category_group_id If category is hidden this is the id of the category group it originally belonged to before it was hidden.
+     * @param string $originalCategoryGroupId If category is hidden this is the id of the category group it originally belonged to before it was hidden.
      *
      * @return $this
      */
-    public function setOriginalCategoryGroupId($original_category_group_id)
+    public function setOriginalCategoryGroupId($originalCategoryGroupId)
     {
-        $this->container['original_category_group_id'] = $original_category_group_id;
+        $this->container['originalCategoryGroupId'] = $originalCategoryGroupId;
 
         return $this;
     }
@@ -580,226 +580,226 @@ class Category implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets goal_type
+     * Gets goalType
      *
      * @return string
      */
     public function getGoalType()
     {
-        return $this->container['goal_type'];
+        return $this->container['goalType'];
     }
 
     /**
-     * Sets goal_type
+     * Sets goalType
      *
-     * @param string $goal_type The type of goal, if the category has a goal (TB='Target Category Balance', TBD='Target Category Balance by Date', MF='Monthly Funding', NEED='Plan Your Spending')
+     * @param string $goalType The type of goal, if the category has a goal (TB='Target Category Balance', TBD='Target Category Balance by Date', MF='Monthly Funding', NEED='Plan Your Spending')
      *
      * @return $this
      */
-    public function setGoalType($goal_type)
+    public function setGoalType($goalType)
     {
         $allowedValues = $this->getGoalTypeAllowableValues();
-        if (!is_null($goal_type) && !in_array($goal_type, $allowedValues, true)) {
+        if (!is_null($goalType) && !in_array($goalType, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'goal_type', must be one of '%s'",
+                    "Invalid value for 'goalType', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['goal_type'] = $goal_type;
+        $this->container['goalType'] = $goalType;
 
         return $this;
     }
 
     /**
-     * Gets goal_creation_month
+     * Gets goalCreationMonth
      *
      * @return \DateTime
      */
     public function getGoalCreationMonth()
     {
-        return $this->container['goal_creation_month'];
+        return $this->container['goalCreationMonth'];
     }
 
     /**
-     * Sets goal_creation_month
+     * Sets goalCreationMonth
      *
-     * @param \DateTime $goal_creation_month The month a goal was created
+     * @param \DateTime $goalCreationMonth The month a goal was created
      *
      * @return $this
      */
-    public function setGoalCreationMonth($goal_creation_month)
+    public function setGoalCreationMonth($goalCreationMonth)
     {
-        $this->container['goal_creation_month'] = $goal_creation_month;
+        $this->container['goalCreationMonth'] = $goalCreationMonth;
 
         return $this;
     }
 
     /**
-     * Gets goal_target
+     * Gets goalTarget
      *
      * @return int
      */
     public function getGoalTarget()
     {
-        return $this->container['goal_target'];
+        return $this->container['goalTarget'];
     }
 
     /**
-     * Sets goal_target
+     * Sets goalTarget
      *
-     * @param int $goal_target The goal target amount in milliunits
+     * @param int $goalTarget The goal target amount in milliunits
      *
      * @return $this
      */
-    public function setGoalTarget($goal_target)
+    public function setGoalTarget($goalTarget)
     {
-        $this->container['goal_target'] = $goal_target;
+        $this->container['goalTarget'] = $goalTarget;
 
         return $this;
     }
 
     /**
-     * Gets goal_target_month
+     * Gets goalTargetMonth
      *
      * @return \DateTime
      */
     public function getGoalTargetMonth()
     {
-        return $this->container['goal_target_month'];
+        return $this->container['goalTargetMonth'];
     }
 
     /**
-     * Sets goal_target_month
+     * Sets goalTargetMonth
      *
-     * @param \DateTime $goal_target_month The original target month for the goal to be completed.  Only some goal types specify this date.
+     * @param \DateTime $goalTargetMonth The original target month for the goal to be completed.  Only some goal types specify this date.
      *
      * @return $this
      */
-    public function setGoalTargetMonth($goal_target_month)
+    public function setGoalTargetMonth($goalTargetMonth)
     {
-        $this->container['goal_target_month'] = $goal_target_month;
+        $this->container['goalTargetMonth'] = $goalTargetMonth;
 
         return $this;
     }
 
     /**
-     * Gets goal_percentage_complete
+     * Gets goalPercentageComplete
      *
      * @return int
      */
     public function getGoalPercentageComplete()
     {
-        return $this->container['goal_percentage_complete'];
+        return $this->container['goalPercentageComplete'];
     }
 
     /**
-     * Sets goal_percentage_complete
+     * Sets goalPercentageComplete
      *
-     * @param int $goal_percentage_complete The percentage completion of the goal
+     * @param int $goalPercentageComplete The percentage completion of the goal
      *
      * @return $this
      */
-    public function setGoalPercentageComplete($goal_percentage_complete)
+    public function setGoalPercentageComplete($goalPercentageComplete)
     {
-        $this->container['goal_percentage_complete'] = $goal_percentage_complete;
+        $this->container['goalPercentageComplete'] = $goalPercentageComplete;
 
         return $this;
     }
 
     /**
-     * Gets goal_months_to_budget
+     * Gets goalMonthsToBudget
      *
      * @return int
      */
     public function getGoalMonthsToBudget()
     {
-        return $this->container['goal_months_to_budget'];
+        return $this->container['goalMonthsToBudget'];
     }
 
     /**
-     * Sets goal_months_to_budget
+     * Sets goalMonthsToBudget
      *
-     * @param int $goal_months_to_budget The number of months, including the current month, left in the current goal period.
+     * @param int $goalMonthsToBudget The number of months, including the current month, left in the current goal period.
      *
      * @return $this
      */
-    public function setGoalMonthsToBudget($goal_months_to_budget)
+    public function setGoalMonthsToBudget($goalMonthsToBudget)
     {
-        $this->container['goal_months_to_budget'] = $goal_months_to_budget;
+        $this->container['goalMonthsToBudget'] = $goalMonthsToBudget;
 
         return $this;
     }
 
     /**
-     * Gets goal_under_funded
+     * Gets goalUnderFunded
      *
      * @return int
      */
     public function getGoalUnderFunded()
     {
-        return $this->container['goal_under_funded'];
+        return $this->container['goalUnderFunded'];
     }
 
     /**
-     * Sets goal_under_funded
+     * Sets goalUnderFunded
      *
-     * @param int $goal_under_funded The amount of funding still needed in the current month to stay on track towards completing the goal within the current goal period.  This amount will generally correspond to the 'Underfunded' amount in the web and mobile clients except when viewing a category with a Needed for Spending Goal in a future month.  The web and mobile clients will ignore any funding from a prior goal period when viewing category with a Needed for Spending Goal in a future month.
+     * @param int $goalUnderFunded The amount of funding still needed in the current month to stay on track towards completing the goal within the current goal period.  This amount will generally correspond to the 'Underfunded' amount in the web and mobile clients except when viewing a category with a Needed for Spending Goal in a future month.  The web and mobile clients will ignore any funding from a prior goal period when viewing category with a Needed for Spending Goal in a future month.
      *
      * @return $this
      */
-    public function setGoalUnderFunded($goal_under_funded)
+    public function setGoalUnderFunded($goalUnderFunded)
     {
-        $this->container['goal_under_funded'] = $goal_under_funded;
+        $this->container['goalUnderFunded'] = $goalUnderFunded;
 
         return $this;
     }
 
     /**
-     * Gets goal_overall_funded
+     * Gets goalOverallFunded
      *
      * @return int
      */
     public function getGoalOverallFunded()
     {
-        return $this->container['goal_overall_funded'];
+        return $this->container['goalOverallFunded'];
     }
 
     /**
-     * Sets goal_overall_funded
+     * Sets goalOverallFunded
      *
-     * @param int $goal_overall_funded The total amount funded towards the goal within the current goal period.
+     * @param int $goalOverallFunded The total amount funded towards the goal within the current goal period.
      *
      * @return $this
      */
-    public function setGoalOverallFunded($goal_overall_funded)
+    public function setGoalOverallFunded($goalOverallFunded)
     {
-        $this->container['goal_overall_funded'] = $goal_overall_funded;
+        $this->container['goalOverallFunded'] = $goalOverallFunded;
 
         return $this;
     }
 
     /**
-     * Gets goal_overall_left
+     * Gets goalOverallLeft
      *
      * @return int
      */
     public function getGoalOverallLeft()
     {
-        return $this->container['goal_overall_left'];
+        return $this->container['goalOverallLeft'];
     }
 
     /**
-     * Sets goal_overall_left
+     * Sets goalOverallLeft
      *
-     * @param int $goal_overall_left The amount of funding still needed to complete the goal within the current goal period.
+     * @param int $goalOverallLeft The amount of funding still needed to complete the goal within the current goal period.
      *
      * @return $this
      */
-    public function setGoalOverallLeft($goal_overall_left)
+    public function setGoalOverallLeft($goalOverallLeft)
     {
-        $this->container['goal_overall_left'] = $goal_overall_left;
+        $this->container['goalOverallLeft'] = $goalOverallLeft;
 
         return $this;
     }

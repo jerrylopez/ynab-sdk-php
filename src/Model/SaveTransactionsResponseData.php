@@ -57,11 +57,11 @@ class SaveTransactionsResponseData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'transaction_ids' => 'string[]',
+        'transactionIds' => 'string[]',
         'transaction' => '\Ynab\Model\TransactionDetail',
         'transactions' => '\Ynab\Model\TransactionDetail[]',
-        'duplicate_import_ids' => 'string[]',
-        'server_knowledge' => 'int'
+        'duplicateImportIds' => 'string[]',
+        'serverKnowledge' => 'int'
     ];
 
     /**
@@ -70,11 +70,11 @@ class SaveTransactionsResponseData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'transaction_ids' => null,
+        'transactionIds' => null,
         'transaction' => null,
         'transactions' => null,
-        'duplicate_import_ids' => null,
-        'server_knowledge' => 'int64'
+        'duplicateImportIds' => null,
+        'serverKnowledge' => 'int64'
     ];
 
     /**
@@ -104,11 +104,11 @@ class SaveTransactionsResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'transaction_ids' => 'transaction_ids',
+        'transactionIds' => 'transaction_ids',
         'transaction' => 'transaction',
         'transactions' => 'transactions',
-        'duplicate_import_ids' => 'duplicate_import_ids',
-        'server_knowledge' => 'server_knowledge'
+        'duplicateImportIds' => 'duplicate_import_ids',
+        'serverKnowledge' => 'server_knowledge'
     ];
 
     /**
@@ -117,11 +117,11 @@ class SaveTransactionsResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'transaction_ids' => 'setTransactionIds',
+        'transactionIds' => 'setTransactionIds',
         'transaction' => 'setTransaction',
         'transactions' => 'setTransactions',
-        'duplicate_import_ids' => 'setDuplicateImportIds',
-        'server_knowledge' => 'setServerKnowledge'
+        'duplicateImportIds' => 'setDuplicateImportIds',
+        'serverKnowledge' => 'setServerKnowledge'
     ];
 
     /**
@@ -130,11 +130,11 @@ class SaveTransactionsResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'transaction_ids' => 'getTransactionIds',
+        'transactionIds' => 'getTransactionIds',
         'transaction' => 'getTransaction',
         'transactions' => 'getTransactions',
-        'duplicate_import_ids' => 'getDuplicateImportIds',
-        'server_knowledge' => 'getServerKnowledge'
+        'duplicateImportIds' => 'getDuplicateImportIds',
+        'serverKnowledge' => 'getServerKnowledge'
     ];
 
     /**
@@ -197,11 +197,11 @@ class SaveTransactionsResponseData implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['transaction_ids'] = isset($data['transaction_ids']) ? $data['transaction_ids'] : null;
+        $this->container['transactionIds'] = isset($data['transactionIds']) ? $data['transactionIds'] : null;
         $this->container['transaction'] = isset($data['transaction']) ? $data['transaction'] : null;
         $this->container['transactions'] = isset($data['transactions']) ? $data['transactions'] : null;
-        $this->container['duplicate_import_ids'] = isset($data['duplicate_import_ids']) ? $data['duplicate_import_ids'] : null;
-        $this->container['server_knowledge'] = isset($data['server_knowledge']) ? $data['server_knowledge'] : null;
+        $this->container['duplicateImportIds'] = isset($data['duplicateImportIds']) ? $data['duplicateImportIds'] : null;
+        $this->container['serverKnowledge'] = isset($data['serverKnowledge']) ? $data['serverKnowledge'] : null;
     }
 
     /**
@@ -213,11 +213,11 @@ class SaveTransactionsResponseData implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['transaction_ids'] === null) {
-            $invalidProperties[] = "'transaction_ids' can't be null";
+        if ($this->container['transactionIds'] === null) {
+            $invalidProperties[] = "'transactionIds' can't be null";
         }
-        if ($this->container['server_knowledge'] === null) {
-            $invalidProperties[] = "'server_knowledge' can't be null";
+        if ($this->container['serverKnowledge'] === null) {
+            $invalidProperties[] = "'serverKnowledge' can't be null";
         }
         return $invalidProperties;
     }
@@ -235,25 +235,25 @@ class SaveTransactionsResponseData implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets transaction_ids
+     * Gets transactionIds
      *
      * @return string[]
      */
     public function getTransactionIds()
     {
-        return $this->container['transaction_ids'];
+        return $this->container['transactionIds'];
     }
 
     /**
-     * Sets transaction_ids
+     * Sets transactionIds
      *
-     * @param string[] $transaction_ids The transaction ids that were saved
+     * @param string[] $transactionIds The transaction ids that were saved
      *
      * @return $this
      */
-    public function setTransactionIds($transaction_ids)
+    public function setTransactionIds($transactionIds)
     {
-        $this->container['transaction_ids'] = $transaction_ids;
+        $this->container['transactionIds'] = $transactionIds;
 
         return $this;
     }
@@ -307,49 +307,49 @@ class SaveTransactionsResponseData implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets duplicate_import_ids
+     * Gets duplicateImportIds
      *
      * @return string[]
      */
     public function getDuplicateImportIds()
     {
-        return $this->container['duplicate_import_ids'];
+        return $this->container['duplicateImportIds'];
     }
 
     /**
-     * Sets duplicate_import_ids
+     * Sets duplicateImportIds
      *
-     * @param string[] $duplicate_import_ids If multiple transactions were specified, a list of import_ids that were not created because of an existing `import_id` found on the same account
+     * @param string[] $duplicateImportIds If multiple transactions were specified, a list of import_ids that were not created because of an existing `import_id` found on the same account
      *
      * @return $this
      */
-    public function setDuplicateImportIds($duplicate_import_ids)
+    public function setDuplicateImportIds($duplicateImportIds)
     {
-        $this->container['duplicate_import_ids'] = $duplicate_import_ids;
+        $this->container['duplicateImportIds'] = $duplicateImportIds;
 
         return $this;
     }
 
     /**
-     * Gets server_knowledge
+     * Gets serverKnowledge
      *
      * @return int
      */
     public function getServerKnowledge()
     {
-        return $this->container['server_knowledge'];
+        return $this->container['serverKnowledge'];
     }
 
     /**
-     * Sets server_knowledge
+     * Sets serverKnowledge
      *
-     * @param int $server_knowledge The knowledge of the server
+     * @param int $serverKnowledge The knowledge of the server
      *
      * @return $this
      */
-    public function setServerKnowledge($server_knowledge)
+    public function setServerKnowledge($serverKnowledge)
     {
-        $this->container['server_knowledge'] = $server_knowledge;
+        $this->container['serverKnowledge'] = $serverKnowledge;
 
         return $this;
     }

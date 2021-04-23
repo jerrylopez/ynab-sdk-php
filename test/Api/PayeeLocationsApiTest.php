@@ -28,6 +28,7 @@
 
 namespace Ynab;
 
+use PHPUnit\Framework\TestCase;
 use \Ynab\Configuration;
 use \Ynab\ApiException;
 use \Ynab\ObjectSerializer;
@@ -40,34 +41,34 @@ use \Ynab\ObjectSerializer;
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PayeeLocationsApiTest extends \PHPUnit_Framework_TestCase
+class PayeeLocationsApiTest extends TestCase
 {
 
     /**
      * Setup before running any test cases
      */
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
     }
 
     /**
      * Setup before running each test case
      */
-    public function setUp()
+    public function setUp(): void
     {
     }
 
     /**
      * Clean up after running each test case
      */
-    public function tearDown()
+    public function tearDown(): void
     {
     }
 
     /**
      * Clean up after running all test cases
      */
-    public static function tearDownAfterClass()
+    public static function tearDownAfterClass(): void
     {
     }
 

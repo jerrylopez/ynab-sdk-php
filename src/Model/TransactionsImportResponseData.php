@@ -57,7 +57,7 @@ class TransactionsImportResponseData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'transaction_ids' => 'string[]'
+        'transactionIds' => 'string[]'
     ];
 
     /**
@@ -66,7 +66,7 @@ class TransactionsImportResponseData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'transaction_ids' => null
+        'transactionIds' => null
     ];
 
     /**
@@ -96,7 +96,7 @@ class TransactionsImportResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'transaction_ids' => 'transaction_ids'
+        'transactionIds' => 'transaction_ids'
     ];
 
     /**
@@ -105,7 +105,7 @@ class TransactionsImportResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'transaction_ids' => 'setTransactionIds'
+        'transactionIds' => 'setTransactionIds'
     ];
 
     /**
@@ -114,7 +114,7 @@ class TransactionsImportResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'transaction_ids' => 'getTransactionIds'
+        'transactionIds' => 'getTransactionIds'
     ];
 
     /**
@@ -177,7 +177,7 @@ class TransactionsImportResponseData implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['transaction_ids'] = isset($data['transaction_ids']) ? $data['transaction_ids'] : null;
+        $this->container['transactionIds'] = isset($data['transactionIds']) ? $data['transactionIds'] : null;
     }
 
     /**
@@ -189,8 +189,8 @@ class TransactionsImportResponseData implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['transaction_ids'] === null) {
-            $invalidProperties[] = "'transaction_ids' can't be null";
+        if ($this->container['transactionIds'] === null) {
+            $invalidProperties[] = "'transactionIds' can't be null";
         }
         return $invalidProperties;
     }
@@ -208,25 +208,25 @@ class TransactionsImportResponseData implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets transaction_ids
+     * Gets transactionIds
      *
      * @return string[]
      */
     public function getTransactionIds()
     {
-        return $this->container['transaction_ids'];
+        return $this->container['transactionIds'];
     }
 
     /**
-     * Sets transaction_ids
+     * Sets transactionIds
      *
-     * @param string[] $transaction_ids The list of transaction ids that were imported.
+     * @param string[] $transactionIds The list of transaction ids that were imported.
      *
      * @return $this
      */
-    public function setTransactionIds($transaction_ids)
+    public function setTransactionIds($transactionIds)
     {
-        $this->container['transaction_ids'] = $transaction_ids;
+        $this->container['transactionIds'] = $transactionIds;
 
         return $this;
     }

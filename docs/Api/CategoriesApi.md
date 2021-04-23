@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **getCategories**
-> \Ynab\Model\CategoriesResponse getCategories($budget_id, $last_knowledge_of_server)
+> \Ynab\Model\CategoriesResponse getCategories($budgetId, $lastKnowledgeOfServer)
 
 List categories
 
@@ -33,11 +33,11 @@ $apiInstance = new Ynab\Api\CategoriesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$budget_id = "budget_id_example"; // string | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-$last_knowledge_of_server = 789; // int | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
+$budgetId = "budgetId_example"; // string | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+$lastKnowledgeOfServer = 789; // int | The starting server knowledge.  If provided, only entities that have changed since `last_knowledge_of_server` will be included.
 
 try {
-    $result = $apiInstance->getCategories($budget_id, $last_knowledge_of_server);
+    $result = $apiInstance->getCategories($budgetId, $lastKnowledgeOfServer);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoriesApi->getCategories: ', $e->getMessage(), PHP_EOL;
@@ -49,8 +49,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **string**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
- **last_knowledge_of_server** | **int**| The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. | [optional]
+ **budgetId** | **string**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **lastKnowledgeOfServer** | **int**| The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. | [optional]
 
 ### Return type
 
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCategoryById**
-> \Ynab\Model\CategoryResponse getCategoryById($budget_id, $category_id)
+> \Ynab\Model\CategoryResponse getCategoryById($budgetId, $categoryId)
 
 Single category
 
@@ -90,11 +90,11 @@ $apiInstance = new Ynab\Api\CategoriesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$budget_id = "budget_id_example"; // string | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
-$category_id = "category_id_example"; // string | The id of the category
+$budgetId = "budgetId_example"; // string | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+$categoryId = "categoryId_example"; // string | The id of the category
 
 try {
-    $result = $apiInstance->getCategoryById($budget_id, $category_id);
+    $result = $apiInstance->getCategoryById($budgetId, $categoryId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoriesApi->getCategoryById: ', $e->getMessage(), PHP_EOL;
@@ -106,8 +106,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **string**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
- **category_id** | **string**| The id of the category |
+ **budgetId** | **string**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **categoryId** | **string**| The id of the category |
 
 ### Return type
 
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getMonthCategoryById**
-> \Ynab\Model\CategoryResponse getMonthCategoryById($budget_id, $month, $category_id)
+> \Ynab\Model\CategoryResponse getMonthCategoryById($budgetId, $month, $categoryId)
 
 Single category for a specific budget month
 
@@ -147,12 +147,12 @@ $apiInstance = new Ynab\Api\CategoriesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$budget_id = "budget_id_example"; // string | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+$budgetId = "budgetId_example"; // string | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 $month = new \DateTime("2013-10-20"); // \DateTime | The budget month in ISO format (e.g. 2016-12-01) (\"current\" can also be used to specify the current calendar month (UTC))
-$category_id = "category_id_example"; // string | The id of the category
+$categoryId = "categoryId_example"; // string | The id of the category
 
 try {
-    $result = $apiInstance->getMonthCategoryById($budget_id, $month, $category_id);
+    $result = $apiInstance->getMonthCategoryById($budgetId, $month, $categoryId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoriesApi->getMonthCategoryById: ', $e->getMessage(), PHP_EOL;
@@ -164,9 +164,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **string**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **budgetId** | **string**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
  **month** | **\DateTime**| The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) |
- **category_id** | **string**| The id of the category |
+ **categoryId** | **string**| The id of the category |
 
 ### Return type
 
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateMonthCategory**
-> \Ynab\Model\SaveCategoryResponse updateMonthCategory($budget_id, $month, $category_id, $data)
+> \Ynab\Model\SaveCategoryResponse updateMonthCategory($budgetId, $month, $categoryId, $data)
 
 Update a category for a specific month
 
@@ -206,13 +206,13 @@ $apiInstance = new Ynab\Api\CategoriesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$budget_id = "budget_id_example"; // string | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+$budgetId = "budgetId_example"; // string | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 $month = new \DateTime("2013-10-20"); // \DateTime | The budget month in ISO format (e.g. 2016-12-01) (\"current\" can also be used to specify the current calendar month (UTC))
-$category_id = "category_id_example"; // string | The id of the category
+$categoryId = "categoryId_example"; // string | The id of the category
 $data = new \Ynab\Model\SaveMonthCategoryWrapper(); // \Ynab\Model\SaveMonthCategoryWrapper | The category to update.  Only `budgeted` amount can be updated and any other fields specified will be ignored.
 
 try {
-    $result = $apiInstance->updateMonthCategory($budget_id, $month, $category_id, $data);
+    $result = $apiInstance->updateMonthCategory($budgetId, $month, $categoryId, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CategoriesApi->updateMonthCategory: ', $e->getMessage(), PHP_EOL;
@@ -224,9 +224,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **string**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **budgetId** | **string**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
  **month** | **\DateTime**| The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) |
- **category_id** | **string**| The id of the category |
+ **categoryId** | **string**| The id of the category |
  **data** | [**\Ynab\Model\SaveMonthCategoryWrapper**](../Model/SaveMonthCategoryWrapper.md)| The category to update.  Only &#x60;budgeted&#x60; amount can be updated and any other fields specified will be ignored. |
 
 ### Return type

@@ -57,17 +57,17 @@ class SaveTransaction implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'account_id' => 'string',
+        'accountId' => 'string',
         'date' => '\DateTime',
         'amount' => 'int',
-        'payee_id' => 'string',
-        'payee_name' => 'string',
-        'category_id' => 'string',
+        'payeeId' => 'string',
+        'payeeName' => 'string',
+        'categoryId' => 'string',
         'memo' => 'string',
         'cleared' => 'string',
         'approved' => 'bool',
-        'flag_color' => 'string',
-        'import_id' => 'string',
+        'flagColor' => 'string',
+        'importId' => 'string',
         'subtransactions' => '\Ynab\Model\SaveSubTransaction[]'
     ];
 
@@ -77,17 +77,17 @@ class SaveTransaction implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'account_id' => 'uuid',
+        'accountId' => 'uuid',
         'date' => 'date',
         'amount' => 'int64',
-        'payee_id' => 'uuid',
-        'payee_name' => null,
-        'category_id' => 'uuid',
+        'payeeId' => 'uuid',
+        'payeeName' => null,
+        'categoryId' => 'uuid',
         'memo' => null,
         'cleared' => null,
         'approved' => null,
-        'flag_color' => null,
-        'import_id' => null,
+        'flagColor' => null,
+        'importId' => null,
         'subtransactions' => null
     ];
 
@@ -118,17 +118,17 @@ class SaveTransaction implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'account_id' => 'account_id',
+        'accountId' => 'account_id',
         'date' => 'date',
         'amount' => 'amount',
-        'payee_id' => 'payee_id',
-        'payee_name' => 'payee_name',
-        'category_id' => 'category_id',
+        'payeeId' => 'payee_id',
+        'payeeName' => 'payee_name',
+        'categoryId' => 'category_id',
         'memo' => 'memo',
         'cleared' => 'cleared',
         'approved' => 'approved',
-        'flag_color' => 'flag_color',
-        'import_id' => 'import_id',
+        'flagColor' => 'flag_color',
+        'importId' => 'import_id',
         'subtransactions' => 'subtransactions'
     ];
 
@@ -138,17 +138,17 @@ class SaveTransaction implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'account_id' => 'setAccountId',
+        'accountId' => 'setAccountId',
         'date' => 'setDate',
         'amount' => 'setAmount',
-        'payee_id' => 'setPayeeId',
-        'payee_name' => 'setPayeeName',
-        'category_id' => 'setCategoryId',
+        'payeeId' => 'setPayeeId',
+        'payeeName' => 'setPayeeName',
+        'categoryId' => 'setCategoryId',
         'memo' => 'setMemo',
         'cleared' => 'setCleared',
         'approved' => 'setApproved',
-        'flag_color' => 'setFlagColor',
-        'import_id' => 'setImportId',
+        'flagColor' => 'setFlagColor',
+        'importId' => 'setImportId',
         'subtransactions' => 'setSubtransactions'
     ];
 
@@ -158,17 +158,17 @@ class SaveTransaction implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'account_id' => 'getAccountId',
+        'accountId' => 'getAccountId',
         'date' => 'getDate',
         'amount' => 'getAmount',
-        'payee_id' => 'getPayeeId',
-        'payee_name' => 'getPayeeName',
-        'category_id' => 'getCategoryId',
+        'payeeId' => 'getPayeeId',
+        'payeeName' => 'getPayeeName',
+        'categoryId' => 'getCategoryId',
         'memo' => 'getMemo',
         'cleared' => 'getCleared',
         'approved' => 'getApproved',
-        'flag_color' => 'getFlagColor',
-        'import_id' => 'getImportId',
+        'flagColor' => 'getFlagColor',
+        'importId' => 'getImportId',
         'subtransactions' => 'getSubtransactions'
     ];
 
@@ -272,17 +272,17 @@ class SaveTransaction implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['account_id'] = isset($data['account_id']) ? $data['account_id'] : null;
+        $this->container['accountId'] = isset($data['accountId']) ? $data['accountId'] : null;
         $this->container['date'] = isset($data['date']) ? $data['date'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['payee_id'] = isset($data['payee_id']) ? $data['payee_id'] : null;
-        $this->container['payee_name'] = isset($data['payee_name']) ? $data['payee_name'] : null;
-        $this->container['category_id'] = isset($data['category_id']) ? $data['category_id'] : null;
+        $this->container['payeeId'] = isset($data['payeeId']) ? $data['payeeId'] : null;
+        $this->container['payeeName'] = isset($data['payeeName']) ? $data['payeeName'] : null;
+        $this->container['categoryId'] = isset($data['categoryId']) ? $data['categoryId'] : null;
         $this->container['memo'] = isset($data['memo']) ? $data['memo'] : null;
         $this->container['cleared'] = isset($data['cleared']) ? $data['cleared'] : null;
         $this->container['approved'] = isset($data['approved']) ? $data['approved'] : null;
-        $this->container['flag_color'] = isset($data['flag_color']) ? $data['flag_color'] : null;
-        $this->container['import_id'] = isset($data['import_id']) ? $data['import_id'] : null;
+        $this->container['flagColor'] = isset($data['flagColor']) ? $data['flagColor'] : null;
+        $this->container['importId'] = isset($data['importId']) ? $data['importId'] : null;
         $this->container['subtransactions'] = isset($data['subtransactions']) ? $data['subtransactions'] : null;
     }
 
@@ -295,8 +295,8 @@ class SaveTransaction implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['account_id'] === null) {
-            $invalidProperties[] = "'account_id' can't be null";
+        if ($this->container['accountId'] === null) {
+            $invalidProperties[] = "'accountId' can't be null";
         }
         if ($this->container['date'] === null) {
             $invalidProperties[] = "'date' can't be null";
@@ -304,8 +304,8 @@ class SaveTransaction implements ModelInterface, ArrayAccess
         if ($this->container['amount'] === null) {
             $invalidProperties[] = "'amount' can't be null";
         }
-        if (!is_null($this->container['payee_name']) && (mb_strlen($this->container['payee_name']) > 50)) {
-            $invalidProperties[] = "invalid value for 'payee_name', the character length must be smaller than or equal to 50.";
+        if (!is_null($this->container['payeeName']) && (mb_strlen($this->container['payeeName']) > 50)) {
+            $invalidProperties[] = "invalid value for 'payeeName', the character length must be smaller than or equal to 50.";
         }
 
         if (!is_null($this->container['memo']) && (mb_strlen($this->container['memo']) > 200)) {
@@ -321,15 +321,15 @@ class SaveTransaction implements ModelInterface, ArrayAccess
         }
 
         $allowedValues = $this->getFlagColorAllowableValues();
-        if (!is_null($this->container['flag_color']) && !in_array($this->container['flag_color'], $allowedValues, true)) {
+        if (!is_null($this->container['flagColor']) && !in_array($this->container['flagColor'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'flag_color', must be one of '%s'",
+                "invalid value for 'flagColor', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
-        if (!is_null($this->container['import_id']) && (mb_strlen($this->container['import_id']) > 36)) {
-            $invalidProperties[] = "invalid value for 'import_id', the character length must be smaller than or equal to 36.";
+        if (!is_null($this->container['importId']) && (mb_strlen($this->container['importId']) > 36)) {
+            $invalidProperties[] = "invalid value for 'importId', the character length must be smaller than or equal to 36.";
         }
 
         return $invalidProperties;
@@ -348,25 +348,25 @@ class SaveTransaction implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets account_id
+     * Gets accountId
      *
      * @return string
      */
     public function getAccountId()
     {
-        return $this->container['account_id'];
+        return $this->container['accountId'];
     }
 
     /**
-     * Sets account_id
+     * Sets accountId
      *
-     * @param string $account_id account_id
+     * @param string $accountId accountId
      *
      * @return $this
      */
-    public function setAccountId($account_id)
+    public function setAccountId($accountId)
     {
-        $this->container['account_id'] = $account_id;
+        $this->container['accountId'] = $accountId;
 
         return $this;
     }
@@ -420,77 +420,77 @@ class SaveTransaction implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets payee_id
+     * Gets payeeId
      *
      * @return string
      */
     public function getPayeeId()
     {
-        return $this->container['payee_id'];
+        return $this->container['payeeId'];
     }
 
     /**
-     * Sets payee_id
+     * Sets payeeId
      *
-     * @param string $payee_id The payee for the transaction.  To create a transfer between two accounts, use the account transfer payee pointing to the target account.  Account transfer payees are specified as `tranfer_payee_id` on the account resource.
+     * @param string $payeeId The payee for the transaction.  To create a transfer between two accounts, use the account transfer payee pointing to the target account.  Account transfer payees are specified as `tranfer_payee_id` on the account resource.
      *
      * @return $this
      */
-    public function setPayeeId($payee_id)
+    public function setPayeeId($payeeId)
     {
-        $this->container['payee_id'] = $payee_id;
+        $this->container['payeeId'] = $payeeId;
 
         return $this;
     }
 
     /**
-     * Gets payee_name
+     * Gets payeeName
      *
      * @return string
      */
     public function getPayeeName()
     {
-        return $this->container['payee_name'];
+        return $this->container['payeeName'];
     }
 
     /**
-     * Sets payee_name
+     * Sets payeeName
      *
-     * @param string $payee_name The payee name.  If a `payee_name` value is provided and `payee_id` has a null value, the `payee_name` value will be used to resolve the payee by either (1) a matching payee rename rule (only if `import_id` is also specified) or (2) a payee with the same name or (3) creation of a new payee.
+     * @param string $payeeName The payee name.  If a `payee_name` value is provided and `payee_id` has a null value, the `payee_name` value will be used to resolve the payee by either (1) a matching payee rename rule (only if `import_id` is also specified) or (2) a payee with the same name or (3) creation of a new payee.
      *
      * @return $this
      */
-    public function setPayeeName($payee_name)
+    public function setPayeeName($payeeName)
     {
-        if (!is_null($payee_name) && (mb_strlen($payee_name) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $payee_name when calling SaveTransaction., must be smaller than or equal to 50.');
+        if (!is_null($payeeName) && (mb_strlen($payeeName) > 50)) {
+            throw new \InvalidArgumentException('invalid length for $payeeName when calling SaveTransaction., must be smaller than or equal to 50.');
         }
 
-        $this->container['payee_name'] = $payee_name;
+        $this->container['payeeName'] = $payeeName;
 
         return $this;
     }
 
     /**
-     * Gets category_id
+     * Gets categoryId
      *
      * @return string
      */
     public function getCategoryId()
     {
-        return $this->container['category_id'];
+        return $this->container['categoryId'];
     }
 
     /**
-     * Sets category_id
+     * Sets categoryId
      *
-     * @param string $category_id The category for the transaction.  To configure a split transaction, you can specify null for `category_id` and provide a `subtransactions` array as part of the transaction object.  If an existing transaction is a split, the `category_id` cannot be changed.  Credit Card Payment categories are not permitted and will be ignored if supplied.
+     * @param string $categoryId The category for the transaction.  To configure a split transaction, you can specify null for `category_id` and provide a `subtransactions` array as part of the transaction object.  If an existing transaction is a split, the `category_id` cannot be changed.  Credit Card Payment categories are not permitted and will be ignored if supplied.
      *
      * @return $this
      */
-    public function setCategoryId($category_id)
+    public function setCategoryId($categoryId)
     {
-        $this->container['category_id'] = $category_id;
+        $this->container['categoryId'] = $categoryId;
 
         return $this;
     }
@@ -581,62 +581,62 @@ class SaveTransaction implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets flag_color
+     * Gets flagColor
      *
      * @return string
      */
     public function getFlagColor()
     {
-        return $this->container['flag_color'];
+        return $this->container['flagColor'];
     }
 
     /**
-     * Sets flag_color
+     * Sets flagColor
      *
-     * @param string $flag_color The transaction flag
+     * @param string $flagColor The transaction flag
      *
      * @return $this
      */
-    public function setFlagColor($flag_color)
+    public function setFlagColor($flagColor)
     {
         $allowedValues = $this->getFlagColorAllowableValues();
-        if (!is_null($flag_color) && !in_array($flag_color, $allowedValues, true)) {
+        if (!is_null($flagColor) && !in_array($flagColor, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'flag_color', must be one of '%s'",
+                    "Invalid value for 'flagColor', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['flag_color'] = $flag_color;
+        $this->container['flagColor'] = $flagColor;
 
         return $this;
     }
 
     /**
-     * Gets import_id
+     * Gets importId
      *
      * @return string
      */
     public function getImportId()
     {
-        return $this->container['import_id'];
+        return $this->container['importId'];
     }
 
     /**
-     * Sets import_id
+     * Sets importId
      *
-     * @param string $import_id If specified, the new transaction will be assigned this `import_id` and considered \"imported\".  We will also attempt to match this imported transaction to an existing \"user-entered\" transation on the same account, with the same amount, and with a date +/-10 days from the imported transaction date.<br><br>Transactions imported through File Based Import or Direct Import (not through the API) are assigned an import_id in the format: 'YNAB:[milliunit_amount]:[iso_date]:[occurrence]'. For example, a transaction dated 2015-12-30 in the amount of -$294.23 USD would have an import_id of 'YNAB:-294230:2015-12-30:1'.  If a second transaction on the same account was imported and had the same date and same amount, its import_id would be 'YNAB:-294230:2015-12-30:2'.  Using a consistent format will prevent duplicates through Direct Import and File Based Import.<br><br>If import_id is omitted or specified as null, the transaction will be treated as a \"user-entered\" transaction. As such, it will be eligible to be matched against transactions later being imported (via DI, FBI, or API).
+     * @param string $importId If specified, the new transaction will be assigned this `import_id` and considered \"imported\".  We will also attempt to match this imported transaction to an existing \"user-entered\" transation on the same account, with the same amount, and with a date +/-10 days from the imported transaction date.<br><br>Transactions imported through File Based Import or Direct Import (not through the API) are assigned an import_id in the format: 'YNAB:[milliunit_amount]:[iso_date]:[occurrence]'. For example, a transaction dated 2015-12-30 in the amount of -$294.23 USD would have an import_id of 'YNAB:-294230:2015-12-30:1'.  If a second transaction on the same account was imported and had the same date and same amount, its import_id would be 'YNAB:-294230:2015-12-30:2'.  Using a consistent format will prevent duplicates through Direct Import and File Based Import.<br><br>If import_id is omitted or specified as null, the transaction will be treated as a \"user-entered\" transaction. As such, it will be eligible to be matched against transactions later being imported (via DI, FBI, or API).
      *
      * @return $this
      */
-    public function setImportId($import_id)
+    public function setImportId($importId)
     {
-        if (!is_null($import_id) && (mb_strlen($import_id) > 36)) {
-            throw new \InvalidArgumentException('invalid length for $import_id when calling SaveTransaction., must be smaller than or equal to 36.');
+        if (!is_null($importId) && (mb_strlen($importId) > 36)) {
+            throw new \InvalidArgumentException('invalid length for $importId when calling SaveTransaction., must be smaller than or equal to 36.');
         }
 
-        $this->container['import_id'] = $import_id;
+        $this->container['importId'] = $importId;
 
         return $this;
     }

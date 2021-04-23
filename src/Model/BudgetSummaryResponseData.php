@@ -58,7 +58,7 @@ class BudgetSummaryResponseData implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'budgets' => '\Ynab\Model\BudgetSummary[]',
-        'default_budget' => '\Ynab\Model\BudgetSummary'
+        'defaultBudget' => '\Ynab\Model\BudgetSummary'
     ];
 
     /**
@@ -68,7 +68,7 @@ class BudgetSummaryResponseData implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'budgets' => null,
-        'default_budget' => null
+        'defaultBudget' => null
     ];
 
     /**
@@ -99,7 +99,7 @@ class BudgetSummaryResponseData implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'budgets' => 'budgets',
-        'default_budget' => 'default_budget'
+        'defaultBudget' => 'default_budget'
     ];
 
     /**
@@ -109,7 +109,7 @@ class BudgetSummaryResponseData implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'budgets' => 'setBudgets',
-        'default_budget' => 'setDefaultBudget'
+        'defaultBudget' => 'setDefaultBudget'
     ];
 
     /**
@@ -119,7 +119,7 @@ class BudgetSummaryResponseData implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'budgets' => 'getBudgets',
-        'default_budget' => 'getDefaultBudget'
+        'defaultBudget' => 'getDefaultBudget'
     ];
 
     /**
@@ -183,7 +183,7 @@ class BudgetSummaryResponseData implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['budgets'] = isset($data['budgets']) ? $data['budgets'] : null;
-        $this->container['default_budget'] = isset($data['default_budget']) ? $data['default_budget'] : null;
+        $this->container['defaultBudget'] = isset($data['defaultBudget']) ? $data['defaultBudget'] : null;
     }
 
     /**
@@ -238,25 +238,25 @@ class BudgetSummaryResponseData implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets default_budget
+     * Gets defaultBudget
      *
      * @return \Ynab\Model\BudgetSummary
      */
     public function getDefaultBudget()
     {
-        return $this->container['default_budget'];
+        return $this->container['defaultBudget'];
     }
 
     /**
-     * Sets default_budget
+     * Sets defaultBudget
      *
-     * @param \Ynab\Model\BudgetSummary $default_budget The default budget, if the associated application is configured to support specifying it
+     * @param \Ynab\Model\BudgetSummary $defaultBudget The default budget, if the associated application is configured to support specifying it
      *
      * @return $this
      */
-    public function setDefaultBudget($default_budget)
+    public function setDefaultBudget($defaultBudget)
     {
-        $this->container['default_budget'] = $default_budget;
+        $this->container['defaultBudget'] = $defaultBudget;
 
         return $this;
     }

@@ -58,9 +58,9 @@ class SaveSubTransaction implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'amount' => 'int',
-        'payee_id' => 'string',
-        'payee_name' => 'string',
-        'category_id' => 'string',
+        'payeeId' => 'string',
+        'payeeName' => 'string',
+        'categoryId' => 'string',
         'memo' => 'string'
     ];
 
@@ -71,9 +71,9 @@ class SaveSubTransaction implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'amount' => 'int64',
-        'payee_id' => 'uuid',
-        'payee_name' => null,
-        'category_id' => 'uuid',
+        'payeeId' => 'uuid',
+        'payeeName' => null,
+        'categoryId' => 'uuid',
         'memo' => null
     ];
 
@@ -105,9 +105,9 @@ class SaveSubTransaction implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'amount' => 'amount',
-        'payee_id' => 'payee_id',
-        'payee_name' => 'payee_name',
-        'category_id' => 'category_id',
+        'payeeId' => 'payee_id',
+        'payeeName' => 'payee_name',
+        'categoryId' => 'category_id',
         'memo' => 'memo'
     ];
 
@@ -118,9 +118,9 @@ class SaveSubTransaction implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'amount' => 'setAmount',
-        'payee_id' => 'setPayeeId',
-        'payee_name' => 'setPayeeName',
-        'category_id' => 'setCategoryId',
+        'payeeId' => 'setPayeeId',
+        'payeeName' => 'setPayeeName',
+        'categoryId' => 'setCategoryId',
         'memo' => 'setMemo'
     ];
 
@@ -131,9 +131,9 @@ class SaveSubTransaction implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'amount' => 'getAmount',
-        'payee_id' => 'getPayeeId',
-        'payee_name' => 'getPayeeName',
-        'category_id' => 'getCategoryId',
+        'payeeId' => 'getPayeeId',
+        'payeeName' => 'getPayeeName',
+        'categoryId' => 'getCategoryId',
         'memo' => 'getMemo'
     ];
 
@@ -198,9 +198,9 @@ class SaveSubTransaction implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['payee_id'] = isset($data['payee_id']) ? $data['payee_id'] : null;
-        $this->container['payee_name'] = isset($data['payee_name']) ? $data['payee_name'] : null;
-        $this->container['category_id'] = isset($data['category_id']) ? $data['category_id'] : null;
+        $this->container['payeeId'] = isset($data['payeeId']) ? $data['payeeId'] : null;
+        $this->container['payeeName'] = isset($data['payeeName']) ? $data['payeeName'] : null;
+        $this->container['categoryId'] = isset($data['categoryId']) ? $data['categoryId'] : null;
         $this->container['memo'] = isset($data['memo']) ? $data['memo'] : null;
     }
 
@@ -216,8 +216,8 @@ class SaveSubTransaction implements ModelInterface, ArrayAccess
         if ($this->container['amount'] === null) {
             $invalidProperties[] = "'amount' can't be null";
         }
-        if (!is_null($this->container['payee_name']) && (mb_strlen($this->container['payee_name']) > 50)) {
-            $invalidProperties[] = "invalid value for 'payee_name', the character length must be smaller than or equal to 50.";
+        if (!is_null($this->container['payeeName']) && (mb_strlen($this->container['payeeName']) > 50)) {
+            $invalidProperties[] = "invalid value for 'payeeName', the character length must be smaller than or equal to 50.";
         }
 
         if (!is_null($this->container['memo']) && (mb_strlen($this->container['memo']) > 200)) {
@@ -264,77 +264,77 @@ class SaveSubTransaction implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets payee_id
+     * Gets payeeId
      *
      * @return string
      */
     public function getPayeeId()
     {
-        return $this->container['payee_id'];
+        return $this->container['payeeId'];
     }
 
     /**
-     * Sets payee_id
+     * Sets payeeId
      *
-     * @param string $payee_id The payee for the subtransaction.
+     * @param string $payeeId The payee for the subtransaction.
      *
      * @return $this
      */
-    public function setPayeeId($payee_id)
+    public function setPayeeId($payeeId)
     {
-        $this->container['payee_id'] = $payee_id;
+        $this->container['payeeId'] = $payeeId;
 
         return $this;
     }
 
     /**
-     * Gets payee_name
+     * Gets payeeName
      *
      * @return string
      */
     public function getPayeeName()
     {
-        return $this->container['payee_name'];
+        return $this->container['payeeName'];
     }
 
     /**
-     * Sets payee_name
+     * Sets payeeName
      *
-     * @param string $payee_name The payee name.  If a `payee_name` value is provided and `payee_id` has a null value, the `payee_name` value will be used to resolve the payee by either (1) a matching payee rename rule (only if import_id is also specified on parent transaction) or (2) a payee with the same name or (3) creation of a new payee.
+     * @param string $payeeName The payee name.  If a `payee_name` value is provided and `payee_id` has a null value, the `payee_name` value will be used to resolve the payee by either (1) a matching payee rename rule (only if import_id is also specified on parent transaction) or (2) a payee with the same name or (3) creation of a new payee.
      *
      * @return $this
      */
-    public function setPayeeName($payee_name)
+    public function setPayeeName($payeeName)
     {
-        if (!is_null($payee_name) && (mb_strlen($payee_name) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $payee_name when calling SaveSubTransaction., must be smaller than or equal to 50.');
+        if (!is_null($payeeName) && (mb_strlen($payeeName) > 50)) {
+            throw new \InvalidArgumentException('invalid length for $payeeName when calling SaveSubTransaction., must be smaller than or equal to 50.');
         }
 
-        $this->container['payee_name'] = $payee_name;
+        $this->container['payeeName'] = $payeeName;
 
         return $this;
     }
 
     /**
-     * Gets category_id
+     * Gets categoryId
      *
      * @return string
      */
     public function getCategoryId()
     {
-        return $this->container['category_id'];
+        return $this->container['categoryId'];
     }
 
     /**
-     * Sets category_id
+     * Sets categoryId
      *
-     * @param string $category_id The category for the subtransaction.  Credit Card Payment categories are not permitted and will be ignored if supplied.
+     * @param string $categoryId The category for the subtransaction.  Credit Card Payment categories are not permitted and will be ignored if supplied.
      *
      * @return $this
      */
-    public function setCategoryId($category_id)
+    public function setCategoryId($categoryId)
     {
-        $this->container['category_id'] = $category_id;
+        $this->container['categoryId'] = $categoryId;
 
         return $this;
     }

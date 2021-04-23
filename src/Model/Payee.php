@@ -59,7 +59,7 @@ class Payee implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'name' => 'string',
-        'transfer_account_id' => 'string',
+        'transferAccountId' => 'string',
         'deleted' => 'bool'
     ];
 
@@ -71,7 +71,7 @@ class Payee implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => 'uuid',
         'name' => null,
-        'transfer_account_id' => null,
+        'transferAccountId' => null,
         'deleted' => null
     ];
 
@@ -104,7 +104,7 @@ class Payee implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
-        'transfer_account_id' => 'transfer_account_id',
+        'transferAccountId' => 'transfer_account_id',
         'deleted' => 'deleted'
     ];
 
@@ -116,7 +116,7 @@ class Payee implements ModelInterface, ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
-        'transfer_account_id' => 'setTransferAccountId',
+        'transferAccountId' => 'setTransferAccountId',
         'deleted' => 'setDeleted'
     ];
 
@@ -128,7 +128,7 @@ class Payee implements ModelInterface, ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
-        'transfer_account_id' => 'getTransferAccountId',
+        'transferAccountId' => 'getTransferAccountId',
         'deleted' => 'getDeleted'
     ];
 
@@ -194,7 +194,7 @@ class Payee implements ModelInterface, ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['transfer_account_id'] = isset($data['transfer_account_id']) ? $data['transfer_account_id'] : null;
+        $this->container['transferAccountId'] = isset($data['transferAccountId']) ? $data['transferAccountId'] : null;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
     }
 
@@ -280,25 +280,25 @@ class Payee implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets transfer_account_id
+     * Gets transferAccountId
      *
      * @return string
      */
     public function getTransferAccountId()
     {
-        return $this->container['transfer_account_id'];
+        return $this->container['transferAccountId'];
     }
 
     /**
-     * Sets transfer_account_id
+     * Sets transferAccountId
      *
-     * @param string $transfer_account_id If a transfer payee, the `account_id` to which this payee transfers to
+     * @param string $transferAccountId If a transfer payee, the `account_id` to which this payee transfers to
      *
      * @return $this
      */
-    public function setTransferAccountId($transfer_account_id)
+    public function setTransferAccountId($transferAccountId)
     {
-        $this->container['transfer_account_id'] = $transfer_account_id;
+        $this->container['transferAccountId'] = $transferAccountId;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 {
     "name": "jerrylopez/ynab",
-    "version": "0.1.1",
+    "version": "1.0.0",
     "description": "PHP wrapper for the YNAB API. Read the documentation at https://api.youneedabudget.com",
     "keywords": [
         "ynab",
@@ -17,16 +17,14 @@
         }
     ],
     "require": {
-        "php": ">=7.0",
+        "php": ">=7.3",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "guzzlehttp/guzzle": "^6.2"
+        "guzzlehttp/guzzle": "^7.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4.8",
-        "squizlabs/php_codesniffer": "~2.6",
-        "friendsofphp/php-cs-fixer": "~1.12"
+        "phpunit/phpunit": "^9.0"
     },
     "autoload": {
         "psr-4": { "Ynab\\" : "src/" }

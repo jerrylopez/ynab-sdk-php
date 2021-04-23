@@ -57,7 +57,7 @@ class ScheduledTransactionResponseData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'scheduled_transaction' => '\Ynab\Model\ScheduledTransactionDetail'
+        'scheduledTransaction' => '\Ynab\Model\ScheduledTransactionDetail'
     ];
 
     /**
@@ -66,7 +66,7 @@ class ScheduledTransactionResponseData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'scheduled_transaction' => null
+        'scheduledTransaction' => null
     ];
 
     /**
@@ -96,7 +96,7 @@ class ScheduledTransactionResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'scheduled_transaction' => 'scheduled_transaction'
+        'scheduledTransaction' => 'scheduled_transaction'
     ];
 
     /**
@@ -105,7 +105,7 @@ class ScheduledTransactionResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'scheduled_transaction' => 'setScheduledTransaction'
+        'scheduledTransaction' => 'setScheduledTransaction'
     ];
 
     /**
@@ -114,7 +114,7 @@ class ScheduledTransactionResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'scheduled_transaction' => 'getScheduledTransaction'
+        'scheduledTransaction' => 'getScheduledTransaction'
     ];
 
     /**
@@ -177,7 +177,7 @@ class ScheduledTransactionResponseData implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['scheduled_transaction'] = isset($data['scheduled_transaction']) ? $data['scheduled_transaction'] : null;
+        $this->container['scheduledTransaction'] = isset($data['scheduledTransaction']) ? $data['scheduledTransaction'] : null;
     }
 
     /**
@@ -189,8 +189,8 @@ class ScheduledTransactionResponseData implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['scheduled_transaction'] === null) {
-            $invalidProperties[] = "'scheduled_transaction' can't be null";
+        if ($this->container['scheduledTransaction'] === null) {
+            $invalidProperties[] = "'scheduledTransaction' can't be null";
         }
         return $invalidProperties;
     }
@@ -208,25 +208,25 @@ class ScheduledTransactionResponseData implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets scheduled_transaction
+     * Gets scheduledTransaction
      *
      * @return \Ynab\Model\ScheduledTransactionDetail
      */
     public function getScheduledTransaction()
     {
-        return $this->container['scheduled_transaction'];
+        return $this->container['scheduledTransaction'];
     }
 
     /**
-     * Sets scheduled_transaction
+     * Sets scheduledTransaction
      *
-     * @param \Ynab\Model\ScheduledTransactionDetail $scheduled_transaction scheduled_transaction
+     * @param \Ynab\Model\ScheduledTransactionDetail $scheduledTransaction scheduledTransaction
      *
      * @return $this
      */
-    public function setScheduledTransaction($scheduled_transaction)
+    public function setScheduledTransaction($scheduledTransaction)
     {
-        $this->container['scheduled_transaction'] = $scheduled_transaction;
+        $this->container['scheduledTransaction'] = $scheduledTransaction;
 
         return $this;
     }

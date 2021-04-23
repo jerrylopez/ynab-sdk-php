@@ -63,14 +63,14 @@ class TransactionSummary implements ModelInterface, ArrayAccess
         'memo' => 'string',
         'cleared' => 'string',
         'approved' => 'bool',
-        'flag_color' => 'string',
-        'account_id' => 'string',
-        'payee_id' => 'string',
-        'category_id' => 'string',
-        'transfer_account_id' => 'string',
-        'transfer_transaction_id' => 'string',
-        'matched_transaction_id' => 'string',
-        'import_id' => 'string',
+        'flagColor' => 'string',
+        'accountId' => 'string',
+        'payeeId' => 'string',
+        'categoryId' => 'string',
+        'transferAccountId' => 'string',
+        'transferTransactionId' => 'string',
+        'matchedTransactionId' => 'string',
+        'importId' => 'string',
         'deleted' => 'bool'
     ];
 
@@ -86,14 +86,14 @@ class TransactionSummary implements ModelInterface, ArrayAccess
         'memo' => null,
         'cleared' => null,
         'approved' => null,
-        'flag_color' => null,
-        'account_id' => 'uuid',
-        'payee_id' => 'uuid',
-        'category_id' => 'uuid',
-        'transfer_account_id' => 'uuid',
-        'transfer_transaction_id' => null,
-        'matched_transaction_id' => null,
-        'import_id' => null,
+        'flagColor' => null,
+        'accountId' => 'uuid',
+        'payeeId' => 'uuid',
+        'categoryId' => 'uuid',
+        'transferAccountId' => 'uuid',
+        'transferTransactionId' => null,
+        'matchedTransactionId' => null,
+        'importId' => null,
         'deleted' => null
     ];
 
@@ -130,14 +130,14 @@ class TransactionSummary implements ModelInterface, ArrayAccess
         'memo' => 'memo',
         'cleared' => 'cleared',
         'approved' => 'approved',
-        'flag_color' => 'flag_color',
-        'account_id' => 'account_id',
-        'payee_id' => 'payee_id',
-        'category_id' => 'category_id',
-        'transfer_account_id' => 'transfer_account_id',
-        'transfer_transaction_id' => 'transfer_transaction_id',
-        'matched_transaction_id' => 'matched_transaction_id',
-        'import_id' => 'import_id',
+        'flagColor' => 'flag_color',
+        'accountId' => 'account_id',
+        'payeeId' => 'payee_id',
+        'categoryId' => 'category_id',
+        'transferAccountId' => 'transfer_account_id',
+        'transferTransactionId' => 'transfer_transaction_id',
+        'matchedTransactionId' => 'matched_transaction_id',
+        'importId' => 'import_id',
         'deleted' => 'deleted'
     ];
 
@@ -153,14 +153,14 @@ class TransactionSummary implements ModelInterface, ArrayAccess
         'memo' => 'setMemo',
         'cleared' => 'setCleared',
         'approved' => 'setApproved',
-        'flag_color' => 'setFlagColor',
-        'account_id' => 'setAccountId',
-        'payee_id' => 'setPayeeId',
-        'category_id' => 'setCategoryId',
-        'transfer_account_id' => 'setTransferAccountId',
-        'transfer_transaction_id' => 'setTransferTransactionId',
-        'matched_transaction_id' => 'setMatchedTransactionId',
-        'import_id' => 'setImportId',
+        'flagColor' => 'setFlagColor',
+        'accountId' => 'setAccountId',
+        'payeeId' => 'setPayeeId',
+        'categoryId' => 'setCategoryId',
+        'transferAccountId' => 'setTransferAccountId',
+        'transferTransactionId' => 'setTransferTransactionId',
+        'matchedTransactionId' => 'setMatchedTransactionId',
+        'importId' => 'setImportId',
         'deleted' => 'setDeleted'
     ];
 
@@ -176,14 +176,14 @@ class TransactionSummary implements ModelInterface, ArrayAccess
         'memo' => 'getMemo',
         'cleared' => 'getCleared',
         'approved' => 'getApproved',
-        'flag_color' => 'getFlagColor',
-        'account_id' => 'getAccountId',
-        'payee_id' => 'getPayeeId',
-        'category_id' => 'getCategoryId',
-        'transfer_account_id' => 'getTransferAccountId',
-        'transfer_transaction_id' => 'getTransferTransactionId',
-        'matched_transaction_id' => 'getMatchedTransactionId',
-        'import_id' => 'getImportId',
+        'flagColor' => 'getFlagColor',
+        'accountId' => 'getAccountId',
+        'payeeId' => 'getPayeeId',
+        'categoryId' => 'getCategoryId',
+        'transferAccountId' => 'getTransferAccountId',
+        'transferTransactionId' => 'getTransferTransactionId',
+        'matchedTransactionId' => 'getMatchedTransactionId',
+        'importId' => 'getImportId',
         'deleted' => 'getDeleted'
     ];
 
@@ -293,14 +293,14 @@ class TransactionSummary implements ModelInterface, ArrayAccess
         $this->container['memo'] = isset($data['memo']) ? $data['memo'] : null;
         $this->container['cleared'] = isset($data['cleared']) ? $data['cleared'] : null;
         $this->container['approved'] = isset($data['approved']) ? $data['approved'] : null;
-        $this->container['flag_color'] = isset($data['flag_color']) ? $data['flag_color'] : null;
-        $this->container['account_id'] = isset($data['account_id']) ? $data['account_id'] : null;
-        $this->container['payee_id'] = isset($data['payee_id']) ? $data['payee_id'] : null;
-        $this->container['category_id'] = isset($data['category_id']) ? $data['category_id'] : null;
-        $this->container['transfer_account_id'] = isset($data['transfer_account_id']) ? $data['transfer_account_id'] : null;
-        $this->container['transfer_transaction_id'] = isset($data['transfer_transaction_id']) ? $data['transfer_transaction_id'] : null;
-        $this->container['matched_transaction_id'] = isset($data['matched_transaction_id']) ? $data['matched_transaction_id'] : null;
-        $this->container['import_id'] = isset($data['import_id']) ? $data['import_id'] : null;
+        $this->container['flagColor'] = isset($data['flagColor']) ? $data['flagColor'] : null;
+        $this->container['accountId'] = isset($data['accountId']) ? $data['accountId'] : null;
+        $this->container['payeeId'] = isset($data['payeeId']) ? $data['payeeId'] : null;
+        $this->container['categoryId'] = isset($data['categoryId']) ? $data['categoryId'] : null;
+        $this->container['transferAccountId'] = isset($data['transferAccountId']) ? $data['transferAccountId'] : null;
+        $this->container['transferTransactionId'] = isset($data['transferTransactionId']) ? $data['transferTransactionId'] : null;
+        $this->container['matchedTransactionId'] = isset($data['matchedTransactionId']) ? $data['matchedTransactionId'] : null;
+        $this->container['importId'] = isset($data['importId']) ? $data['importId'] : null;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
     }
 
@@ -337,15 +337,15 @@ class TransactionSummary implements ModelInterface, ArrayAccess
             $invalidProperties[] = "'approved' can't be null";
         }
         $allowedValues = $this->getFlagColorAllowableValues();
-        if (!is_null($this->container['flag_color']) && !in_array($this->container['flag_color'], $allowedValues, true)) {
+        if (!is_null($this->container['flagColor']) && !in_array($this->container['flagColor'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
-                "invalid value for 'flag_color', must be one of '%s'",
+                "invalid value for 'flagColor', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
 
-        if ($this->container['account_id'] === null) {
-            $invalidProperties[] = "'account_id' can't be null";
+        if ($this->container['accountId'] === null) {
+            $invalidProperties[] = "'accountId' can't be null";
         }
         if ($this->container['deleted'] === null) {
             $invalidProperties[] = "'deleted' can't be null";
@@ -519,202 +519,202 @@ class TransactionSummary implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets flag_color
+     * Gets flagColor
      *
      * @return string
      */
     public function getFlagColor()
     {
-        return $this->container['flag_color'];
+        return $this->container['flagColor'];
     }
 
     /**
-     * Sets flag_color
+     * Sets flagColor
      *
-     * @param string $flag_color The transaction flag
+     * @param string $flagColor The transaction flag
      *
      * @return $this
      */
-    public function setFlagColor($flag_color)
+    public function setFlagColor($flagColor)
     {
         $allowedValues = $this->getFlagColorAllowableValues();
-        if (!is_null($flag_color) && !in_array($flag_color, $allowedValues, true)) {
+        if (!is_null($flagColor) && !in_array($flagColor, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'flag_color', must be one of '%s'",
+                    "Invalid value for 'flagColor', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['flag_color'] = $flag_color;
+        $this->container['flagColor'] = $flagColor;
 
         return $this;
     }
 
     /**
-     * Gets account_id
+     * Gets accountId
      *
      * @return string
      */
     public function getAccountId()
     {
-        return $this->container['account_id'];
+        return $this->container['accountId'];
     }
 
     /**
-     * Sets account_id
+     * Sets accountId
      *
-     * @param string $account_id account_id
+     * @param string $accountId accountId
      *
      * @return $this
      */
-    public function setAccountId($account_id)
+    public function setAccountId($accountId)
     {
-        $this->container['account_id'] = $account_id;
+        $this->container['accountId'] = $accountId;
 
         return $this;
     }
 
     /**
-     * Gets payee_id
+     * Gets payeeId
      *
      * @return string
      */
     public function getPayeeId()
     {
-        return $this->container['payee_id'];
+        return $this->container['payeeId'];
     }
 
     /**
-     * Sets payee_id
+     * Sets payeeId
      *
-     * @param string $payee_id payee_id
+     * @param string $payeeId payeeId
      *
      * @return $this
      */
-    public function setPayeeId($payee_id)
+    public function setPayeeId($payeeId)
     {
-        $this->container['payee_id'] = $payee_id;
+        $this->container['payeeId'] = $payeeId;
 
         return $this;
     }
 
     /**
-     * Gets category_id
+     * Gets categoryId
      *
      * @return string
      */
     public function getCategoryId()
     {
-        return $this->container['category_id'];
+        return $this->container['categoryId'];
     }
 
     /**
-     * Sets category_id
+     * Sets categoryId
      *
-     * @param string $category_id category_id
+     * @param string $categoryId categoryId
      *
      * @return $this
      */
-    public function setCategoryId($category_id)
+    public function setCategoryId($categoryId)
     {
-        $this->container['category_id'] = $category_id;
+        $this->container['categoryId'] = $categoryId;
 
         return $this;
     }
 
     /**
-     * Gets transfer_account_id
+     * Gets transferAccountId
      *
      * @return string
      */
     public function getTransferAccountId()
     {
-        return $this->container['transfer_account_id'];
+        return $this->container['transferAccountId'];
     }
 
     /**
-     * Sets transfer_account_id
+     * Sets transferAccountId
      *
-     * @param string $transfer_account_id If a transfer transaction, the account to which it transfers
+     * @param string $transferAccountId If a transfer transaction, the account to which it transfers
      *
      * @return $this
      */
-    public function setTransferAccountId($transfer_account_id)
+    public function setTransferAccountId($transferAccountId)
     {
-        $this->container['transfer_account_id'] = $transfer_account_id;
+        $this->container['transferAccountId'] = $transferAccountId;
 
         return $this;
     }
 
     /**
-     * Gets transfer_transaction_id
+     * Gets transferTransactionId
      *
      * @return string
      */
     public function getTransferTransactionId()
     {
-        return $this->container['transfer_transaction_id'];
+        return $this->container['transferTransactionId'];
     }
 
     /**
-     * Sets transfer_transaction_id
+     * Sets transferTransactionId
      *
-     * @param string $transfer_transaction_id If a transfer transaction, the id of transaction on the other side of the transfer
+     * @param string $transferTransactionId If a transfer transaction, the id of transaction on the other side of the transfer
      *
      * @return $this
      */
-    public function setTransferTransactionId($transfer_transaction_id)
+    public function setTransferTransactionId($transferTransactionId)
     {
-        $this->container['transfer_transaction_id'] = $transfer_transaction_id;
+        $this->container['transferTransactionId'] = $transferTransactionId;
 
         return $this;
     }
 
     /**
-     * Gets matched_transaction_id
+     * Gets matchedTransactionId
      *
      * @return string
      */
     public function getMatchedTransactionId()
     {
-        return $this->container['matched_transaction_id'];
+        return $this->container['matchedTransactionId'];
     }
 
     /**
-     * Sets matched_transaction_id
+     * Sets matchedTransactionId
      *
-     * @param string $matched_transaction_id If transaction is matched, the id of the matched transaction
+     * @param string $matchedTransactionId If transaction is matched, the id of the matched transaction
      *
      * @return $this
      */
-    public function setMatchedTransactionId($matched_transaction_id)
+    public function setMatchedTransactionId($matchedTransactionId)
     {
-        $this->container['matched_transaction_id'] = $matched_transaction_id;
+        $this->container['matchedTransactionId'] = $matchedTransactionId;
 
         return $this;
     }
 
     /**
-     * Gets import_id
+     * Gets importId
      *
      * @return string
      */
     public function getImportId()
     {
-        return $this->container['import_id'];
+        return $this->container['importId'];
     }
 
     /**
-     * Sets import_id
+     * Sets importId
      *
-     * @param string $import_id If the Transaction was imported, this field is a unique (by account) import identifier.  If this transaction was imported through File Based Import or Direct Import and not through the API, the import_id will have the format: 'YNAB:[milliunit_amount]:[iso_date]:[occurrence]'.  For example, a transaction dated 2015-12-30 in the amount of -$294.23 USD would have an import_id of 'YNAB:-294230:2015-12-30:1'.  If a second transaction on the same account was imported and had the same date and same amount, its import_id would be 'YNAB:-294230:2015-12-30:2'.
+     * @param string $importId If the Transaction was imported, this field is a unique (by account) import identifier.  If this transaction was imported through File Based Import or Direct Import and not through the API, the import_id will have the format: 'YNAB:[milliunit_amount]:[iso_date]:[occurrence]'.  For example, a transaction dated 2015-12-30 in the amount of -$294.23 USD would have an import_id of 'YNAB:-294230:2015-12-30:1'.  If a second transaction on the same account was imported and had the same date and same amount, its import_id would be 'YNAB:-294230:2015-12-30:2'.
      *
      * @return $this
      */
-    public function setImportId($import_id)
+    public function setImportId($importId)
     {
-        $this->container['import_id'] = $import_id;
+        $this->container['importId'] = $importId;
 
         return $this;
     }

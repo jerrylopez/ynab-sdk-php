@@ -57,8 +57,8 @@ class BulkResponseDataBulk implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'transaction_ids' => 'string[]',
-        'duplicate_import_ids' => 'string[]'
+        'transactionIds' => 'string[]',
+        'duplicateImportIds' => 'string[]'
     ];
 
     /**
@@ -67,8 +67,8 @@ class BulkResponseDataBulk implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'transaction_ids' => null,
-        'duplicate_import_ids' => null
+        'transactionIds' => null,
+        'duplicateImportIds' => null
     ];
 
     /**
@@ -98,8 +98,8 @@ class BulkResponseDataBulk implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'transaction_ids' => 'transaction_ids',
-        'duplicate_import_ids' => 'duplicate_import_ids'
+        'transactionIds' => 'transaction_ids',
+        'duplicateImportIds' => 'duplicate_import_ids'
     ];
 
     /**
@@ -108,8 +108,8 @@ class BulkResponseDataBulk implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'transaction_ids' => 'setTransactionIds',
-        'duplicate_import_ids' => 'setDuplicateImportIds'
+        'transactionIds' => 'setTransactionIds',
+        'duplicateImportIds' => 'setDuplicateImportIds'
     ];
 
     /**
@@ -118,8 +118,8 @@ class BulkResponseDataBulk implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'transaction_ids' => 'getTransactionIds',
-        'duplicate_import_ids' => 'getDuplicateImportIds'
+        'transactionIds' => 'getTransactionIds',
+        'duplicateImportIds' => 'getDuplicateImportIds'
     ];
 
     /**
@@ -182,8 +182,8 @@ class BulkResponseDataBulk implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['transaction_ids'] = isset($data['transaction_ids']) ? $data['transaction_ids'] : null;
-        $this->container['duplicate_import_ids'] = isset($data['duplicate_import_ids']) ? $data['duplicate_import_ids'] : null;
+        $this->container['transactionIds'] = isset($data['transactionIds']) ? $data['transactionIds'] : null;
+        $this->container['duplicateImportIds'] = isset($data['duplicateImportIds']) ? $data['duplicateImportIds'] : null;
     }
 
     /**
@@ -195,11 +195,11 @@ class BulkResponseDataBulk implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['transaction_ids'] === null) {
-            $invalidProperties[] = "'transaction_ids' can't be null";
+        if ($this->container['transactionIds'] === null) {
+            $invalidProperties[] = "'transactionIds' can't be null";
         }
-        if ($this->container['duplicate_import_ids'] === null) {
-            $invalidProperties[] = "'duplicate_import_ids' can't be null";
+        if ($this->container['duplicateImportIds'] === null) {
+            $invalidProperties[] = "'duplicateImportIds' can't be null";
         }
         return $invalidProperties;
     }
@@ -217,49 +217,49 @@ class BulkResponseDataBulk implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets transaction_ids
+     * Gets transactionIds
      *
      * @return string[]
      */
     public function getTransactionIds()
     {
-        return $this->container['transaction_ids'];
+        return $this->container['transactionIds'];
     }
 
     /**
-     * Sets transaction_ids
+     * Sets transactionIds
      *
-     * @param string[] $transaction_ids The list of Transaction ids that were created.
+     * @param string[] $transactionIds The list of Transaction ids that were created.
      *
      * @return $this
      */
-    public function setTransactionIds($transaction_ids)
+    public function setTransactionIds($transactionIds)
     {
-        $this->container['transaction_ids'] = $transaction_ids;
+        $this->container['transactionIds'] = $transactionIds;
 
         return $this;
     }
 
     /**
-     * Gets duplicate_import_ids
+     * Gets duplicateImportIds
      *
      * @return string[]
      */
     public function getDuplicateImportIds()
     {
-        return $this->container['duplicate_import_ids'];
+        return $this->container['duplicateImportIds'];
     }
 
     /**
-     * Sets duplicate_import_ids
+     * Sets duplicateImportIds
      *
-     * @param string[] $duplicate_import_ids If any Transactions were not created because they had an `import_id` matching a transaction already on the same account, the specified import_id(s) will be included in this list.
+     * @param string[] $duplicateImportIds If any Transactions were not created because they had an `import_id` matching a transaction already on the same account, the specified import_id(s) will be included in this list.
      *
      * @return $this
      */
-    public function setDuplicateImportIds($duplicate_import_ids)
+    public function setDuplicateImportIds($duplicateImportIds)
     {
-        $this->container['duplicate_import_ids'] = $duplicate_import_ids;
+        $this->container['duplicateImportIds'] = $duplicateImportIds;
 
         return $this;
     }

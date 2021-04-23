@@ -92,16 +92,16 @@ class CategoriesApi
      *
      * List categories
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  int $last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  int $lastKnowledgeOfServer The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ynab\Model\CategoriesResponse
      */
-    public function getCategories($budget_id, $last_knowledge_of_server = null)
+    public function getCategories($budgetId, $lastKnowledgeOfServer = null)
     {
-        list($response) = $this->getCategoriesWithHttpInfo($budget_id, $last_knowledge_of_server);
+        list($response) = $this->getCategoriesWithHttpInfo($budgetId, $lastKnowledgeOfServer);
         return $response;
     }
 
@@ -110,17 +110,17 @@ class CategoriesApi
      *
      * List categories
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  int $last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  int $lastKnowledgeOfServer The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ynab\Model\CategoriesResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCategoriesWithHttpInfo($budget_id, $last_knowledge_of_server = null)
+    public function getCategoriesWithHttpInfo($budgetId, $lastKnowledgeOfServer = null)
     {
         $returnType = '\Ynab\Model\CategoriesResponse';
-        $request = $this->getCategoriesRequest($budget_id, $last_knowledge_of_server);
+        $request = $this->getCategoriesRequest($budgetId, $lastKnowledgeOfServer);
 
         try {
             $options = $this->createHttpClientOption();
@@ -202,15 +202,15 @@ class CategoriesApi
      *
      * List categories
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  int $last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  int $lastKnowledgeOfServer The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCategoriesAsync($budget_id, $last_knowledge_of_server = null)
+    public function getCategoriesAsync($budgetId, $lastKnowledgeOfServer = null)
     {
-        return $this->getCategoriesAsyncWithHttpInfo($budget_id, $last_knowledge_of_server)
+        return $this->getCategoriesAsyncWithHttpInfo($budgetId, $lastKnowledgeOfServer)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -223,16 +223,16 @@ class CategoriesApi
      *
      * List categories
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  int $last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  int $lastKnowledgeOfServer The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCategoriesAsyncWithHttpInfo($budget_id, $last_knowledge_of_server = null)
+    public function getCategoriesAsyncWithHttpInfo($budgetId, $lastKnowledgeOfServer = null)
     {
         $returnType = '\Ynab\Model\CategoriesResponse';
-        $request = $this->getCategoriesRequest($budget_id, $last_knowledge_of_server);
+        $request = $this->getCategoriesRequest($budgetId, $lastKnowledgeOfServer);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -274,18 +274,18 @@ class CategoriesApi
     /**
      * Create request for operation 'getCategories'
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  int $last_knowledge_of_server The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  int $lastKnowledgeOfServer The starting server knowledge.  If provided, only entities that have changed since &#x60;last_knowledge_of_server&#x60; will be included. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getCategoriesRequest($budget_id, $last_knowledge_of_server = null)
+    protected function getCategoriesRequest($budgetId, $lastKnowledgeOfServer = null)
     {
-        // verify the required parameter 'budget_id' is set
-        if ($budget_id === null || (is_array($budget_id) && count($budget_id) === 0)) {
+        // verify the required parameter 'budgetId' is set
+        if ($budgetId === null || (is_array($budgetId) && count($budgetId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $budget_id when calling getCategories'
+                'Missing the required parameter $budgetId when calling getCategories'
             );
         }
 
@@ -297,15 +297,15 @@ class CategoriesApi
         $multipart = false;
 
         // query params
-        if ($last_knowledge_of_server !== null) {
-            $queryParams['last_knowledge_of_server'] = ObjectSerializer::toQueryValue($last_knowledge_of_server);
+        if ($lastKnowledgeOfServer !== null) {
+            $queryParams['last_knowledge_of_server'] = ObjectSerializer::toQueryValue($lastKnowledgeOfServer);
         }
 
         // path params
-        if ($budget_id !== null) {
+        if ($budgetId !== null) {
             $resourcePath = str_replace(
                 '{' . 'budget_id' . '}',
-                ObjectSerializer::toPathValue($budget_id),
+                ObjectSerializer::toPathValue($budgetId),
                 $resourcePath
             );
         }
@@ -391,16 +391,16 @@ class CategoriesApi
      *
      * Single category
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  string $category_id The id of the category (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $categoryId The id of the category (required)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ynab\Model\CategoryResponse
      */
-    public function getCategoryById($budget_id, $category_id)
+    public function getCategoryById($budgetId, $categoryId)
     {
-        list($response) = $this->getCategoryByIdWithHttpInfo($budget_id, $category_id);
+        list($response) = $this->getCategoryByIdWithHttpInfo($budgetId, $categoryId);
         return $response;
     }
 
@@ -409,17 +409,17 @@ class CategoriesApi
      *
      * Single category
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  string $category_id The id of the category (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $categoryId The id of the category (required)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ynab\Model\CategoryResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCategoryByIdWithHttpInfo($budget_id, $category_id)
+    public function getCategoryByIdWithHttpInfo($budgetId, $categoryId)
     {
         $returnType = '\Ynab\Model\CategoryResponse';
-        $request = $this->getCategoryByIdRequest($budget_id, $category_id);
+        $request = $this->getCategoryByIdRequest($budgetId, $categoryId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -501,15 +501,15 @@ class CategoriesApi
      *
      * Single category
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  string $category_id The id of the category (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $categoryId The id of the category (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCategoryByIdAsync($budget_id, $category_id)
+    public function getCategoryByIdAsync($budgetId, $categoryId)
     {
-        return $this->getCategoryByIdAsyncWithHttpInfo($budget_id, $category_id)
+        return $this->getCategoryByIdAsyncWithHttpInfo($budgetId, $categoryId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -522,16 +522,16 @@ class CategoriesApi
      *
      * Single category
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  string $category_id The id of the category (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $categoryId The id of the category (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCategoryByIdAsyncWithHttpInfo($budget_id, $category_id)
+    public function getCategoryByIdAsyncWithHttpInfo($budgetId, $categoryId)
     {
         $returnType = '\Ynab\Model\CategoryResponse';
-        $request = $this->getCategoryByIdRequest($budget_id, $category_id);
+        $request = $this->getCategoryByIdRequest($budgetId, $categoryId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -573,24 +573,24 @@ class CategoriesApi
     /**
      * Create request for operation 'getCategoryById'
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
-     * @param  string $category_id The id of the category (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $categoryId The id of the category (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getCategoryByIdRequest($budget_id, $category_id)
+    protected function getCategoryByIdRequest($budgetId, $categoryId)
     {
-        // verify the required parameter 'budget_id' is set
-        if ($budget_id === null || (is_array($budget_id) && count($budget_id) === 0)) {
+        // verify the required parameter 'budgetId' is set
+        if ($budgetId === null || (is_array($budgetId) && count($budgetId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $budget_id when calling getCategoryById'
+                'Missing the required parameter $budgetId when calling getCategoryById'
             );
         }
-        // verify the required parameter 'category_id' is set
-        if ($category_id === null || (is_array($category_id) && count($category_id) === 0)) {
+        // verify the required parameter 'categoryId' is set
+        if ($categoryId === null || (is_array($categoryId) && count($categoryId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $category_id when calling getCategoryById'
+                'Missing the required parameter $categoryId when calling getCategoryById'
             );
         }
 
@@ -603,18 +603,18 @@ class CategoriesApi
 
 
         // path params
-        if ($budget_id !== null) {
+        if ($budgetId !== null) {
             $resourcePath = str_replace(
                 '{' . 'budget_id' . '}',
-                ObjectSerializer::toPathValue($budget_id),
+                ObjectSerializer::toPathValue($budgetId),
                 $resourcePath
             );
         }
         // path params
-        if ($category_id !== null) {
+        if ($categoryId !== null) {
             $resourcePath = str_replace(
                 '{' . 'category_id' . '}',
-                ObjectSerializer::toPathValue($category_id),
+                ObjectSerializer::toPathValue($categoryId),
                 $resourcePath
             );
         }
@@ -700,17 +700,17 @@ class CategoriesApi
      *
      * Single category for a specific budget month
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
      * @param  \DateTime $month The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) (required)
-     * @param  string $category_id The id of the category (required)
+     * @param  string $categoryId The id of the category (required)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ynab\Model\CategoryResponse
      */
-    public function getMonthCategoryById($budget_id, $month, $category_id)
+    public function getMonthCategoryById($budgetId, $month, $categoryId)
     {
-        list($response) = $this->getMonthCategoryByIdWithHttpInfo($budget_id, $month, $category_id);
+        list($response) = $this->getMonthCategoryByIdWithHttpInfo($budgetId, $month, $categoryId);
         return $response;
     }
 
@@ -719,18 +719,18 @@ class CategoriesApi
      *
      * Single category for a specific budget month
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
      * @param  \DateTime $month The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) (required)
-     * @param  string $category_id The id of the category (required)
+     * @param  string $categoryId The id of the category (required)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ynab\Model\CategoryResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMonthCategoryByIdWithHttpInfo($budget_id, $month, $category_id)
+    public function getMonthCategoryByIdWithHttpInfo($budgetId, $month, $categoryId)
     {
         $returnType = '\Ynab\Model\CategoryResponse';
-        $request = $this->getMonthCategoryByIdRequest($budget_id, $month, $category_id);
+        $request = $this->getMonthCategoryByIdRequest($budgetId, $month, $categoryId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -812,16 +812,16 @@ class CategoriesApi
      *
      * Single category for a specific budget month
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
      * @param  \DateTime $month The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) (required)
-     * @param  string $category_id The id of the category (required)
+     * @param  string $categoryId The id of the category (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMonthCategoryByIdAsync($budget_id, $month, $category_id)
+    public function getMonthCategoryByIdAsync($budgetId, $month, $categoryId)
     {
-        return $this->getMonthCategoryByIdAsyncWithHttpInfo($budget_id, $month, $category_id)
+        return $this->getMonthCategoryByIdAsyncWithHttpInfo($budgetId, $month, $categoryId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -834,17 +834,17 @@ class CategoriesApi
      *
      * Single category for a specific budget month
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
      * @param  \DateTime $month The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) (required)
-     * @param  string $category_id The id of the category (required)
+     * @param  string $categoryId The id of the category (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMonthCategoryByIdAsyncWithHttpInfo($budget_id, $month, $category_id)
+    public function getMonthCategoryByIdAsyncWithHttpInfo($budgetId, $month, $categoryId)
     {
         $returnType = '\Ynab\Model\CategoryResponse';
-        $request = $this->getMonthCategoryByIdRequest($budget_id, $month, $category_id);
+        $request = $this->getMonthCategoryByIdRequest($budgetId, $month, $categoryId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -886,19 +886,19 @@ class CategoriesApi
     /**
      * Create request for operation 'getMonthCategoryById'
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
      * @param  \DateTime $month The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) (required)
-     * @param  string $category_id The id of the category (required)
+     * @param  string $categoryId The id of the category (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getMonthCategoryByIdRequest($budget_id, $month, $category_id)
+    protected function getMonthCategoryByIdRequest($budgetId, $month, $categoryId)
     {
-        // verify the required parameter 'budget_id' is set
-        if ($budget_id === null || (is_array($budget_id) && count($budget_id) === 0)) {
+        // verify the required parameter 'budgetId' is set
+        if ($budgetId === null || (is_array($budgetId) && count($budgetId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $budget_id when calling getMonthCategoryById'
+                'Missing the required parameter $budgetId when calling getMonthCategoryById'
             );
         }
         // verify the required parameter 'month' is set
@@ -907,10 +907,10 @@ class CategoriesApi
                 'Missing the required parameter $month when calling getMonthCategoryById'
             );
         }
-        // verify the required parameter 'category_id' is set
-        if ($category_id === null || (is_array($category_id) && count($category_id) === 0)) {
+        // verify the required parameter 'categoryId' is set
+        if ($categoryId === null || (is_array($categoryId) && count($categoryId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $category_id when calling getMonthCategoryById'
+                'Missing the required parameter $categoryId when calling getMonthCategoryById'
             );
         }
 
@@ -923,10 +923,10 @@ class CategoriesApi
 
 
         // path params
-        if ($budget_id !== null) {
+        if ($budgetId !== null) {
             $resourcePath = str_replace(
                 '{' . 'budget_id' . '}',
-                ObjectSerializer::toPathValue($budget_id),
+                ObjectSerializer::toPathValue($budgetId),
                 $resourcePath
             );
         }
@@ -939,10 +939,10 @@ class CategoriesApi
             );
         }
         // path params
-        if ($category_id !== null) {
+        if ($categoryId !== null) {
             $resourcePath = str_replace(
                 '{' . 'category_id' . '}',
-                ObjectSerializer::toPathValue($category_id),
+                ObjectSerializer::toPathValue($categoryId),
                 $resourcePath
             );
         }
@@ -1028,18 +1028,18 @@ class CategoriesApi
      *
      * Update a category for a specific month
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
      * @param  \DateTime $month The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) (required)
-     * @param  string $category_id The id of the category (required)
+     * @param  string $categoryId The id of the category (required)
      * @param  \Ynab\Model\SaveMonthCategoryWrapper $data The category to update.  Only &#x60;budgeted&#x60; amount can be updated and any other fields specified will be ignored. (required)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ynab\Model\SaveCategoryResponse
      */
-    public function updateMonthCategory($budget_id, $month, $category_id, $data)
+    public function updateMonthCategory($budgetId, $month, $categoryId, $data)
     {
-        list($response) = $this->updateMonthCategoryWithHttpInfo($budget_id, $month, $category_id, $data);
+        list($response) = $this->updateMonthCategoryWithHttpInfo($budgetId, $month, $categoryId, $data);
         return $response;
     }
 
@@ -1048,19 +1048,19 @@ class CategoriesApi
      *
      * Update a category for a specific month
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
      * @param  \DateTime $month The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) (required)
-     * @param  string $category_id The id of the category (required)
+     * @param  string $categoryId The id of the category (required)
      * @param  \Ynab\Model\SaveMonthCategoryWrapper $data The category to update.  Only &#x60;budgeted&#x60; amount can be updated and any other fields specified will be ignored. (required)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ynab\Model\SaveCategoryResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateMonthCategoryWithHttpInfo($budget_id, $month, $category_id, $data)
+    public function updateMonthCategoryWithHttpInfo($budgetId, $month, $categoryId, $data)
     {
         $returnType = '\Ynab\Model\SaveCategoryResponse';
-        $request = $this->updateMonthCategoryRequest($budget_id, $month, $category_id, $data);
+        $request = $this->updateMonthCategoryRequest($budgetId, $month, $categoryId, $data);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1134,17 +1134,17 @@ class CategoriesApi
      *
      * Update a category for a specific month
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
      * @param  \DateTime $month The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) (required)
-     * @param  string $category_id The id of the category (required)
+     * @param  string $categoryId The id of the category (required)
      * @param  \Ynab\Model\SaveMonthCategoryWrapper $data The category to update.  Only &#x60;budgeted&#x60; amount can be updated and any other fields specified will be ignored. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateMonthCategoryAsync($budget_id, $month, $category_id, $data)
+    public function updateMonthCategoryAsync($budgetId, $month, $categoryId, $data)
     {
-        return $this->updateMonthCategoryAsyncWithHttpInfo($budget_id, $month, $category_id, $data)
+        return $this->updateMonthCategoryAsyncWithHttpInfo($budgetId, $month, $categoryId, $data)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1157,18 +1157,18 @@ class CategoriesApi
      *
      * Update a category for a specific month
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
      * @param  \DateTime $month The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) (required)
-     * @param  string $category_id The id of the category (required)
+     * @param  string $categoryId The id of the category (required)
      * @param  \Ynab\Model\SaveMonthCategoryWrapper $data The category to update.  Only &#x60;budgeted&#x60; amount can be updated and any other fields specified will be ignored. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateMonthCategoryAsyncWithHttpInfo($budget_id, $month, $category_id, $data)
+    public function updateMonthCategoryAsyncWithHttpInfo($budgetId, $month, $categoryId, $data)
     {
         $returnType = '\Ynab\Model\SaveCategoryResponse';
-        $request = $this->updateMonthCategoryRequest($budget_id, $month, $category_id, $data);
+        $request = $this->updateMonthCategoryRequest($budgetId, $month, $categoryId, $data);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1210,20 +1210,20 @@ class CategoriesApi
     /**
      * Create request for operation 'updateMonthCategory'
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
      * @param  \DateTime $month The budget month in ISO format (e.g. 2016-12-01) (\&quot;current\&quot; can also be used to specify the current calendar month (UTC)) (required)
-     * @param  string $category_id The id of the category (required)
+     * @param  string $categoryId The id of the category (required)
      * @param  \Ynab\Model\SaveMonthCategoryWrapper $data The category to update.  Only &#x60;budgeted&#x60; amount can be updated and any other fields specified will be ignored. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateMonthCategoryRequest($budget_id, $month, $category_id, $data)
+    protected function updateMonthCategoryRequest($budgetId, $month, $categoryId, $data)
     {
-        // verify the required parameter 'budget_id' is set
-        if ($budget_id === null || (is_array($budget_id) && count($budget_id) === 0)) {
+        // verify the required parameter 'budgetId' is set
+        if ($budgetId === null || (is_array($budgetId) && count($budgetId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $budget_id when calling updateMonthCategory'
+                'Missing the required parameter $budgetId when calling updateMonthCategory'
             );
         }
         // verify the required parameter 'month' is set
@@ -1232,10 +1232,10 @@ class CategoriesApi
                 'Missing the required parameter $month when calling updateMonthCategory'
             );
         }
-        // verify the required parameter 'category_id' is set
-        if ($category_id === null || (is_array($category_id) && count($category_id) === 0)) {
+        // verify the required parameter 'categoryId' is set
+        if ($categoryId === null || (is_array($categoryId) && count($categoryId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $category_id when calling updateMonthCategory'
+                'Missing the required parameter $categoryId when calling updateMonthCategory'
             );
         }
         // verify the required parameter 'data' is set
@@ -1254,10 +1254,10 @@ class CategoriesApi
 
 
         // path params
-        if ($budget_id !== null) {
+        if ($budgetId !== null) {
             $resourcePath = str_replace(
                 '{' . 'budget_id' . '}',
-                ObjectSerializer::toPathValue($budget_id),
+                ObjectSerializer::toPathValue($budgetId),
                 $resourcePath
             );
         }
@@ -1270,10 +1270,10 @@ class CategoriesApi
             );
         }
         // path params
-        if ($category_id !== null) {
+        if ($categoryId !== null) {
             $resourcePath = str_replace(
                 '{' . 'category_id' . '}',
-                ObjectSerializer::toPathValue($category_id),
+                ObjectSerializer::toPathValue($categoryId),
                 $resourcePath
             );
         }

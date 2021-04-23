@@ -60,15 +60,15 @@ class Account implements ModelInterface, ArrayAccess
         'id' => 'string',
         'name' => 'string',
         'type' => 'string',
-        'on_budget' => 'bool',
+        'onBudget' => 'bool',
         'closed' => 'bool',
         'note' => 'string',
         'balance' => 'int',
-        'cleared_balance' => 'int',
-        'uncleared_balance' => 'int',
-        'transfer_payee_id' => 'string',
-        'direct_import_linked' => 'bool',
-        'direct_import_in_error' => 'bool',
+        'clearedBalance' => 'int',
+        'unclearedBalance' => 'int',
+        'transferPayeeId' => 'string',
+        'directImportLinked' => 'bool',
+        'directImportInError' => 'bool',
         'deleted' => 'bool'
     ];
 
@@ -81,15 +81,15 @@ class Account implements ModelInterface, ArrayAccess
         'id' => 'uuid',
         'name' => null,
         'type' => null,
-        'on_budget' => null,
+        'onBudget' => null,
         'closed' => null,
         'note' => null,
         'balance' => 'int64',
-        'cleared_balance' => 'int64',
-        'uncleared_balance' => 'int64',
-        'transfer_payee_id' => 'uuid',
-        'direct_import_linked' => null,
-        'direct_import_in_error' => null,
+        'clearedBalance' => 'int64',
+        'unclearedBalance' => 'int64',
+        'transferPayeeId' => 'uuid',
+        'directImportLinked' => null,
+        'directImportInError' => null,
         'deleted' => null
     ];
 
@@ -123,15 +123,15 @@ class Account implements ModelInterface, ArrayAccess
         'id' => 'id',
         'name' => 'name',
         'type' => 'type',
-        'on_budget' => 'on_budget',
+        'onBudget' => 'on_budget',
         'closed' => 'closed',
         'note' => 'note',
         'balance' => 'balance',
-        'cleared_balance' => 'cleared_balance',
-        'uncleared_balance' => 'uncleared_balance',
-        'transfer_payee_id' => 'transfer_payee_id',
-        'direct_import_linked' => 'direct_import_linked',
-        'direct_import_in_error' => 'direct_import_in_error',
+        'clearedBalance' => 'cleared_balance',
+        'unclearedBalance' => 'uncleared_balance',
+        'transferPayeeId' => 'transfer_payee_id',
+        'directImportLinked' => 'direct_import_linked',
+        'directImportInError' => 'direct_import_in_error',
         'deleted' => 'deleted'
     ];
 
@@ -144,15 +144,15 @@ class Account implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'name' => 'setName',
         'type' => 'setType',
-        'on_budget' => 'setOnBudget',
+        'onBudget' => 'setOnBudget',
         'closed' => 'setClosed',
         'note' => 'setNote',
         'balance' => 'setBalance',
-        'cleared_balance' => 'setClearedBalance',
-        'uncleared_balance' => 'setUnclearedBalance',
-        'transfer_payee_id' => 'setTransferPayeeId',
-        'direct_import_linked' => 'setDirectImportLinked',
-        'direct_import_in_error' => 'setDirectImportInError',
+        'clearedBalance' => 'setClearedBalance',
+        'unclearedBalance' => 'setUnclearedBalance',
+        'transferPayeeId' => 'setTransferPayeeId',
+        'directImportLinked' => 'setDirectImportLinked',
+        'directImportInError' => 'setDirectImportInError',
         'deleted' => 'setDeleted'
     ];
 
@@ -165,15 +165,15 @@ class Account implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'name' => 'getName',
         'type' => 'getType',
-        'on_budget' => 'getOnBudget',
+        'onBudget' => 'getOnBudget',
         'closed' => 'getClosed',
         'note' => 'getNote',
         'balance' => 'getBalance',
-        'cleared_balance' => 'getClearedBalance',
-        'uncleared_balance' => 'getUnclearedBalance',
-        'transfer_payee_id' => 'getTransferPayeeId',
-        'direct_import_linked' => 'getDirectImportLinked',
-        'direct_import_in_error' => 'getDirectImportInError',
+        'clearedBalance' => 'getClearedBalance',
+        'unclearedBalance' => 'getUnclearedBalance',
+        'transferPayeeId' => 'getTransferPayeeId',
+        'directImportLinked' => 'getDirectImportLinked',
+        'directImportInError' => 'getDirectImportInError',
         'deleted' => 'getDeleted'
     ];
 
@@ -273,15 +273,15 @@ class Account implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['on_budget'] = isset($data['on_budget']) ? $data['on_budget'] : null;
+        $this->container['onBudget'] = isset($data['onBudget']) ? $data['onBudget'] : null;
         $this->container['closed'] = isset($data['closed']) ? $data['closed'] : null;
         $this->container['note'] = isset($data['note']) ? $data['note'] : null;
         $this->container['balance'] = isset($data['balance']) ? $data['balance'] : null;
-        $this->container['cleared_balance'] = isset($data['cleared_balance']) ? $data['cleared_balance'] : null;
-        $this->container['uncleared_balance'] = isset($data['uncleared_balance']) ? $data['uncleared_balance'] : null;
-        $this->container['transfer_payee_id'] = isset($data['transfer_payee_id']) ? $data['transfer_payee_id'] : null;
-        $this->container['direct_import_linked'] = isset($data['direct_import_linked']) ? $data['direct_import_linked'] : null;
-        $this->container['direct_import_in_error'] = isset($data['direct_import_in_error']) ? $data['direct_import_in_error'] : null;
+        $this->container['clearedBalance'] = isset($data['clearedBalance']) ? $data['clearedBalance'] : null;
+        $this->container['unclearedBalance'] = isset($data['unclearedBalance']) ? $data['unclearedBalance'] : null;
+        $this->container['transferPayeeId'] = isset($data['transferPayeeId']) ? $data['transferPayeeId'] : null;
+        $this->container['directImportLinked'] = isset($data['directImportLinked']) ? $data['directImportLinked'] : null;
+        $this->container['directImportInError'] = isset($data['directImportInError']) ? $data['directImportInError'] : null;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
     }
 
@@ -311,8 +311,8 @@ class Account implements ModelInterface, ArrayAccess
             );
         }
 
-        if ($this->container['on_budget'] === null) {
-            $invalidProperties[] = "'on_budget' can't be null";
+        if ($this->container['onBudget'] === null) {
+            $invalidProperties[] = "'onBudget' can't be null";
         }
         if ($this->container['closed'] === null) {
             $invalidProperties[] = "'closed' can't be null";
@@ -320,14 +320,14 @@ class Account implements ModelInterface, ArrayAccess
         if ($this->container['balance'] === null) {
             $invalidProperties[] = "'balance' can't be null";
         }
-        if ($this->container['cleared_balance'] === null) {
-            $invalidProperties[] = "'cleared_balance' can't be null";
+        if ($this->container['clearedBalance'] === null) {
+            $invalidProperties[] = "'clearedBalance' can't be null";
         }
-        if ($this->container['uncleared_balance'] === null) {
-            $invalidProperties[] = "'uncleared_balance' can't be null";
+        if ($this->container['unclearedBalance'] === null) {
+            $invalidProperties[] = "'unclearedBalance' can't be null";
         }
-        if ($this->container['transfer_payee_id'] === null) {
-            $invalidProperties[] = "'transfer_payee_id' can't be null";
+        if ($this->container['transferPayeeId'] === null) {
+            $invalidProperties[] = "'transferPayeeId' can't be null";
         }
         if ($this->container['deleted'] === null) {
             $invalidProperties[] = "'deleted' can't be null";
@@ -429,25 +429,25 @@ class Account implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets on_budget
+     * Gets onBudget
      *
      * @return bool
      */
     public function getOnBudget()
     {
-        return $this->container['on_budget'];
+        return $this->container['onBudget'];
     }
 
     /**
-     * Sets on_budget
+     * Sets onBudget
      *
-     * @param bool $on_budget Whether this account is on budget or not
+     * @param bool $onBudget Whether this account is on budget or not
      *
      * @return $this
      */
-    public function setOnBudget($on_budget)
+    public function setOnBudget($onBudget)
     {
-        $this->container['on_budget'] = $on_budget;
+        $this->container['onBudget'] = $onBudget;
 
         return $this;
     }
@@ -525,121 +525,121 @@ class Account implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets cleared_balance
+     * Gets clearedBalance
      *
      * @return int
      */
     public function getClearedBalance()
     {
-        return $this->container['cleared_balance'];
+        return $this->container['clearedBalance'];
     }
 
     /**
-     * Sets cleared_balance
+     * Sets clearedBalance
      *
-     * @param int $cleared_balance The current cleared balance of the account in milliunits format
+     * @param int $clearedBalance The current cleared balance of the account in milliunits format
      *
      * @return $this
      */
-    public function setClearedBalance($cleared_balance)
+    public function setClearedBalance($clearedBalance)
     {
-        $this->container['cleared_balance'] = $cleared_balance;
+        $this->container['clearedBalance'] = $clearedBalance;
 
         return $this;
     }
 
     /**
-     * Gets uncleared_balance
+     * Gets unclearedBalance
      *
      * @return int
      */
     public function getUnclearedBalance()
     {
-        return $this->container['uncleared_balance'];
+        return $this->container['unclearedBalance'];
     }
 
     /**
-     * Sets uncleared_balance
+     * Sets unclearedBalance
      *
-     * @param int $uncleared_balance The current uncleared balance of the account in milliunits format
+     * @param int $unclearedBalance The current uncleared balance of the account in milliunits format
      *
      * @return $this
      */
-    public function setUnclearedBalance($uncleared_balance)
+    public function setUnclearedBalance($unclearedBalance)
     {
-        $this->container['uncleared_balance'] = $uncleared_balance;
+        $this->container['unclearedBalance'] = $unclearedBalance;
 
         return $this;
     }
 
     /**
-     * Gets transfer_payee_id
+     * Gets transferPayeeId
      *
      * @return string
      */
     public function getTransferPayeeId()
     {
-        return $this->container['transfer_payee_id'];
+        return $this->container['transferPayeeId'];
     }
 
     /**
-     * Sets transfer_payee_id
+     * Sets transferPayeeId
      *
-     * @param string $transfer_payee_id The payee id which should be used when transferring to this account
+     * @param string $transferPayeeId The payee id which should be used when transferring to this account
      *
      * @return $this
      */
-    public function setTransferPayeeId($transfer_payee_id)
+    public function setTransferPayeeId($transferPayeeId)
     {
-        $this->container['transfer_payee_id'] = $transfer_payee_id;
+        $this->container['transferPayeeId'] = $transferPayeeId;
 
         return $this;
     }
 
     /**
-     * Gets direct_import_linked
+     * Gets directImportLinked
      *
      * @return bool
      */
     public function getDirectImportLinked()
     {
-        return $this->container['direct_import_linked'];
+        return $this->container['directImportLinked'];
     }
 
     /**
-     * Sets direct_import_linked
+     * Sets directImportLinked
      *
-     * @param bool $direct_import_linked Whether or not the account is linked to a financial institution for automatic transaction import.
+     * @param bool $directImportLinked Whether or not the account is linked to a financial institution for automatic transaction import.
      *
      * @return $this
      */
-    public function setDirectImportLinked($direct_import_linked)
+    public function setDirectImportLinked($directImportLinked)
     {
-        $this->container['direct_import_linked'] = $direct_import_linked;
+        $this->container['directImportLinked'] = $directImportLinked;
 
         return $this;
     }
 
     /**
-     * Gets direct_import_in_error
+     * Gets directImportInError
      *
      * @return bool
      */
     public function getDirectImportInError()
     {
-        return $this->container['direct_import_in_error'];
+        return $this->container['directImportInError'];
     }
 
     /**
-     * Sets direct_import_in_error
+     * Sets directImportInError
      *
-     * @param bool $direct_import_in_error If an account linked to a financial institution (direct_import_linked=true) and the linked connection is not in a healthy state, this will be true.
+     * @param bool $directImportInError If an account linked to a financial institution (direct_import_linked=true) and the linked connection is not in a healthy state, this will be true.
      *
      * @return $this
      */
-    public function setDirectImportInError($direct_import_in_error)
+    public function setDirectImportInError($directImportInError)
     {
-        $this->container['direct_import_in_error'] = $direct_import_in_error;
+        $this->container['directImportInError'] = $directImportInError;
 
         return $this;
     }

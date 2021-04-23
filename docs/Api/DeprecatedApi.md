@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **bulkCreateTransactions**
-> \Ynab\Model\BulkResponse bulkCreateTransactions($budget_id, $transactions)
+> \Ynab\Model\BulkResponse bulkCreateTransactions($budgetId, $transactions)
 
 Bulk create transactions
 
@@ -30,11 +30,11 @@ $apiInstance = new Ynab\Api\DeprecatedApi(
     new GuzzleHttp\Client(),
     $config
 );
-$budget_id = "budget_id_example"; // string | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
+$budgetId = "budgetId_example"; // string | The id of the budget. \"last-used\" can be used to specify the last used budget and \"default\" can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget).
 $transactions = new \Ynab\Model\BulkTransactions(); // \Ynab\Model\BulkTransactions | The list of transactions to create
 
 try {
-    $result = $apiInstance->bulkCreateTransactions($budget_id, $transactions);
+    $result = $apiInstance->bulkCreateTransactions($budgetId, $transactions);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DeprecatedApi->bulkCreateTransactions: ', $e->getMessage(), PHP_EOL;
@@ -46,7 +46,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **string**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
+ **budgetId** | **string**| The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). |
  **transactions** | [**\Ynab\Model\BulkTransactions**](../Model/BulkTransactions.md)| The list of transactions to create |
 
 ### Return type

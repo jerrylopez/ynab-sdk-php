@@ -1,9 +1,14 @@
 {
-  "artifactVersion": "0.1.1",
+  "artifactVersion": "1.0.0",
   "composerProjectName": "ynab",
   "gitUserId": "jerrylopez",
   "gitRepoId": "ynab-sdk-php",
   "invokerPackage": "Ynab",
   "packagePath": ".",
-  "srcBasePath": "src"
+  "srcBasePath": "src",
+  "sortParamsByRequiredFlag": true,
+  "ensureUniqueParams": true,
+  "allowUnicodeIdentifiers": false,
+  "variableNamingConvention": "camelCase",
+  "hideGenerationTimestamp": true
 }

@@ -23,6 +23,7 @@
 #!docs/README.md
 
 .travis.yml
+composer.json
 composer.lock
 git_push.sh
 README.md

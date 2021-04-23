@@ -57,8 +57,8 @@ class CategoriesResponseData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'category_groups' => '\Ynab\Model\CategoryGroupWithCategories[]',
-        'server_knowledge' => 'int'
+        'categoryGroups' => '\Ynab\Model\CategoryGroupWithCategories[]',
+        'serverKnowledge' => 'int'
     ];
 
     /**
@@ -67,8 +67,8 @@ class CategoriesResponseData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'category_groups' => null,
-        'server_knowledge' => 'int64'
+        'categoryGroups' => null,
+        'serverKnowledge' => 'int64'
     ];
 
     /**
@@ -98,8 +98,8 @@ class CategoriesResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'category_groups' => 'category_groups',
-        'server_knowledge' => 'server_knowledge'
+        'categoryGroups' => 'category_groups',
+        'serverKnowledge' => 'server_knowledge'
     ];
 
     /**
@@ -108,8 +108,8 @@ class CategoriesResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'category_groups' => 'setCategoryGroups',
-        'server_knowledge' => 'setServerKnowledge'
+        'categoryGroups' => 'setCategoryGroups',
+        'serverKnowledge' => 'setServerKnowledge'
     ];
 
     /**
@@ -118,8 +118,8 @@ class CategoriesResponseData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'category_groups' => 'getCategoryGroups',
-        'server_knowledge' => 'getServerKnowledge'
+        'categoryGroups' => 'getCategoryGroups',
+        'serverKnowledge' => 'getServerKnowledge'
     ];
 
     /**
@@ -182,8 +182,8 @@ class CategoriesResponseData implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['category_groups'] = isset($data['category_groups']) ? $data['category_groups'] : null;
-        $this->container['server_knowledge'] = isset($data['server_knowledge']) ? $data['server_knowledge'] : null;
+        $this->container['categoryGroups'] = isset($data['categoryGroups']) ? $data['categoryGroups'] : null;
+        $this->container['serverKnowledge'] = isset($data['serverKnowledge']) ? $data['serverKnowledge'] : null;
     }
 
     /**
@@ -195,11 +195,11 @@ class CategoriesResponseData implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['category_groups'] === null) {
-            $invalidProperties[] = "'category_groups' can't be null";
+        if ($this->container['categoryGroups'] === null) {
+            $invalidProperties[] = "'categoryGroups' can't be null";
         }
-        if ($this->container['server_knowledge'] === null) {
-            $invalidProperties[] = "'server_knowledge' can't be null";
+        if ($this->container['serverKnowledge'] === null) {
+            $invalidProperties[] = "'serverKnowledge' can't be null";
         }
         return $invalidProperties;
     }
@@ -217,49 +217,49 @@ class CategoriesResponseData implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets category_groups
+     * Gets categoryGroups
      *
      * @return \Ynab\Model\CategoryGroupWithCategories[]
      */
     public function getCategoryGroups()
     {
-        return $this->container['category_groups'];
+        return $this->container['categoryGroups'];
     }
 
     /**
-     * Sets category_groups
+     * Sets categoryGroups
      *
-     * @param \Ynab\Model\CategoryGroupWithCategories[] $category_groups category_groups
+     * @param \Ynab\Model\CategoryGroupWithCategories[] $categoryGroups categoryGroups
      *
      * @return $this
      */
-    public function setCategoryGroups($category_groups)
+    public function setCategoryGroups($categoryGroups)
     {
-        $this->container['category_groups'] = $category_groups;
+        $this->container['categoryGroups'] = $categoryGroups;
 
         return $this;
     }
 
     /**
-     * Gets server_knowledge
+     * Gets serverKnowledge
      *
      * @return int
      */
     public function getServerKnowledge()
     {
-        return $this->container['server_knowledge'];
+        return $this->container['serverKnowledge'];
     }
 
     /**
-     * Sets server_knowledge
+     * Sets serverKnowledge
      *
-     * @param int $server_knowledge The knowledge of the server
+     * @param int $serverKnowledge The knowledge of the server
      *
      * @return $this
      */
-    public function setServerKnowledge($server_knowledge)
+    public function setServerKnowledge($serverKnowledge)
     {
-        $this->container['server_knowledge'] = $server_knowledge;
+        $this->container['serverKnowledge'] = $serverKnowledge;
 
         return $this;
     }

@@ -58,7 +58,7 @@ class PayeeLocation implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'payee_id' => 'string',
+        'payeeId' => 'string',
         'latitude' => 'string',
         'longitude' => 'string',
         'deleted' => 'bool'
@@ -71,7 +71,7 @@ class PayeeLocation implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => 'uuid',
-        'payee_id' => 'uuid',
+        'payeeId' => 'uuid',
         'latitude' => null,
         'longitude' => null,
         'deleted' => null
@@ -105,7 +105,7 @@ class PayeeLocation implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'payee_id' => 'payee_id',
+        'payeeId' => 'payee_id',
         'latitude' => 'latitude',
         'longitude' => 'longitude',
         'deleted' => 'deleted'
@@ -118,7 +118,7 @@ class PayeeLocation implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'payee_id' => 'setPayeeId',
+        'payeeId' => 'setPayeeId',
         'latitude' => 'setLatitude',
         'longitude' => 'setLongitude',
         'deleted' => 'setDeleted'
@@ -131,7 +131,7 @@ class PayeeLocation implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'payee_id' => 'getPayeeId',
+        'payeeId' => 'getPayeeId',
         'latitude' => 'getLatitude',
         'longitude' => 'getLongitude',
         'deleted' => 'getDeleted'
@@ -198,7 +198,7 @@ class PayeeLocation implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['payee_id'] = isset($data['payee_id']) ? $data['payee_id'] : null;
+        $this->container['payeeId'] = isset($data['payeeId']) ? $data['payeeId'] : null;
         $this->container['latitude'] = isset($data['latitude']) ? $data['latitude'] : null;
         $this->container['longitude'] = isset($data['longitude']) ? $data['longitude'] : null;
         $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
@@ -216,8 +216,8 @@ class PayeeLocation implements ModelInterface, ArrayAccess
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
-        if ($this->container['payee_id'] === null) {
-            $invalidProperties[] = "'payee_id' can't be null";
+        if ($this->container['payeeId'] === null) {
+            $invalidProperties[] = "'payeeId' can't be null";
         }
         if ($this->container['latitude'] === null) {
             $invalidProperties[] = "'latitude' can't be null";
@@ -268,25 +268,25 @@ class PayeeLocation implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets payee_id
+     * Gets payeeId
      *
      * @return string
      */
     public function getPayeeId()
     {
-        return $this->container['payee_id'];
+        return $this->container['payeeId'];
     }
 
     /**
-     * Sets payee_id
+     * Sets payeeId
      *
-     * @param string $payee_id payee_id
+     * @param string $payeeId payeeId
      *
      * @return $this
      */
-    public function setPayeeId($payee_id)
+    public function setPayeeId($payeeId)
     {
-        $this->container['payee_id'] = $payee_id;
+        $this->container['payeeId'] = $payeeId;
 
         return $this;
     }

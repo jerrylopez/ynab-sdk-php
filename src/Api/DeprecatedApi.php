@@ -92,16 +92,16 @@ class DeprecatedApi
      *
      * Bulk create transactions
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
      * @param  \Ynab\Model\BulkTransactions $transactions The list of transactions to create (required)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Ynab\Model\BulkResponse
      */
-    public function bulkCreateTransactions($budget_id, $transactions)
+    public function bulkCreateTransactions($budgetId, $transactions)
     {
-        list($response) = $this->bulkCreateTransactionsWithHttpInfo($budget_id, $transactions);
+        list($response) = $this->bulkCreateTransactionsWithHttpInfo($budgetId, $transactions);
         return $response;
     }
 
@@ -110,17 +110,17 @@ class DeprecatedApi
      *
      * Bulk create transactions
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
      * @param  \Ynab\Model\BulkTransactions $transactions The list of transactions to create (required)
      *
      * @throws \Ynab\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Ynab\Model\BulkResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function bulkCreateTransactionsWithHttpInfo($budget_id, $transactions)
+    public function bulkCreateTransactionsWithHttpInfo($budgetId, $transactions)
     {
         $returnType = '\Ynab\Model\BulkResponse';
-        $request = $this->bulkCreateTransactionsRequest($budget_id, $transactions);
+        $request = $this->bulkCreateTransactionsRequest($budgetId, $transactions);
 
         try {
             $options = $this->createHttpClientOption();
@@ -194,15 +194,15 @@ class DeprecatedApi
      *
      * Bulk create transactions
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
      * @param  \Ynab\Model\BulkTransactions $transactions The list of transactions to create (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function bulkCreateTransactionsAsync($budget_id, $transactions)
+    public function bulkCreateTransactionsAsync($budgetId, $transactions)
     {
-        return $this->bulkCreateTransactionsAsyncWithHttpInfo($budget_id, $transactions)
+        return $this->bulkCreateTransactionsAsyncWithHttpInfo($budgetId, $transactions)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -215,16 +215,16 @@ class DeprecatedApi
      *
      * Bulk create transactions
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
      * @param  \Ynab\Model\BulkTransactions $transactions The list of transactions to create (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function bulkCreateTransactionsAsyncWithHttpInfo($budget_id, $transactions)
+    public function bulkCreateTransactionsAsyncWithHttpInfo($budgetId, $transactions)
     {
         $returnType = '\Ynab\Model\BulkResponse';
-        $request = $this->bulkCreateTransactionsRequest($budget_id, $transactions);
+        $request = $this->bulkCreateTransactionsRequest($budgetId, $transactions);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -266,18 +266,18 @@ class DeprecatedApi
     /**
      * Create request for operation 'bulkCreateTransactions'
      *
-     * @param  string $budget_id The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
+     * @param  string $budgetId The id of the budget. \&quot;last-used\&quot; can be used to specify the last used budget and \&quot;default\&quot; can be used if default budget selection is enabled (see: https://api.youneedabudget.com/#oauth-default-budget). (required)
      * @param  \Ynab\Model\BulkTransactions $transactions The list of transactions to create (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function bulkCreateTransactionsRequest($budget_id, $transactions)
+    protected function bulkCreateTransactionsRequest($budgetId, $transactions)
     {
-        // verify the required parameter 'budget_id' is set
-        if ($budget_id === null || (is_array($budget_id) && count($budget_id) === 0)) {
+        // verify the required parameter 'budgetId' is set
+        if ($budgetId === null || (is_array($budgetId) && count($budgetId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $budget_id when calling bulkCreateTransactions'
+                'Missing the required parameter $budgetId when calling bulkCreateTransactions'
             );
         }
         // verify the required parameter 'transactions' is set
@@ -296,10 +296,10 @@ class DeprecatedApi
 
 
         // path params
-        if ($budget_id !== null) {
+        if ($budgetId !== null) {
             $resourcePath = str_replace(
                 '{' . 'budget_id' . '}',
-                ObjectSerializer::toPathValue($budget_id),
+                ObjectSerializer::toPathValue($budgetId),
                 $resourcePath
             );
         }
