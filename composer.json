@@ -1,5 +1,5 @@
 {
-    "name": "jerrylopez/ynab",
+    "name": "jesscarlos/ynab",
     "version": "1.0.0",
     "description": "PHP wrapper for the YNAB API. Read the documentation at https://api.youneedabudget.com",
     "keywords": [
@@ -8,12 +8,16 @@
         "sdk",
         "api"
     ],
-    "homepage": "https://github.com/jerrylopez/ynab-sdk-php",
+    "homepage": "https://github.com/jesscarlos/ynab-sdk-php",
     "license": "MIT",
     "authors": [
         {
             "name": "Jerry Lopez",
             "homepage": "https://github.com/jerrylopez"
+        },
+        {
+            "name": "Jess Carlos",
+            "homepage": "https://github.com/jesscarlos"
         }
     ],
     "require": {
